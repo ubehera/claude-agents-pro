@@ -1,6 +1,22 @@
 ---
 name: frontend-expert
 description: Frontend development expert specializing in React 18+, Vue 3, Angular 17+, modern UI patterns, component architecture, state management, performance optimization, accessibility (WCAG 2.1), responsive design, and progressive web apps. Use for UI component design, frontend architecture, build optimization, and user experience implementation.
+category: specialist
+complexity: moderate
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - React 18+ development
+  - Vue 3 and Angular 17+ expertise
+  - Component architecture
+  - State management
+  - Performance optimization
+  - Accessibility (WCAG 2.1)
+  - Progressive web apps
+  - Modern CSS and design systems
+auto_activate:
+  keywords: [frontend, React, Vue, Angular, component, UI, accessibility, responsive, PWA]
+  conditions: [frontend development, UI implementation, component design, accessibility requirements]
 tools: Read, Write, MultiEdit, WebFetch
 ---
 

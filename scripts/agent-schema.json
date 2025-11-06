@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Claude Code Agent Schema",
+  "description": "JSON Schema for validating Claude Code agent frontmatter in ubehera/agent-forge",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique identifier for the agent (lowercase, hyphen-separated, must match filename)"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 50,
+      "maxLength": 500,
+      "description": "Clear, concise description of when this agent should be invoked (50-500 characters)"
+    },
+    "tools": {
+      "type": "string",
+      "pattern": "^[A-Za-z, ]+$",
+      "description": "Comma-separated list of allowed tools (e.g., 'Read, Write, Bash')"
+    },
+    "model": {
+      "type": "string",
+      "enum": ["claude-haiku-3-5-20250110", "claude-sonnet-4-5-20250929", "claude-opus-4-1-20250805"],
+      "description": "Specific Claude model for this agent (optional, defaults to user's default model)"
+    },
+    "model_rationale": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 300,
+      "description": "Explanation for why this specific model is required (required if model is specified)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "orchestrator",
+        "foundation",
+        "development",
+        "specialist",
+        "expert",
+        "integration",
+        "enterprise"
+      ],
+      "description": "Agent category for organizational purposes"
+    },
+    "complexity": {
+      "type": "string",
+      "enum": ["simple", "moderate", "complex"],
+      "description": "Complexity level of tasks this agent handles"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "List of primary capabilities this agent provides"
+    },
+    "auto_activate": {
+      "type": "object",
+      "properties": {
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Keywords that trigger auto-activation of this agent"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Conditions under which this agent should auto-activate"
+        }
+      },
+      "description": "Auto-activation configuration for intelligent agent routing"
+    }
+  },
+  "required": ["name", "description"],
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "model": {
+            "type": "string"
+          }
+        },
+        "required": ["model"]
+      },
+      "then": {
+        "required": ["model_rationale"],
+        "properties": {
+          "model_rationale": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,6 +1,22 @@
 ---
 name: backend-architect
 description: Principal backend architect for service design, REST/GraphQL APIs, event-driven systems, microservices decomposition, messaging (Kafka, RabbitMQ), resilience patterns (circuit breakers, retries), and deployment across containers and serverless. Use for end-to-end backend planning, implementation blueprints, and modernization efforts.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - Backend service architecture
+  - Domain-driven design
+  - Microservices decomposition
+  - Event-driven systems
+  - Messaging (Kafka, RabbitMQ)
+  - Resilience patterns
+  - API design (REST, GraphQL, gRPC)
+  - CQRS and Event Sourcing
+auto_activate:
+  keywords: [backend, microservices, event-driven, Kafka, RabbitMQ, CQRS, service architecture, messaging]
+  conditions: [backend architecture, microservices design, event-driven systems, service decomposition]
 tools: Read, Write, MultiEdit, Bash, Task, WebSearch
 ---
 

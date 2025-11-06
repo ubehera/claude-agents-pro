@@ -1,0 +1,89 @@
+name: Validate Agents
+
+on:
+  pull_request:
+    paths:
+      - 'agents/**/*.md'
+      - '!agents/README.md'
+      - '!agents/TESTING.md'
+      - '!agents/AGENT_CHECKLIST.md'
+      - '.github/workflows/validate-agents.yml'
+      - 'scripts/verify-agents.sh'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate agent frontmatter and structure
+        run: |
+          chmod +x scripts/verify-agents.sh
+          ./scripts/verify-agents.sh
+
+      - name: Check for naming inconsistencies
+        run: |
+          echo "Checking agent naming conventions..."
+
+          # Find all agent files (excluding docs)
+          while IFS= read -r file; do
+            if [[ -f "$file" ]]; then
+              # Extract name from frontmatter
+              name=$(sed -n '1,20p' "$file" | awk -F: '/^name:/ {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; exit}')
+              basename=$(basename "$file")
+              expected="${basename%.md}"
+
+              if [[ -n "$name" && "$name" != "$expected" ]]; then
+                echo "❌ File $file has name field '$name' but should be '$expected'"
+                exit 1
+              fi
+            fi
+          done < <(find agents -mindepth 2 -type f -name '*.md' ! -name 'README.md' ! -name 'TESTING.md' ! -name 'AGENT_CHECKLIST.md')
+
+          echo "✅ All agent file names match their name fields"
+
+      - name: Check for duplicate agent names
+        run: |
+          echo "Checking for duplicate agent names..."
+
+          # Extract all agent names and check for duplicates
+          duplicates=$(find agents -mindepth 2 -type f -name '*.md' ! -name 'README.md' ! -name 'TESTING.md' ! -name 'AGENT_CHECKLIST.md' -exec basename {} .md \; | sort | uniq -d)
+
+          if [[ -n "$duplicates" ]]; then
+            echo "❌ Duplicate agent names found:"
+            echo "$duplicates"
+            exit 1
+          fi
+
+          echo "✅ No duplicate agent names found"
+
+      - name: Generate validation report
+        if: failure()
+        run: |
+          echo "# Agent Validation Report" > validation-report.txt
+          echo "Generated: $(date)" >> validation-report.txt
+          echo "" >> validation-report.txt
+          echo "## Validation Errors" >> validation-report.txt
+          echo "" >> validation-report.txt
+          echo "Validation failed. Please check the workflow logs above for details." >> validation-report.txt
+          echo "" >> validation-report.txt
+          echo "Common issues:" >> validation-report.txt
+          echo "- Missing frontmatter fields (name, description)" >> validation-report.txt
+          echo "- Name field doesn't match filename" >> validation-report.txt
+          echo "- Frontmatter not starting with '---'" >> validation-report.txt
+
+      - name: Upload validation report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: validation-report.txt
+          retention-days: 30
+
+      - name: Block merge on validation failure
+        if: failure()
+        run: |
+          echo "::error::Agent validation failed. Please fix the errors above before merging."
+          exit 1

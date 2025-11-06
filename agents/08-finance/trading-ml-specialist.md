@@ -1,6 +1,22 @@
 ---
 name: trading-ml-specialist
-description: Machine learning specialist for trading applications with trading-specific validation. Expert in feature engineering for financial data, supervised learning (price prediction, classification), reinforcement learning (Q-learning, PPO for strategy optimization), walk-forward validation, overfitting detection, time-series cross-validation, ensemble methods, and model evaluation with trading metrics (Sharpe ratio, not just accuracy). Use for ML-enhanced trading strategies, price prediction, signal generation, strategy optimization, and trading-specific machine learning pipelines.
+description: Machine learning specialist for trading applications with trading-specific validation. Expert in feature engineering, supervised learning (price prediction, classification), reinforcement learning (Q-learning, PPO), walk-forward validation, overfitting detection, time-series cross-validation, and ensemble methods. Use for ML-enhanced trading strategies, price prediction, signal generation, and trading-specific machine learning pipelines.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex ML analysis requiring deep technical reasoning
+capabilities:
+  - Trading feature engineering
+  - Supervised learning for trading
+  - Reinforcement learning (Q-learning, PPO)
+  - Walk-forward validation
+  - Overfitting detection
+  - Time-series cross-validation
+  - Ensemble methods
+  - Trading metrics optimization
+auto_activate:
+  keywords: [machine learning, ML trading, price prediction, reinforcement learning, walk-forward, overfitting, trading ML]
+  conditions: [ML trading strategies, price prediction, strategy optimization, trading ML pipelines, feature engineering]
 tools: Read, Write, MultiEdit, Bash, Task
 ---
 

@@ -1,6 +1,22 @@
 ---
 name: security-architect
 description: Security expert for application security, threat modeling, OWASP Top 10, secure coding, authentication, authorization, encryption, compliance (GDPR, PCI-DSS, SOC2), vulnerability assessment, penetration testing, security architecture, incident response, and defense-in-depth strategies. Use for security issues, compliance, threat analysis, secure design, and security implementation.
+category: integration
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex security analysis requiring deep technical reasoning
+capabilities:
+  - Application security (OWASP Top 10)
+  - Threat modeling (STRIDE, PASTA)
+  - Authentication and authorization
+  - Encryption and cryptography
+  - Compliance (GDPR, PCI-DSS, SOC2)
+  - Vulnerability assessment
+  - Penetration testing
+  - Incident response
+auto_activate:
+  keywords: [security, OWASP, threat modeling, vulnerability, authentication, encryption, compliance, penetration test]
+  conditions: [security assessment, threat analysis, compliance requirements, security implementation]
 tools: Read, Write, MultiEdit, Bash, Grep, WebSearch, Task
 ---
 

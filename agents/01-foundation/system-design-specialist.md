@@ -1,6 +1,23 @@
 ---
 name: system-design-specialist
 description: System design expert for distributed systems, microservices, scalability, load balancing, caching, database design, message queues, event-driven architecture, high availability, fault tolerance, CAP theorem, consensus algorithms, and large-scale architecture. Use for system architecture, distributed system design, scalability planning, and handling millions of users.
+category: foundation
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - Distributed systems design
+  - Microservices architecture
+  - Scalability patterns
+  - High availability design
+  - Fault tolerance
+  - CAP theorem application
+  - Message queuing architecture
+  - Event-driven architecture
+  - Database architecture
+auto_activate:
+  keywords: [system design, architecture, distributed systems, microservices, scalability, high availability, message queue]
+  conditions: [architecture design, system design tasks, scalability planning, distributed system implementation]
 tools: Read, Write, MultiEdit, WebSearch, Task
 ---
 

@@ -1,6 +1,21 @@
 ---
 name: research-librarian
 description: Research specialist for discovering, vetting, and summarizing authoritative sources (RFCs, vendor docs, specs, standards). Use for exploratory questions, comparative analysis, and unknown URLs. Prioritize primary sources; produce concise findings with citations and handoff links for follow‑up work.
+category: integration
+complexity: simple
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex research tasks requiring deep technical reasoning
+capabilities:
+  - Research and source discovery
+  - Authoritative source vetting
+  - Technical documentation synthesis
+  - Standards research (RFCs, W3C)
+  - Vendor documentation analysis
+  - Comparative analysis
+  - Citation management
+auto_activate:
+  keywords: [research, documentation, RFC, standards, vendor docs, specification, comparative analysis]
+  conditions: [research needs, documentation discovery, standards research, source vetting]
 tools: Read, Write, MultiEdit, WebSearch
 ---
 

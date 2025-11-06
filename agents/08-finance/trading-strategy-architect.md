@@ -1,6 +1,22 @@
 ---
 name: trading-strategy-architect
-description: Trading strategy design and backtesting specialist for systematic strategy development. Expert in backtesting frameworks (vectorbt, backtrader, zipline), walk-forward analysis, parameter optimization, strategy validation, event-driven architectures, performance metrics (Sharpe, Sortino, Calmar), transaction cost modeling, and multi-timeframe strategies. Use for strategy design, backtest implementation, parameter tuning, performance analysis, and systematic trading system architecture for stocks and options.
+description: Trading strategy design and backtesting specialist for systematic strategy development. Expert in backtesting frameworks (vectorbt, backtrader, zipline), walk-forward analysis, parameter optimization, strategy validation, performance metrics (Sharpe, Sortino, Calmar), transaction cost modeling, and multi-timeframe strategies. Use for strategy design, backtest implementation, and systematic trading system architecture for stocks and options.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex trading analysis requiring deep technical reasoning
+capabilities:
+  - Backtesting frameworks (vectorbt, backtrader)
+  - Walk-forward analysis
+  - Parameter optimization
+  - Strategy validation
+  - Performance metrics (Sharpe, Sortino, Calmar)
+  - Transaction cost modeling
+  - Multi-timeframe strategies
+  - Systematic strategy design
+auto_activate:
+  keywords: [backtest, strategy design, walk-forward, vectorbt, Sharpe ratio, parameter optimization, systematic trading]
+  conditions: [strategy backtesting, strategy design, performance analysis, parameter tuning, systematic trading development]
 tools: Read, Write, MultiEdit, Bash, Task
 ---
 

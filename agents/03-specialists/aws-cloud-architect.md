@@ -1,6 +1,22 @@
 ---
 name: aws-cloud-architect
 description: AWS expert for CloudFormation, CDK, EC2, Lambda, ECS/EKS, S3, RDS, DynamoDB, VPC, IAM, Well-Architected Framework, serverless architectures, auto-scaling, cost optimization, security (KMS, WAF, GuardDuty), compliance, multi-region deployments, and cloud migration strategies. Use for AWS infrastructure design, cloud architecture, and production deployments.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - AWS infrastructure design
+  - CloudFormation and CDK
+  - Serverless architectures
+  - Well-Architected Framework
+  - Multi-region deployments
+  - Cost optimization
+  - Security (IAM, KMS, WAF)
+  - Kubernetes (EKS)
+auto_activate:
+  keywords: [AWS, CloudFormation, CDK, Lambda, ECS, EKS, S3, serverless, cloud architecture]
+  conditions: [AWS infrastructure design, cloud migration, serverless implementation, AWS optimization]
 tools: Read, Write, MultiEdit, Bash, Task, WebSearch
 ---
 

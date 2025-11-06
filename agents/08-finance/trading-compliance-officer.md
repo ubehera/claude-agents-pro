@@ -1,6 +1,22 @@
 ---
 name: trading-compliance-officer
 description: Trading compliance and regulatory specialist for retail trading rules. Expert in Pattern Day Trader (PDT) rules, wash sale tracking, trade reporting, regulatory compliance (FINRA, SEC), best execution monitoring, audit trail generation, tax reporting (1099-B), account restrictions, and trading rule enforcement. Use for compliance checking, regulatory validation, trade reporting, tax documentation, and ensuring adherence to trading regulations for retail traders.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex compliance analysis requiring deep technical reasoning
+capabilities:
+  - Pattern Day Trader (PDT) rules
+  - Wash sale tracking
+  - FINRA and SEC compliance
+  - Trade reporting and audit trails
+  - Tax reporting (1099-B)
+  - Best execution monitoring
+  - Regulatory validation
+  - Account restrictions management
+auto_activate:
+  keywords: [compliance, PDT, wash sale, FINRA, SEC, tax reporting, 1099-B, regulatory, audit trail]
+  conditions: [compliance checking, regulatory validation, tax reporting, trade auditing, PDT monitoring]
 tools: Read, Write, MultiEdit, WebSearch, Task
 ---
 

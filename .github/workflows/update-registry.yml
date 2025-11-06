@@ -1,0 +1,150 @@
+name: Update Agent Registry
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'agents/**/*.md'
+      - '!agents/README.md'
+      - '!agents/TESTING.md'
+      - '!agents/AGENT_CHECKLIST.md'
+  workflow_dispatch:
+
+jobs:
+  update-registry:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm init -y
+          npm install gray-matter --save-dev
+
+      - name: Generate agent registry
+        run: |
+          cat > scripts/generate-registry.js << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          const matter = require('gray-matter');
+
+          const AGENTS_DIR = path.join(__dirname, '..', 'agents');
+          const OUTPUT_FILE = path.join(__dirname, '..', 'registry.json');
+
+          function getAllAgents(dir, basePath = '') {
+            const agents = [];
+            const items = fs.readdirSync(dir, { withFileTypes: true });
+
+            for (const item of items) {
+              const fullPath = path.join(dir, item.name);
+              const relativePath = path.join(basePath, item.name);
+
+              if (item.isDirectory()) {
+                // Recursively process subdirectories
+                agents.push(...getAllAgents(fullPath, relativePath));
+              } else if (item.isFile() && item.name.endsWith('.md') &&
+                         !['README.md', 'TESTING.md', 'AGENT_CHECKLIST.md'].includes(item.name)) {
+                try {
+                  const content = fs.readFileSync(fullPath, 'utf8');
+                  const { data: frontmatter } = matter(content);
+
+                  if (frontmatter.name && frontmatter.description) {
+                    const tier = basePath.split('/')[0] || 'unknown';
+
+                    agents.push({
+                      name: frontmatter.name,
+                      description: frontmatter.description,
+                      tier: tier,
+                      path: relativePath,
+                      tools: frontmatter.tools || [],
+                      enhanced_capabilities: frontmatter.enhanced_capabilities || [],
+                      subagent_type: frontmatter.subagent_type || frontmatter.name
+                    });
+                  }
+                } catch (error) {
+                  console.warn(`Warning: Failed to parse ${relativePath}: ${error.message}`);
+                }
+              }
+            }
+
+            return agents;
+          }
+
+          // Generate registry
+          const agents = getAllAgents(AGENTS_DIR);
+
+          // Sort by tier and name
+          agents.sort((a, b) => {
+            if (a.tier !== b.tier) return a.tier.localeCompare(b.tier);
+            return a.name.localeCompare(b.name);
+          });
+
+          const registry = {
+            version: '1.0.0',
+            generated: new Date().toISOString(),
+            total_agents: agents.length,
+            agents: agents,
+            tiers: [...new Set(agents.map(a => a.tier))].sort()
+          };
+
+          fs.writeFileSync(OUTPUT_FILE, JSON.stringify(registry, null, 2));
+          console.log(`✅ Generated registry with ${agents.length} agents`);
+          console.log(`📊 Tiers: ${registry.tiers.join(', ')}`);
+          EOF
+
+          node scripts/generate-registry.js
+
+      - name: Validate registry generation
+        run: |
+          if [ ! -f registry.json ]; then
+            echo "::error::registry.json was not generated"
+            exit 1
+          fi
+
+          # Validate JSON syntax
+          if ! jq empty registry.json 2>/dev/null; then
+            echo "::error::registry.json contains invalid JSON"
+            exit 1
+          fi
+
+          echo "✅ Registry generated successfully"
+          echo "📊 Registry summary:"
+          jq -r '.total_agents as $total | .tiers | map("\(.): \([.] | length)") | "Total agents: \($total)\nTiers: \(. | join(", "))"' registry.json
+
+      - name: Commit registry.json
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          if git diff --quiet registry.json; then
+            echo "No changes to registry.json"
+            exit 0
+          fi
+
+          git add registry.json
+          git commit -m "chore: update agent registry [skip ci]"
+          git push
+
+      - name: Generate registry stats
+        run: |
+          echo "# Agent Registry Statistics" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Total Agents:** $(jq -r '.total_agents' registry.json)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Tiers:**" >> $GITHUB_STEP_SUMMARY
+          jq -r '.tiers[]' registry.json | while read tier; do
+            count=$(jq -r ".agents | map(select(.tier == \"$tier\")) | length" registry.json)
+            echo "- $tier: $count agents" >> $GITHUB_STEP_SUMMARY
+          done

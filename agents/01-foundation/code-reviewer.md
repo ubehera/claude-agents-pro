@@ -1,6 +1,21 @@
 ---
 name: code-reviewer
 description: Expert code review specialist for analyzing code quality, identifying bugs, security issues, and suggesting improvements. Use when reviewing pull requests, analyzing code changes, or performing quality audits.
+category: foundation
+complexity: moderate
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - Code quality analysis
+  - Security vulnerability detection
+  - Performance review
+  - Architecture review
+  - Static analysis
+  - Best practices enforcement
+  - OWASP compliance
+auto_activate:
+  keywords: [review, code review, PR, pull request, quality audit, security audit, analyze code]
+  conditions: [pull request review, code quality assessment, security analysis, pre-merge validation]
 tools: Read, Grep, Glob, Task, WebSearch
 ---
 

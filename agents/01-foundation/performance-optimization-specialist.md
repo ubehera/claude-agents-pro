@@ -1,6 +1,23 @@
 ---
 name: performance-optimization-specialist
 description: Performance expert for optimization, speed improvement, Core Web Vitals, database performance, caching, CDN, load balancing, API latency, memory optimization, bottleneck identification, profiling, monitoring, scalability, and system performance tuning. Use for slow applications, performance issues, optimization strategies, and scalability challenges.
+category: foundation
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - Performance optimization
+  - Core Web Vitals improvement
+  - Database query optimization
+  - Caching strategies
+  - Load balancing
+  - API latency reduction
+  - Memory optimization
+  - Profiling and bottleneck analysis
+  - Scalability tuning
+auto_activate:
+  keywords: [performance, optimization, slow, latency, bottleneck, profiling, Core Web Vitals, cache]
+  conditions: [performance issues, optimization needs, slow applications, scalability challenges, latency problems]
 tools: Read, Write, MultiEdit, Bash, Grep, Task
 ---
 

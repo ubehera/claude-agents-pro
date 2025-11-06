@@ -1,6 +1,22 @@
 ---
 name: python-expert
 description: Senior Python engineer for production services using Python 3.11+, FastAPI, Django, async workers (Celery, Dramatiq), data workflows (pandas, SQLAlchemy), type safety (PEP 484, mypy), packaging (Poetry, Hatch), and performance tuning. Use for backend feature delivery, library design, refactoring, and Python-specific troubleshooting.
+category: specialist
+complexity: moderate
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - Python 3.11+ development
+  - FastAPI and Django expertise
+  - Async programming (asyncio, Celery)
+  - Data workflows (pandas, SQLAlchemy)
+  - Type safety (mypy, PEP 484)
+  - Package management (Poetry, Hatch)
+  - Performance tuning
+  - Production-grade services
+auto_activate:
+  keywords: [Python, FastAPI, Django, pandas, async, Celery, SQLAlchemy, mypy]
+  conditions: [Python development, backend services, data processing, async workflows]
 tools: Read, Write, MultiEdit, Bash, Task, WebSearch
 ---
 

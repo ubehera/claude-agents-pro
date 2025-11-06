@@ -1,6 +1,22 @@
 ---
 name: mobile-specialist
 description: Principal mobile engineer for iOS (SwiftUI, UIKit) and Android (Kotlin, Jetpack) plus cross-platform stacks (React Native 0.73+, Flutter 3.16+). Handles architecture, native modules, performance profiling, release automation, and mobile CI/CD. Use for feature delivery, platform audits, and mobile modernization.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - iOS development (SwiftUI, UIKit)
+  - Android development (Kotlin, Jetpack)
+  - Cross-platform frameworks (React Native, Flutter)
+  - Native modules integration
+  - Mobile performance optimization
+  - Release automation
+  - Mobile CI/CD
+  - App store deployment
+auto_activate:
+  keywords: [mobile, iOS, Android, SwiftUI, Kotlin, React Native, Flutter, app store]
+  conditions: [mobile development, iOS/Android features, cross-platform apps, mobile optimization]
 tools: Read, Write, MultiEdit, Bash, Task, WebSearch
 ---
 

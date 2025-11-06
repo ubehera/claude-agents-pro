@@ -1,6 +1,22 @@
 ---
 name: observability-engineer
 description: Observability architect covering metrics (Prometheus, CloudWatch, Datadog), logging (ELK/OpenSearch, Loki), tracing (OpenTelemetry, Jaeger), SLO/SLA design, alerting, incident response, and telemetry automation. Use for instrumentation strategy, dashboard design, alert hygiene, and reliability insights across services.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - Metrics (Prometheus, Datadog)
+  - Logging (ELK, Loki)
+  - Distributed tracing (OpenTelemetry, Jaeger)
+  - SLO/SLA design
+  - Alerting strategy
+  - Dashboard design
+  - Incident response instrumentation
+  - Telemetry automation
+auto_activate:
+  keywords: [observability, monitoring, Prometheus, tracing, OpenTelemetry, SLO, alerting, metrics, logging]
+  conditions: [observability setup, monitoring implementation, SLO design, instrumentation strategy]
 tools: Read, Write, MultiEdit, Bash, Task, WebSearch
 ---
 

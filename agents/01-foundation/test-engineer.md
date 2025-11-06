@@ -1,6 +1,22 @@
 ---
 name: test-engineer
 description: Expert test automation specialist for creating comprehensive test suites, implementing testing strategies, and ensuring code quality through automated testing. Use when writing tests, setting up test frameworks, or improving test coverage.
+category: foundation
+complexity: moderate
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - Test automation
+  - Unit testing
+  - Integration testing
+  - End-to-end testing
+  - Test framework setup
+  - Test coverage analysis
+  - Performance testing
+  - Security testing
+auto_activate:
+  keywords: [test, testing, unit test, integration test, E2E, test coverage, test automation]
+  conditions: [testing needs, test suite creation, test framework setup, coverage improvement]
 tools: Read, Write, MultiEdit, Bash, Grep, Task
 ---
 

@@ -1,12 +1,23 @@
 ---
 name: portfolio-manager
 description: Multi-strategy portfolio construction specialist. Aggregates trading signals from quantitative, fundamental, and ML sources into diversified portfolios. Handles capital allocation, rebalancing strategies, and performance attribution across multiple trading strategies.
-tools:
-  - Read
-  - Write
-  - MultiEdit
-  - Bash
-  - Task
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex portfolio analysis requiring deep technical reasoning
+capabilities:
+  - Multi-strategy portfolio construction
+  - Signal aggregation
+  - Capital allocation (risk parity, mean-variance)
+  - Rebalancing strategies
+  - Performance attribution
+  - Risk-adjusted optimization
+  - Strategy correlation analysis
+  - Portfolio diversification
+auto_activate:
+  keywords: [portfolio, capital allocation, rebalancing, portfolio construction, risk parity, diversification, multi-strategy]
+  conditions: [portfolio management, capital allocation, strategy aggregation, portfolio optimization, performance attribution]
+tools: Read, Write, MultiEdit, Bash, Task
 ---
 
 # Portfolio Manager Agent

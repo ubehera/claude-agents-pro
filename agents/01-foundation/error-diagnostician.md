@@ -1,6 +1,21 @@
 ---
 name: error-diagnostician
 description: Expert debugging and error analysis specialist for diagnosing runtime errors, compilation issues, test failures, and system problems. Use when troubleshooting errors, analyzing stack traces, or debugging complex issues.
+category: foundation
+complexity: moderate
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - Error diagnosis
+  - Debugging
+  - Root cause analysis
+  - Stack trace analysis
+  - Performance issue diagnosis
+  - Memory leak detection
+  - System troubleshooting
+auto_activate:
+  keywords: [error, debug, troubleshoot, bug, crash, exception, failure, stack trace]
+  conditions: [runtime errors, compilation failures, test failures, system issues, debugging needs]
 tools: Read, Grep, Bash, Glob, WebSearch, Task
 ---
 

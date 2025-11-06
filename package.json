@@ -1,0 +1,47 @@
+{
+  "name": "@ubehera/agent-forge",
+  "version": "1.0.0",
+  "description": "Production-ready Claude Code agents with multi-tier orchestration and comprehensive validation",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "validate": "tsx scripts/validate-agents.ts",
+    "validate:agent": "tsx scripts/validate-agents.ts --agent",
+    "validate:verbose": "tsx scripts/validate-agents.ts --output validation-report.json",
+    "quality:score": "python3 scripts/quality-scorer.py --agents-dir agents",
+    "quality:agent": "python3 scripts/quality-scorer.py --agent",
+    "quality:full": "python3 scripts/quality-scorer.py --agents-dir agents --output quality-report.json",
+    "generate:registry": "tsx scripts/generate-registry.ts",
+    "lint": "npm run validate",
+    "test": "npm run validate && npm run quality:score"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "glob": "^10.3.10",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "claude-code",
+    "agents",
+    "ai-orchestration",
+    "agent-forge",
+    "multi-agent-systems",
+    "ddd",
+    "validation"
+  ],
+  "author": "Umank Behera",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ubehera/agent-forge"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.9.0"
+  }
+}

@@ -1,6 +1,22 @@
 ---
 name: api-platform-engineer
 description: Expert in REST API design, GraphQL schemas, OpenAPI/Swagger specs, API gateways (Kong, Apigee, AWS API Gateway), rate limiting, OAuth 2.0/JWT auth, developer portals, API versioning, microservices communication, and API governance. Use for API design, gateway setup, API documentation, developer experience optimization, and API lifecycle management.
+category: foundation
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - REST API design
+  - GraphQL schema design
+  - OpenAPI/Swagger specifications
+  - API gateway configuration
+  - OAuth 2.0 and JWT authentication
+  - API versioning strategies
+  - Developer portal creation
+  - API governance frameworks
+auto_activate:
+  keywords: [API, REST, GraphQL, endpoint, OpenAPI, Swagger, gateway, OAuth, JWT]
+  conditions: [API design tasks, authentication implementation, API documentation, gateway configuration]
 tools: Read, Write, MultiEdit, Bash, Grep, WebFetch, Task
 ---
 

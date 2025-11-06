@@ -1,6 +1,22 @@
 ---
 name: database-architect
 description: Senior database architect for relational modeling (PostgreSQL, MySQL), distributed data stores (CockroachDB, DynamoDB, MongoDB), migration strategy, performance tuning, indexing, replication, sharding, backup/DR, and data governance. Use for schema design, query optimization, multi-region planning, and compliance-ready storage solutions.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - Relational database design (PostgreSQL, MySQL)
+  - NoSQL systems (DynamoDB, MongoDB)
+  - Query optimization
+  - Migration strategy
+  - Performance tuning
+  - Replication and sharding
+  - Disaster recovery
+  - Data governance and compliance
+auto_activate:
+  keywords: [database, PostgreSQL, MySQL, MongoDB, DynamoDB, schema, query optimization, migration]
+  conditions: [database design, schema modeling, query optimization, data migration, database scaling]
 tools: Read, Write, MultiEdit, Bash, Task, WebSearch
 ---
 

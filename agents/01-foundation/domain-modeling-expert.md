@@ -1,6 +1,22 @@
 ---
 name: domain-modeling-expert
 description: Strategic Domain-Driven Design specialist for bounded context identification, event storming facilitation, ubiquitous language definition, aggregate design, and context mapping. Expert in discovering business domains through collaborative modeling, defining domain boundaries, and establishing shared vocabulary. Use for Phase 2 domain modeling, event storming workshops, context map creation, aggregate root design, and strategic DDD before architectural implementation.
+category: foundation
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - Domain-Driven Design (DDD)
+  - Event storming facilitation
+  - Bounded context identification
+  - Ubiquitous language definition
+  - Aggregate design
+  - Context mapping
+  - Strategic DDD modeling
+  - Domain discovery
+auto_activate:
+  keywords: [domain, DDD, bounded context, event storming, aggregate, ubiquitous language, context map]
+  conditions: [domain modeling phase, strategic DDD, business domain discovery, context boundary definition]
 tools: Read, Write, MultiEdit, Task, WebSearch
 ---
 

@@ -1,7 +1,7 @@
 ---
-name: GLOSSARY
+name: finance-glossary
 description: Canonical terminology and domain boundaries for finance trading agents
-tools: []
+tools: Read
 ---
 
 # Finance Domain - Ubiquitous Language Glossary

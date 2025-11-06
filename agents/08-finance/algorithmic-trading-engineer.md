@@ -1,6 +1,22 @@
 ---
 name: algorithmic-trading-engineer
-description: Algorithmic trading execution and order management specialist for live trading systems. Expert in multi-broker integration (Alpaca, E*TRADE, Fidelity), order management systems (OMS), execution algorithms (TWAP, VWAP, iceberg), order types (market, limit, stop-loss, trailing stop, bracket orders), position reconciliation, trade logging, retry logic, and real-time order status monitoring. Use for broker API integration, order execution, live trading deployment, position tracking, and production trading system implementation for stocks and options.
+description: Algorithmic trading execution and order management specialist for live trading systems. Expert in multi-broker integration (Alpaca, E*TRADE, Fidelity), order management systems (OMS), execution algorithms (TWAP, VWAP, iceberg), order types (market, limit, stop-loss, trailing stop, bracket orders), position reconciliation, trade logging, and real-time monitoring. Use for broker API integration, order execution, live trading deployment, and production trading system implementation.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex trading systems requiring deep technical reasoning
+capabilities:
+  - Multi-broker integration (Alpaca, E*TRADE, Fidelity)
+  - Order management systems (OMS)
+  - Execution algorithms (TWAP, VWAP)
+  - Order types (market, limit, stop, bracket)
+  - Position reconciliation
+  - Trade logging and audit trails
+  - Retry logic and error handling
+  - Real-time order monitoring
+auto_activate:
+  keywords: [order execution, broker API, OMS, TWAP, VWAP, position reconciliation, live trading, order management]
+  conditions: [order execution, broker integration, live trading, position tracking, trading system implementation]
 tools: Read, Write, MultiEdit, Bash, Task
 ---
 

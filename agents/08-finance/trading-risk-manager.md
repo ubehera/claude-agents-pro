@@ -1,6 +1,22 @@
 ---
 name: trading-risk-manager
 description: Trading risk management and portfolio optimization specialist for capital preservation. Expert in position sizing (Kelly criterion, fixed fractional), portfolio optimization (mean-variance, risk parity, Black-Litterman), VaR/CVaR calculations, correlation analysis, drawdown monitoring, exposure limits, and real-time risk tracking. Use for risk assessment, position sizing, portfolio construction, risk limit enforcement, and capital allocation for stocks and options portfolios.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex risk analysis requiring deep technical reasoning
+capabilities:
+  - Position sizing (Kelly criterion)
+  - Portfolio optimization (mean-variance, risk parity)
+  - VaR and CVaR calculations
+  - Correlation analysis
+  - Drawdown monitoring
+  - Exposure limits enforcement
+  - Real-time risk tracking
+  - Capital preservation
+auto_activate:
+  keywords: [risk management, position sizing, Kelly criterion, VaR, CVaR, risk parity, drawdown, exposure limits]
+  conditions: [risk management, position sizing, portfolio risk, risk limit enforcement, capital preservation]
 tools: Read, Write, MultiEdit, Bash, Task
 ---
 

@@ -1,6 +1,22 @@
 ---
 name: devops-automation-expert
 description: DevOps expert for CI/CD pipelines (GitHub Actions, GitLab CI, Jenkins), infrastructure as code (Terraform, Ansible), GitOps (ArgoCD, Flux), Kubernetes, Docker, monitoring (Prometheus, Grafana), automation, deployment strategies, developer productivity, and operational excellence. Use for pipeline setup, automation, deployment, infrastructure management, and DevOps transformation.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - CI/CD pipelines (GitHub Actions, Jenkins)
+  - Infrastructure as Code (Terraform, Ansible)
+  - GitOps (ArgoCD, Flux)
+  - Kubernetes and Docker
+  - Monitoring (Prometheus, Grafana)
+  - Deployment automation
+  - Secret management
+  - Policy as code
+auto_activate:
+  keywords: [DevOps, CI/CD, Terraform, Kubernetes, Docker, ArgoCD, GitOps, pipeline, automation]
+  conditions: [CI/CD setup, infrastructure automation, Kubernetes deployment, DevOps transformation]
 tools: Read, Write, MultiEdit, Bash, Task, Grep
 ---
 

@@ -1,6 +1,22 @@
 ---
 name: equity-research-analyst
-description: Equity research and fundamental analysis specialist for stock selection and valuation. Expert in financial statement analysis (income statement, balance sheet, cash flow), valuation models (DCF, P/E, P/B, EV/EBITDA comparables), financial ratios (ROE, ROA, debt ratios, margins), earnings analysis, industry benchmarking, and fundamental screening for stock and options trading. Use for fundamental analysis, stock screening, valuation, financial modeling, company research, and fundamental-technical strategy combination.
+description: Equity research and fundamental analysis specialist for stock selection and valuation. Expert in financial statement analysis, valuation models (DCF, P/E, P/B, EV/EBITDA comparables), financial ratios (ROE, ROA, debt ratios, margins), earnings analysis, industry benchmarking, and fundamental screening. Use for fundamental analysis, stock screening, valuation, financial modeling, and company research for stocks and options.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex equity analysis requiring deep technical reasoning
+capabilities:
+  - Financial statement analysis
+  - Valuation models (DCF, comparables)
+  - Financial ratio analysis
+  - Earnings analysis
+  - Industry benchmarking
+  - Fundamental screening
+  - Company research
+  - Investment thesis development
+auto_activate:
+  keywords: [fundamental analysis, valuation, DCF, financial statement, P/E ratio, earnings, stock screening, ROE]
+  conditions: [fundamental analysis needs, stock valuation, company research, financial modeling, investment screening]
 tools: Read, Write, MultiEdit, WebSearch, Task
 ---
 

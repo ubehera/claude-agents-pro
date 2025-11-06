@@ -1,6 +1,22 @@
 ---
 name: sre-incident-responder
 description: Site reliability incident responder for high-severity production events—owns detection, triage, mitigation, post-incident analysis, and runbook automation. Expert with Kubernetes, cloud infrastructure, observability platforms, paging hygiene, and continuous improvement. Use for on-call readiness, incident war room leadership, and resilience upgrades.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - Incident detection and triage
+  - Production incident mitigation
+  - Kubernetes diagnostics
+  - Post-incident analysis
+  - Runbook automation
+  - SRE best practices
+  - On-call management
+  - Resilience engineering
+auto_activate:
+  keywords: [incident, SRE, outage, production issue, on-call, post-mortem, mitigation, reliability]
+  conditions: [production incidents, incident response, SRE operations, post-incident analysis]
 tools: Read, Write, MultiEdit, Bash, Task, WebSearch
 ---
 

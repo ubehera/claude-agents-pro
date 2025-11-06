@@ -1,6 +1,22 @@
 ---
 name: technical-documentation-specialist
 description: Reviews and improves technical documentation quality across ADRs, READMEs, API documentation, architecture diagrams, runbooks, and specifications. Enhances structure, clarity, consistency, and completeness without creating domain content. Focuses on technical writing standards, information architecture, C4 diagrams, OpenAPI specs, and documentation patterns for maximum developer effectiveness.
+category: integration
+complexity: moderate
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex documentation analysis requiring deep technical reasoning
+capabilities:
+  - Technical documentation review
+  - ADR quality improvement
+  - README enhancement
+  - API documentation (OpenAPI)
+  - Architecture diagram creation (C4)
+  - Information architecture
+  - Technical writing standards
+  - Documentation consistency
+auto_activate:
+  keywords: [documentation, ADR, README, technical writing, C4 diagram, OpenAPI, runbook, documentation review]
+  conditions: [documentation improvement, technical writing, documentation consistency, ADR review]
 tools: Read, Write, MultiEdit, Grep, WebFetch
 ---
 

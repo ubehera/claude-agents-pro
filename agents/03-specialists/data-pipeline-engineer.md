@@ -1,6 +1,22 @@
 ---
 name: data-pipeline-engineer
 description: Data engineering expert for Apache Spark, Airflow, Kafka, ETL/ELT pipelines, data lakes, streaming processing, batch processing, dbt, Snowflake, BigQuery, data quality (Great Expectations), data orchestration, real-time analytics, and feature engineering. Use for data pipeline architecture, stream processing, data warehousing, and data platform development.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - Apache Spark and PySpark
+  - Workflow orchestration (Airflow, Prefect)
+  - Stream processing (Kafka, Flink)
+  - Data warehousing (Snowflake, BigQuery)
+  - ETL/ELT pipelines
+  - Data lakes (Delta Lake)
+  - Data quality (Great Expectations)
+  - dbt transformations
+auto_activate:
+  keywords: [data pipeline, Spark, Airflow, Kafka, ETL, data lake, streaming, dbt, Snowflake, BigQuery]
+  conditions: [data pipeline development, stream processing, data warehousing, ETL implementation]
 tools: Read, Write, MultiEdit, Bash, Task
 ---
 

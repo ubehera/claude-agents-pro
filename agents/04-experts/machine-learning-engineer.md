@@ -1,6 +1,22 @@
 ---
 name: machine-learning-engineer
 description: ML/AI expert for PyTorch, TensorFlow, MLOps, model training, deployment, MLflow, Kubeflow, feature engineering, model serving, distributed training, A/B testing, model monitoring, data pipelines, neural networks, deep learning, and production ML systems. Use for machine learning projects, AI implementation, model deployment, and MLOps pipelines.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex ML engineering requiring deep technical reasoning
+capabilities:
+  - PyTorch and TensorFlow
+  - MLOps (MLflow, Kubeflow)
+  - Model training and deployment
+  - Feature engineering
+  - Model serving and monitoring
+  - Distributed training
+  - Computer vision and NLP
+  - Production ML systems
+auto_activate:
+  keywords: [machine learning, ML, AI, PyTorch, TensorFlow, MLOps, model training, deep learning, neural network]
+  conditions: [ML projects, model deployment, MLOps pipelines, AI implementation, feature engineering]
 tools: Read, Write, MultiEdit, Bash, Task, WebSearch
 ---
 

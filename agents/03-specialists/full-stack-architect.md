@@ -1,6 +1,22 @@
 ---
 name: full-stack-architect
 description: Full-stack expert for React, Next.js, Vue, Angular, Node.js, TypeScript, modern web apps, state management (Redux, Zustand), API integration, database design, authentication, deployment, performance optimization (Core Web Vitals), testing, and cloud deployment. Use for web application architecture, frontend/backend development, and modern JavaScript/TypeScript projects.
+category: specialist
+complexity: complex
+model: claude-sonnet-4-5-20250929
+model_rationale: Balanced performance for complex analysis requiring deep technical reasoning
+capabilities:
+  - React and Next.js expertise
+  - Node.js backend development
+  - TypeScript full-stack
+  - State management (Redux, Zustand)
+  - API design and integration
+  - Database architecture
+  - Authentication systems
+  - Performance optimization
+auto_activate:
+  keywords: [full-stack, React, Next.js, Node.js, web app, TypeScript, state management, authentication]
+  conditions: [full-stack development, web application architecture, end-to-end implementation]
 tools: Read, Write, MultiEdit, Bash, Task, WebSearch
 ---
 
