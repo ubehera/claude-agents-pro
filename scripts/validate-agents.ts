@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Agent Validation Script for ubehera/agent-forge
+ * Agent Validation Script for Claude Agents Pro
  *
  * Validates agent markdown files against JSON schema and custom rules:
  * - YAML frontmatter structure and completeness

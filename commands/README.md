@@ -1,8 +1,8 @@
 # Claude Code Custom Slash Commands
 
-> **Production-ready slash commands for the agent-forge ecosystem**
+> **Production-ready slash commands for Claude Agents Pro**
 
-These custom slash commands orchestrate multi-agent workflows, automate development tasks, and ensure quality standards across the ubehera agent-forge project.
+These custom slash commands orchestrate multi-agent workflows, automate development tasks, and ensure quality standards across Claude Agents Pro.
 
 ## Installation
 

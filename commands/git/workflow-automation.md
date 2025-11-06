@@ -233,7 +233,7 @@ git branch -r --merged | wc -l                    # Merged branches
 ### Repository Synchronization
 ```bash
 # Sync across multiple repositories
-for repo in agent-forge agent-templates agent-docs; do
+for repo in claude-agents-pro agent-templates agent-docs; do
     cd "$repo"
     git fetch --all
     git checkout main

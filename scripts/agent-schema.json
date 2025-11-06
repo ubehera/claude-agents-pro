@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Claude Code Agent Schema",
-  "description": "JSON Schema for validating Claude Code agent frontmatter in ubehera/agent-forge",
+  "description": "JSON Schema for validating Claude Code agent frontmatter in Claude Agents Pro",
   "type": "object",
   "properties": {
     "name": {

@@ -221,4 +221,4 @@ MIT License - See project root for details.
 
 ## Support
 
-For questions or issues, refer to the main agent-forge documentation or create an issue in the repository.
+For questions or issues, refer to the main Claude Agents Pro documentation or create an issue in the repository.

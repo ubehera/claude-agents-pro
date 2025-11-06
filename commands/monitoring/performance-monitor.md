@@ -109,7 +109,7 @@ awk '{if($2 > baseline * 1.2) print "REGRESSION: " $0}' current_metrics.txt
 ### System Overview
 ```bash
 # Create simple dashboard
-watch -n 1 'echo "=== Agent-Forge Performance Dashboard ==="; \
+watch -n 1 'echo "=== Claude Agents Pro Performance Dashboard ==="; \
 echo "CPU: $(top -b -n1 | grep "Cpu(s)" | awk "{print \$2}" | cut -d% -f1)%"; \
 echo "Memory: $(free | grep Mem | awk "{printf(\"%.1f%%\", \$3/\$2 * 100.0)}")"; \
 echo "Disk: $(df / | tail -1 | awk "{print \$5}")"; \

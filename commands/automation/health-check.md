@@ -1,12 +1,12 @@
 ---
-description: Comprehensive health check for agent-forge infrastructure
+description: Comprehensive health check for Claude Agents Pro infrastructure
 args: [--scope agents|scripts|configs] [--fix-issues] [--report-format json|text]
 tools: Bash(./scripts/verify-agents.sh:*), Bash(./scripts/quality-scorer.py:*), Read, Grep
 model: claude-sonnet-4-5
 ---
 
 ## Objective
-Perform comprehensive health checks across the agent-forge ecosystem including agents, scripts, configurations, and dependencies.
+Perform comprehensive health checks across the Claude Agents Pro ecosystem including agents, scripts, configurations, and dependencies.
 
 ## Before You Run
 - Ensure all project dependencies are installed

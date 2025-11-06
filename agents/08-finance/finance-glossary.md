@@ -9,7 +9,7 @@ tools: Read
 ## Introduction
 
 ### Purpose
-This glossary defines the canonical vocabulary shared across the 8 finance agents in the agent-forge trading system. It resolves terminology conflicts, establishes ownership boundaries, and ensures consistent communication between agents handling market data, quantitative analysis, strategy development, risk management, order execution, fundamental research, machine learning, and compliance.
+This glossary defines the canonical vocabulary shared across the 8 finance agents in the Claude Agents Pro trading system. It resolves terminology conflicts, establishes ownership boundaries, and ensures consistent communication between agents handling market data, quantitative analysis, strategy development, risk management, order execution, fundamental research, machine learning, and compliance.
 
 **Context**: The finance domain exhibits natural terminology overlap due to shared concepts (volatility, signals, performance metrics, backtesting). This glossary disambiguates overloaded terms and defines which agent owns each capability.
 
@@ -879,7 +879,7 @@ sharpe = (returns - get_risk_free_rate()) / volatility
 ---
 
 **Questions or Ambiguities?**
-Contact: domain-modeling-expert or create issue in agent-forge repository.
+Contact: domain-modeling-expert or create issue in Claude Agents Pro repository.
 
 ---
 *Licensed under Apache-2.0*

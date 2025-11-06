@@ -1,7 +1,7 @@
 {
-  "name": "@ubehera/agent-forge",
+  "name": "@ubehera/claude-agents-pro",
   "version": "1.0.0",
-  "description": "Production-ready Claude Code agents with multi-tier orchestration and comprehensive validation",
+  "description": "First premium Claude Code marketplace with quality validation - Production-ready agents with multi-tier orchestration",
   "private": true,
   "type": "commonjs",
   "scripts": {
@@ -29,16 +29,18 @@
     "claude-code",
     "agents",
     "ai-orchestration",
-    "agent-forge",
+    "claude-agents-pro",
     "multi-agent-systems",
     "ddd",
-    "validation"
+    "validation",
+    "marketplace",
+    "premium"
   ],
   "author": "Umank Behera",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ubehera/agent-forge"
+    "url": "https://github.com/ubehera/claude-agents-pro"
   },
   "engines": {
     "node": ">=18.0.0",

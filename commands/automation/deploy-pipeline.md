@@ -1,12 +1,12 @@
 ---
-description: Deploy CI/CD pipeline configuration for agent-forge project
+description: Deploy CI/CD pipeline configuration for Claude Agents Pro project
 args: [--provider github|gitlab] [--environment dev|staging|prod] [--dry-run]
 tools: Write, Bash(git:*), Bash(gh:*), Bash(glab:*)
 model: claude-sonnet-4-5
 ---
 
 ## Objective
-Generate and deploy CI/CD pipeline configuration tailored for agent-forge repository automation.
+Generate and deploy CI/CD pipeline configuration tailored for Claude Agents Pro repository automation.
 
 ## Before You Run
 - Ensure you have appropriate repository permissions

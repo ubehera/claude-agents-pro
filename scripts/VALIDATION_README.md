@@ -1,6 +1,6 @@
 # Agent Validation Infrastructure
 
-Comprehensive validation system for ubehera/agent-forge agents, ensuring quality, consistency, and adherence to best practices.
+Comprehensive validation system for Claude Agents Pro agents, ensuring quality, consistency, and adherence to best practices.
 
 ## Overview
 

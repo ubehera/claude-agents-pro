@@ -67,8 +67,8 @@ find . -type d -empty -not -path "./.git/*" -delete 2>/dev/null
 ### Cache and Log Cleanup
 ```bash
 # Clear application caches
-rm -rf ~/.cache/agent-forge/
-rm -rf /tmp/agent-forge-*
+rm -rf ~/.cache/claude-agents-pro/
+rm -rf /tmp/claude-agents-pro-*
 
 # Rotate and compress logs
 find logs/ -name "*.log" -mtime +30 -exec gzip {} \;
@@ -76,7 +76,7 @@ find logs/ -name "*.log.gz" -mtime +90 -delete
 
 # Clear system-specific caches
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    rm -rf ~/Library/Caches/agent-forge/
+    rm -rf ~/Library/Caches/claude-agents-pro/
 fi
 ```
 
@@ -248,13 +248,13 @@ echo "Repository health score: $HEALTH_SCORE/100"
 ### Cron Job Setup
 ```bash
 # Daily cleanup at 2 AM
-0 2 * * * cd /path/to/agent-forge && ./cleanup-automation --scope cache,logs >/dev/null 2>&1
+0 2 * * * cd /path/to/claude-agents-pro && ./cleanup-automation --scope cache,logs >/dev/null 2>&1
 
 # Weekly cleanup on Sundays at 3 AM
-0 3 * * 0 cd /path/to/agent-forge && ./cleanup-automation --scope all --schedule weekly
+0 3 * * 0 cd /path/to/claude-agents-pro && ./cleanup-automation --scope all --schedule weekly
 
 # Monthly deep cleanup on the 1st at 4 AM
-0 4 1 * * cd /path/to/agent-forge && ./cleanup-automation --scope all --aggressive
+0 4 1 * * cd /path/to/claude-agents-pro && ./cleanup-automation --scope all --aggressive
 ```
 
 ### CI/CD Integration

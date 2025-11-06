@@ -1,6 +1,6 @@
 # Claude Code Agent Collection
 
-Central catalog for the agent-forge workspace. Every agent complies with Claude Code frontmatter requirements and ships with pragmatic guidance.
+Central catalog for Claude Agents Pro. Every agent complies with Claude Code frontmatter requirements and ships with pragmatic guidance.
 
 ## Active Agents
 | Agent | Tier | Domain Focus | Tool Set |

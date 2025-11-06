@@ -2,7 +2,7 @@
 
 ## Delivery Overview
 
-Complete validation infrastructure for ubehera/agent-forge, replacing the bash-based verification script with a robust TypeScript + JSON Schema validation system, plus comprehensive quality scoring.
+Complete validation infrastructure for Claude Agents Pro, replacing the bash-based verification script with a robust TypeScript + JSON Schema validation system, plus comprehensive quality scoring.
 
 ## Files Delivered
 
