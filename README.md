@@ -1,4 +1,4 @@
-# agent-forge
+# Claude Agents Pro
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Agents](https://img.shields.io/badge/agents-34-brightgreen.svg)](./agents/README.md)
