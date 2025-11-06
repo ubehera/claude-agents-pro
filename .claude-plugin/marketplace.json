@@ -1,0 +1,283 @@
+{
+  "name": "Claude Agents Pro",
+  "description": "Production-ready Claude Code agents with quality validation (70+ minimum, 85+ production). First premium marketplace with automated scoring and tiered architecture.",
+  "version": "1.0.0",
+  "author": "Umank Behera",
+  "repository": "https://github.com/ubehera/claude-agents-pro",
+  "homepage": "https://github.com/ubehera/claude-agents-pro",
+  "license": "Apache-2.0",
+  "pricing": {
+    "free": {
+      "name": "Community",
+      "description": "22 core agents covering orchestration, foundation engineering, and development",
+      "price": 0
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "10 premium agents: cloud, security, DevOps, observability, SRE, research",
+      "price": 12,
+      "billing": "monthly",
+      "annual_price": 120,
+      "purchase_url": "https://gumroad.com/l/claude-agents-pro"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "description": "All 34 agents including ML and complete finance suite (trading, risk, compliance)",
+      "price": 45,
+      "billing": "monthly",
+      "annual_price": 450,
+      "purchase_url": "https://gumroad.com/l/claude-agents-enterprise"
+    }
+  },
+  "plugins": [
+    {
+      "name": "agent-coordinator",
+      "description": "Multi-agent orchestration master for complex workflows",
+      "path": "agents/00-meta/agent-coordinator.md",
+      "tier": "free",
+      "category": "orchestration"
+    },
+    {
+      "name": "api-platform-engineer",
+      "description": "API design & governance with OpenAPI/GraphQL",
+      "path": "agents/01-foundation/api-platform-engineer.md",
+      "tier": "free",
+      "category": "foundation"
+    },
+    {
+      "name": "code-reviewer",
+      "description": "Code review & quality gates specialist",
+      "path": "agents/01-foundation/code-reviewer.md",
+      "tier": "free",
+      "category": "foundation"
+    },
+    {
+      "name": "domain-modeling-expert",
+      "description": "Strategic DDD & context mapping",
+      "path": "agents/01-foundation/domain-modeling-expert.md",
+      "tier": "free",
+      "category": "foundation"
+    },
+    {
+      "name": "error-diagnostician",
+      "description": "Production debugging & triage specialist",
+      "path": "agents/01-foundation/error-diagnostician.md",
+      "tier": "free",
+      "category": "foundation"
+    },
+    {
+      "name": "performance-optimization-specialist",
+      "description": "End-to-end performance tuning expert",
+      "path": "agents/01-foundation/performance-optimization-specialist.md",
+      "tier": "free",
+      "category": "foundation"
+    },
+    {
+      "name": "system-design-specialist",
+      "description": "Distributed systems architecture expert",
+      "path": "agents/01-foundation/system-design-specialist.md",
+      "tier": "free",
+      "category": "foundation"
+    },
+    {
+      "name": "test-engineer",
+      "description": "Test strategy & automation specialist",
+      "path": "agents/01-foundation/test-engineer.md",
+      "tier": "free",
+      "category": "foundation"
+    },
+    {
+      "name": "frontend-expert",
+      "description": "Modern web UI engineering (React, Vue, Angular)",
+      "path": "agents/02-development/frontend-expert.md",
+      "tier": "free",
+      "category": "development"
+    },
+    {
+      "name": "mobile-specialist",
+      "description": "Native + cross-platform mobile development",
+      "path": "agents/02-development/mobile-specialist.md",
+      "tier": "free",
+      "category": "development"
+    },
+    {
+      "name": "python-expert",
+      "description": "Python services & libraries specialist",
+      "path": "agents/02-development/python-expert.md",
+      "tier": "free",
+      "category": "development"
+    },
+    {
+      "name": "typescript-architect",
+      "description": "TypeScript platforms & tooling expert",
+      "path": "agents/02-development/typescript-architect.md",
+      "tier": "free",
+      "category": "development"
+    },
+    {
+      "name": "backend-architect",
+      "description": "Service architecture & APIs specialist",
+      "path": "agents/03-specialists/backend-architect.md",
+      "tier": "free",
+      "category": "specialists"
+    },
+    {
+      "name": "data-pipeline-engineer",
+      "description": "ETL and streaming pipelines expert",
+      "path": "agents/03-specialists/data-pipeline-engineer.md",
+      "tier": "free",
+      "category": "specialists"
+    },
+    {
+      "name": "full-stack-architect",
+      "description": "End-to-end web application delivery",
+      "path": "agents/03-specialists/full-stack-architect.md",
+      "tier": "free",
+      "category": "specialists"
+    },
+    {
+      "name": "aws-cloud-architect",
+      "description": "Cloud architecture on AWS (CloudFormation, CDK, ECS, Lambda)",
+      "path": "agents/03-specialists/aws-cloud-architect.md",
+      "tier": "pro",
+      "category": "specialists",
+      "license_required": true
+    },
+    {
+      "name": "database-architect",
+      "description": "Data modeling & performance expert",
+      "path": "agents/03-specialists/database-architect.md",
+      "tier": "pro",
+      "category": "specialists",
+      "license_required": true
+    },
+    {
+      "name": "devops-automation-expert",
+      "description": "CI/CD and platform automation specialist",
+      "path": "agents/03-specialists/devops-automation-expert.md",
+      "tier": "pro",
+      "category": "specialists",
+      "license_required": true
+    },
+    {
+      "name": "observability-engineer",
+      "description": "Metrics, logging, tracing, SLOs expert",
+      "path": "agents/03-specialists/observability-engineer.md",
+      "tier": "pro",
+      "category": "specialists",
+      "license_required": true
+    },
+    {
+      "name": "sre-incident-responder",
+      "description": "Incident response & reliability specialist",
+      "path": "agents/03-specialists/sre-incident-responder.md",
+      "tier": "pro",
+      "category": "specialists",
+      "license_required": true
+    },
+    {
+      "name": "research-librarian",
+      "description": "Primary-source research & synthesis expert",
+      "path": "agents/06-integration/research-librarian.md",
+      "tier": "pro",
+      "category": "integration",
+      "license_required": true
+    },
+    {
+      "name": "technical-documentation-specialist",
+      "description": "Technical writing & doc quality expert",
+      "path": "agents/06-integration/technical-documentation-specialist.md",
+      "tier": "pro",
+      "category": "integration",
+      "license_required": true
+    },
+    {
+      "name": "security-architect",
+      "description": "Threat modeling & secure design expert",
+      "path": "agents/07-quality/security-architect.md",
+      "tier": "pro",
+      "category": "quality",
+      "license_required": true
+    },
+    {
+      "name": "machine-learning-engineer",
+      "description": "MLOps and production ML systems expert",
+      "path": "agents/04-experts/machine-learning-engineer.md",
+      "tier": "enterprise",
+      "category": "experts",
+      "license_required": true
+    },
+    {
+      "name": "algorithmic-trading-engineer",
+      "description": "Order execution & broker integration specialist",
+      "path": "agents/08-finance/algorithmic-trading-engineer.md",
+      "tier": "enterprise",
+      "category": "finance",
+      "license_required": true
+    },
+    {
+      "name": "equity-research-analyst",
+      "description": "Fundamental analysis & valuation expert",
+      "path": "agents/08-finance/equity-research-analyst.md",
+      "tier": "enterprise",
+      "category": "finance",
+      "license_required": true
+    },
+    {
+      "name": "market-data-engineer",
+      "description": "Market data pipelines & quality specialist",
+      "path": "agents/08-finance/market-data-engineer.md",
+      "tier": "enterprise",
+      "category": "finance",
+      "license_required": true
+    },
+    {
+      "name": "portfolio-manager",
+      "description": "Multi-strategy portfolio construction & allocation",
+      "path": "agents/08-finance/portfolio-manager.md",
+      "tier": "enterprise",
+      "category": "finance",
+      "license_required": true
+    },
+    {
+      "name": "quantitative-analyst",
+      "description": "Technical indicators & Greeks specialist",
+      "path": "agents/08-finance/quantitative-analyst.md",
+      "tier": "enterprise",
+      "category": "finance",
+      "license_required": true
+    },
+    {
+      "name": "trading-compliance-officer",
+      "description": "PDT rules & regulatory compliance expert",
+      "path": "agents/08-finance/trading-compliance-officer.md",
+      "tier": "enterprise",
+      "category": "finance",
+      "license_required": true
+    },
+    {
+      "name": "trading-ml-specialist",
+      "description": "ML for trading with walk-forward validation",
+      "path": "agents/08-finance/trading-ml-specialist.md",
+      "tier": "enterprise",
+      "category": "finance",
+      "license_required": true
+    },
+    {
+      "name": "trading-risk-manager",
+      "description": "Position sizing & portfolio optimization expert",
+      "path": "agents/08-finance/trading-risk-manager.md",
+      "tier": "enterprise",
+      "category": "finance",
+      "license_required": true
+    },
+    {
+      "name": "trading-strategy-architect",
+      "description": "Backtesting & strategy validation specialist",
+      "path": "agents/08-finance/trading-strategy-architect.md",
+      "tier": "enterprise",
+      "category": "finance",
+      "license_required": true
+    }
+  ]
+}

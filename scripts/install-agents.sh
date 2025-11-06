@@ -16,8 +16,10 @@ NC='\033[0m' # No Color
 # Script configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 AGENTS_DIR="$(dirname "$SCRIPT_DIR")/agents"
+MARKETPLACE_JSON="$(dirname "$SCRIPT_DIR")/.claude-plugin/marketplace.json"
 USER_CLAUDE_DIR="$HOME/.claude/agents"
 PROJECT_CLAUDE_DIR=".claude/agents"
+LICENSE_CHECKER="$SCRIPT_DIR/check-license.sh"
 
 # Default values
 INSTALL_MODE="user"
@@ -135,6 +137,69 @@ validate_agent() {
     return 0
 }
 
+# Function to get agent tier from marketplace.json
+get_agent_tier() {
+    local agent_name="$1"
+
+    if [[ ! -f "$MARKETPLACE_JSON" ]]; then
+        echo "free"  # Default to free if marketplace.json doesn't exist
+        return 0
+    fi
+
+    # Extract tier using python (safer for JSON parsing)
+    if command -v python3 &> /dev/null; then
+        local tier=$(python3 -c "
+import json, sys
+try:
+    with open('$MARKETPLACE_JSON') as f:
+        data = json.load(f)
+        for plugin in data.get('plugins', []):
+            if plugin.get('name') == '$agent_name':
+                print(plugin.get('tier', 'free'))
+                sys.exit(0)
+    print('free')
+except:
+    print('free')
+" 2>/dev/null)
+        echo "${tier:-free}"
+    else
+        # Fallback: simple grep (less reliable)
+        if grep -A 2 "\"name\": \"$agent_name\"" "$MARKETPLACE_JSON" | grep -q "\"tier\": \"pro\""; then
+            echo "pro"
+        elif grep -A 2 "\"name\": \"$agent_name\"" "$MARKETPLACE_JSON" | grep -q "\"tier\": \"enterprise\""; then
+            echo "enterprise"
+        else
+            echo "free"
+        fi
+    fi
+}
+
+# Function to check license for agent
+check_agent_license() {
+    local agent_name="$1"
+    local tier=$(get_agent_tier "$agent_name")
+
+    if [[ "$tier" == "free" ]]; then
+        return 0
+    fi
+
+    # Check if license checker exists
+    if [[ ! -f "$LICENSE_CHECKER" ]]; then
+        print_warning "License checker not found, skipping validation"
+        return 0
+    fi
+
+    # Make license checker executable
+    chmod +x "$LICENSE_CHECKER" 2>/dev/null || true
+
+    # Run license checker
+    if "$LICENSE_CHECKER" "$tier" > /dev/null 2>&1; then
+        return 0
+    else
+        return 1
+    fi
+}
+
 # Function to backup existing agents
 backup_agents() {
     local target_dir="$1"
@@ -213,13 +278,24 @@ install_agents() {
     
     local installed_count=0
     local skipped_count=0
-    
+    local license_skipped=0
+
     for source_file in "${agents_to_install[@]}"; do
         local agent=$(basename "${source_file%.md}")
         local target_file="$target_dir/${agent}.md"
-        
+        local tier=$(get_agent_tier "$agent")
+
         if [[ "$VERBOSE" == true ]]; then
-            print_info "Processing $agent..."
+            print_info "Processing $agent (tier: $tier)..."
+        fi
+
+        # Check license for premium agents
+        if [[ "$tier" != "free" ]]; then
+            if ! check_agent_license "$agent"; then
+                print_warning "  ⊘ Skipped: $agent (requires $tier license)"
+                ((license_skipped++))
+                continue
+            fi
         fi
         
         if [[ -f "$target_file" ]]; then
@@ -256,8 +332,18 @@ install_agents() {
         if [[ "$skipped_count" -gt 0 ]]; then
             print_info "  Already up to date: $skipped_count agents"
         fi
+        if [[ "$license_skipped" -gt 0 ]]; then
+            print_warning "  Skipped (license required): $license_skipped agents"
+            echo ""
+            print_info "Get premium licenses at:"
+            echo "    Pro ($12/mo): https://gumroad.com/l/claude-agents-pro"
+            echo "    Enterprise ($45/mo): https://gumroad.com/l/claude-agents-enterprise"
+        fi
     else
         print_info "[DRY RUN] Would install/update $installed_count agents"
+        if [[ "$license_skipped" -gt 0 ]]; then
+            print_warning "  [DRY RUN] Would skip $license_skipped premium agents (no license)"
+        fi
     fi
 }
 

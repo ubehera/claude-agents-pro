@@ -5,7 +5,9 @@
 [![Commands](https://img.shields.io/badge/commands-35-blue.svg)](./commands/README.md)
 [![Quality](https://img.shields.io/badge/quality-validated-success.svg)](./scripts/quality-scorer.py)
 
-Production-ready Claude Code agents with checklists and MCP integrations—build, test, and maintain in one workspace.
+**First premium Claude Code marketplace with automated quality validation (70+ minimum, 85+ production).**
+
+Production-ready agents with checklists and MCP integrations—build, test, and maintain in one workspace.
 
 ## System Architecture
 
@@ -26,18 +28,62 @@ Production-ready Claude Code agents with checklists and MCP integrations—build
 - **Tier 6 (Integration)**: Research, technical documentation, and knowledge management
 - **Tier 7 (Quality)**: Security architecture, compliance, and audit
 
+## 💰 Pricing
+
+### Free (Community)
+**15 core agents** - Forever free
+- Meta orchestration: `agent-coordinator`
+- All Foundation tier: API, testing, review, debugging, domain modeling, system design, performance
+- All Development tier: Frontend, mobile, Python, TypeScript
+- Select Specialists: Backend, full-stack, data pipeline engineering
+
+### Pro - $12/month
+**+8 premium agents** (23 total)
+- **Cloud & Infrastructure**: `aws-cloud-architect`, `database-architect`
+- **Operations**: `devops-automation-expert`, `observability-engineer`, `sre-incident-responder`
+- **Research & Docs**: `research-librarian`, `technical-documentation-specialist`
+- **Security**: `security-architect`
+
+[Get Pro License →](https://gumroad.com/l/claude-agents-pro)
+
+### Enterprise - $45/month
+**All 34 agents** + priority support
+- **Machine Learning**: `machine-learning-engineer`
+- **Complete Finance Suite** (9 agents): Trading, risk management, compliance, ML, fundamental analysis, quant strategies, portfolio management
+- **Custom agent development** consultation (monthly office hours)
+
+[Get Enterprise License →](https://gumroad.com/l/claude-agents-enterprise)
+
+---
+
 ## Quick Start
 
 ### For Users
+
+#### Free Tier
 ```bash
 # Clone and enter the repository
-git clone https://github.com/ubehera/agent-forge.git
-cd agent-forge
+git clone https://github.com/ubehera/claude-agents-pro.git
+cd claude-agents-pro
 
-# Install all agents (user-scoped, available across projects)
+# Install free agents (user-scoped, available across projects)
 ./scripts/install-agents.sh --user
 
 # Restart Claude Code to load agents
+```
+
+#### Pro/Enterprise Setup
+```bash
+# After purchasing a license, save your license key:
+echo 'YOUR-LICENSE-KEY' > ~/.claude-agents-pro-license
+
+# Install all agents (includes premium agents based on license)
+./scripts/install-agents.sh --user
+
+# Check license status
+./scripts/check-license.sh status
+
+# Restart Claude Code
 ```
 
 ### For Developers
