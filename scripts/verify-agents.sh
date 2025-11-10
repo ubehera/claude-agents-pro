@@ -17,12 +17,18 @@ while IFS= read -r -d '' file; do
 
   name=$(sed -n '1,20p' "$file" | awk -F: '/^name:/ {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; exit}')
   desc_ok=$(sed -n '1,40p' "$file" | grep -q '^description:' && echo ok || echo no)
+  category=$(sed -n '1,40p' "$file" | awk -F: '/^category:/ {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; exit}')
+  complexity=$(sed -n '1,40p' "$file" | awk -F: '/^complexity:/ {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; exit}')
+  model=$(sed -n '1,40p' "$file" | awk -F: '/^model:/ {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; exit}')
   tools=$(sed -n '1,40p' "$file" | awk -F: '/^tools:/ {sub(/^ /, "", $2); print $2; exit}')
 
   errs=()
   [[ $(head -n1 "$file") == "---" ]] || errs+=("missing frontmatter start ---")
   [[ -n "$name" ]] || errs+=("missing name")
   [[ "$desc_ok" == ok ]] || errs+=("missing description")
+  [[ -n "$category" ]] || errs+=("missing category")
+  [[ -n "$complexity" ]] || errs+=("missing complexity")
+  [[ -n "$model" ]] || errs+=("missing model")
 
   # name should match filename (without .md)
   expected="${base%.md}"
@@ -30,7 +36,25 @@ while IFS= read -r -d '' file; do
     errs+=("name '$name' != filename '$expected'")
   fi
 
-  # warn if both WebSearch and WebFetch are in tools
+  # validate category is one of the allowed values
+  valid_categories="orchestrator foundation development specialist expert integration quality finance"
+  if [[ -n "$category" ]] && ! echo "$valid_categories" | grep -qw "$category"; then
+    errs+=("invalid category '$category' (must be one of: $valid_categories)")
+  fi
+
+  # validate complexity is one of the allowed values
+  valid_complexity="simple moderate complex expert"
+  if [[ -n "$complexity" ]] && ! echo "$valid_complexity" | grep -qw "$complexity"; then
+    errs+=("invalid complexity '$complexity' (must be one of: $valid_complexity)")
+  fi
+
+  # warn if tools field is present (this repo uses tool inheritance)
+  if [[ -n "$tools" ]]; then
+    echo "[WARN] $base: has explicit 'tools' field (this repo uses tool inheritance - consider removing)"
+    ((warn++))
+  fi
+
+  # warn if both WebSearch and WebFetch are in tools (only if tools field exists)
   if echo "$tools" | grep -q "WebSearch" && echo "$tools" | grep -q "WebFetch"; then
     echo "[WARN] $base: tools include both WebSearch and WebFetch"
     ((warn++))

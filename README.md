@@ -1,7 +1,7 @@
 # Claude Agents Pro
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![Agents](https://img.shields.io/badge/agents-34-brightgreen.svg)](./agents/README.md)
+[![Agents](https://img.shields.io/badge/agents-33-brightgreen.svg)](./agents/README.md)
 [![Commands](https://img.shields.io/badge/commands-35-blue.svg)](./commands/README.md)
 [![Quality](https://img.shields.io/badge/quality-validated-success.svg)](./scripts/quality-scorer.py)
 
@@ -10,13 +10,13 @@ Personal collection of production-ready Claude Code agents with automated qualit
 ## System Architecture
 
 ### 🎯 Core Components
-- **34 Specialized Agents**: Tiered collection from orchestration to domain experts
+- **33 Specialized Agents**: Tiered collection from orchestration to domain experts
 - **35 Slash Commands**: Quick access workflows using latest Claude models (Opus 4-1, Sonnet 4-5)
 - **Automation Scripts**: Install, verify, and score agent quality
 - **MCP Integration**: Memory persistence and advanced reasoning capabilities
 - **Quality Framework**: Automated validation, scoring rubric (70+ minimum, 85+ production)
 
-### 📊 Agent Tiers (34 Total)
+### 📊 Agent Tiers (33 Total)
 - **Tier 0 (Meta)**: Multi-agent orchestration and workflow coordination
 - **Tier 1 (Foundation)**: Core engineering (API, domain modeling, testing, review, debugging, performance, system design)
 - **Tier 2 (Development)**: Language/platform specialists (frontend, mobile, Python, TypeScript)

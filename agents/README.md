@@ -2,6 +2,18 @@
 
 Central catalog for Claude Agents Pro. Every agent complies with Claude Code frontmatter requirements and ships with pragmatic guidance.
 
+## Tool Access Philosophy
+
+All agents in this collection **inherit the full Claude Code toolset** for maximum flexibility and developer experience. This intentional design choice prioritizes:
+
+- **No permission errors** during complex workflows
+- **Simplified maintenance** - no tool list updates required when new capabilities are added
+- **Trust in Claude's judgment** for appropriate tool selection based on task context
+
+The tool sets documented in the table below represent **typical usage patterns** for each agent, not access restrictions. Agents can access any tool when the task requires it.
+
+**For least-privilege deployments**: Fork agents and add explicit `tools:` fields following the pattern used in other repositories (e.g., VoltAgent). This collection optimizes for flexibility over strict access control.
+
 ## Active Agents
 | Agent | Tier | Domain Focus | Tool Set |
 |-------|------|--------------|----------|
@@ -86,5 +98,6 @@ python3 scripts/quality-scorer.py --agents-dir agents --output quality-report.js
 
 ## Contribution Notes
 - Place new agents in the appropriate tier directory (`agents/00-meta`, `agents/01-foundation`, ...).
-- Keep `tools` lists minimal to match least-privilege guidance.
+- **Do not add `tools:` field** to agent frontmatter - agents inherit all tools automatically.
+- Document typical tool usage in this catalog's table for reference purposes.
 - Update this catalog, `../AGENTS.md`, and `configs/agent-metadata.json` whenever agents are added, renamed, or removed.
