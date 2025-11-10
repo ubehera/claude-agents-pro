@@ -17,7 +17,6 @@ capabilities:
 auto_activate:
   keywords: [test, testing, unit test, integration test, E2E, test coverage, test automation]
   conditions: [testing needs, test suite creation, test framework setup, coverage improvement]
-tools: Read, Write, MultiEdit, Bash, Grep, Task
 ---
 
 # Test Engineer Agent

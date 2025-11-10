@@ -17,7 +17,6 @@ capabilities:
 auto_activate:
   keywords: [portfolio, capital allocation, rebalancing, portfolio construction, risk parity, diversification, multi-strategy]
   conditions: [portfolio management, capital allocation, strategy aggregation, portfolio optimization, performance attribution]
-tools: Read, Write, MultiEdit, Bash, Task
 ---
 
 # Portfolio Manager Agent

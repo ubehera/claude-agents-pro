@@ -1,7 +1,7 @@
 {
   "name": "@ubehera/claude-agents-pro",
   "version": "1.0.0",
-  "description": "First premium Claude Code marketplace with quality validation - Production-ready agents with multi-tier orchestration",
+  "description": "Personal collection of production-ready Claude Code agents with quality validation and multi-tier orchestration",
   "private": true,
   "type": "commonjs",
   "scripts": {
@@ -29,12 +29,9 @@
     "claude-code",
     "agents",
     "ai-orchestration",
-    "claude-agents-pro",
     "multi-agent-systems",
     "ddd",
-    "validation",
-    "marketplace",
-    "premium"
+    "validation"
   ],
   "author": "Umank Behera",
   "license": "Apache-2.0",

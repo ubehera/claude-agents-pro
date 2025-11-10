@@ -16,7 +16,6 @@ capabilities:
 auto_activate:
   keywords: [error, debug, troubleshoot, bug, crash, exception, failure, stack trace]
   conditions: [runtime errors, compilation failures, test failures, system issues, debugging needs]
-tools: Read, Grep, Bash, Glob, WebSearch, Task
 ---
 
 # Error Diagnostician Agent

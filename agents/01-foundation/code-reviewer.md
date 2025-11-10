@@ -16,7 +16,6 @@ capabilities:
 auto_activate:
   keywords: [review, code review, PR, pull request, quality audit, security audit, analyze code]
   conditions: [pull request review, code quality assessment, security analysis, pre-merge validation]
-tools: Read, Grep, Glob, Task, WebSearch
 ---
 
 # Code Reviewer Agent

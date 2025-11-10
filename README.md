@@ -5,9 +5,7 @@
 [![Commands](https://img.shields.io/badge/commands-35-blue.svg)](./commands/README.md)
 [![Quality](https://img.shields.io/badge/quality-validated-success.svg)](./scripts/quality-scorer.py)
 
-**First premium Claude Code marketplace with automated quality validation (70+ minimum, 85+ production).**
-
-Production-ready agents with checklists and MCP integrations—build, test, and maintain in one workspace.
+Personal collection of production-ready Claude Code agents with automated quality validation and multi-tier orchestration.
 
 ## System Architecture
 
@@ -27,84 +25,39 @@ Production-ready agents with checklists and MCP integrations—build, test, and 
 - **Tier 5 (Utilities)**: Search, documentation retrieval, and developer tools
 - **Tier 6 (Integration)**: Research, technical documentation, and knowledge management
 - **Tier 7 (Quality)**: Security architecture, compliance, and audit
-
-## 💰 Pricing
-
-### Free (Community)
-**15 core agents** - Forever free
-- Meta orchestration: `agent-coordinator`
-- All Foundation tier: API, testing, review, debugging, domain modeling, system design, performance
-- All Development tier: Frontend, mobile, Python, TypeScript
-- Select Specialists: Backend, full-stack, data pipeline engineering
-
-### Pro - $12/month
-**+8 premium agents** (23 total)
-- **Cloud & Infrastructure**: `aws-cloud-architect`, `database-architect`
-- **Operations**: `devops-automation-expert`, `observability-engineer`, `sre-incident-responder`
-- **Research & Docs**: `research-librarian`, `technical-documentation-specialist`
-- **Security**: `security-architect`
-
-[Get Pro License →](https://gumroad.com/l/claude-agents-pro)
-
-### Enterprise - $45/month
-**All 34 agents** + priority support
-- **Machine Learning**: `machine-learning-engineer`
-- **Complete Finance Suite** (9 agents): Trading, risk management, compliance, ML, fundamental analysis, quant strategies, portfolio management
-- **Custom agent development** consultation (monthly office hours)
-
-[Get Enterprise License →](https://gumroad.com/l/claude-agents-enterprise)
-
----
+- **Tier 8 (Finance)**: Trading, risk management, compliance, quantitative analysis, portfolio management
 
 ## Quick Start
 
-### For Users
+### Installation
 
-#### Free Tier
 ```bash
-# Clone and enter the repository
+# Clone the repository
 git clone https://github.com/ubehera/claude-agents-pro.git
 cd claude-agents-pro
 
-# Install free agents (user-scoped, available across projects)
+# Install agents (user-scoped, available across all projects)
 ./scripts/install-agents.sh --user
+
+# Or install project-scoped (only in current directory)
+./scripts/install-agents.sh --project
 
 # Restart Claude Code to load agents
 ```
 
-#### Pro/Enterprise Setup
+### Validation & Quality
+
 ```bash
-# After purchasing a license, save your license key:
-echo 'YOUR-LICENSE-KEY' > ~/.claude-agents-pro-license
-
-# Install all agents (includes premium agents based on license)
-./scripts/install-agents.sh --user
-
-# Check license status
-./scripts/check-license.sh status
-
-# Restart Claude Code
-```
-
-### For Developers
-```bash
-# Install agents locally for testing
-./scripts/install-agents.sh --project  # Project-scoped installation
-
 # Validate agent structure and frontmatter
 ./scripts/verify-agents.sh
 
 # Score agent quality (minimum 70/100, production 85/100)
 python3 scripts/quality-scorer.py --agents-dir agents
 python3 scripts/quality-scorer.py --agent agents/01-foundation/api-platform-engineer.md
-
-# Test changes
-# 1. Restart Claude Code
-# 2. Invoke agent with test prompt matching its domain
-# 3. Verify tool restrictions and behavior
 ```
 
 ### Agent Discovery
+
 Once installed, agents are automatically selected based on task context:
 - **Direct Invocation**: "Use the API platform engineer to design a REST API"
 - **Implicit Routing**: "Help me debug this performance issue" → `performance-optimization-specialist`
@@ -121,11 +74,11 @@ See `agents/README.md` for complete trigger patterns and invocation examples.
 4. **Operations**: DevOps agents finalize deployment and monitoring
 
 ### 🎯 Common Workflows
-- **Feature Development**: `/workflow` → DDD workflow with quality gates
-- **API Design**: `/api` → `api-platform-engineer` with OpenAPI/GraphQL
-- **Security Review**: `/security-audit` → `security-architect` assessment
-- **Performance**: `/performance` → `performance-optimization-specialist`
-- **Incident Response**: `sre-incident-responder` → diagnosis → mitigation
+- **Feature Development**: `/workflows:feature-development` → DDD workflow with quality gates
+- **API Design**: `/01-foundation:api` → `api-platform-engineer` with OpenAPI/GraphQL
+- **Security Review**: `/quality:security-audit` → `security-architect` assessment
+- **Performance**: `/quality:performance` → `performance-optimization-specialist`
+- **Debugging**: `/01-foundation:debug` → `error-diagnostician` intelligent debugging
 
 ## Key Documentation
 - `agents/README.md`: Complete agent catalog with invocation triggers
@@ -135,23 +88,33 @@ See `agents/README.md` for complete trigger patterns and invocation examples.
 - `patterns/orchestration/`: Multi-agent coordination patterns
 - `prompts/CLAUDE.md`: Operating instructions for Claude Code
 
-## License
-- Code, documentation, and agents are licensed under Apache License 2.0. See `LICENSE`.
+## MCP Configuration
 
-## MCP Config
-- Location: `./.mcp.json` (project-level). Claude Code merges this with your user-level `~/.mcp.json`.
-- Included by default: `memory` and `sequential-thinking` servers via `npx`.
-- Enable more servers by editing `./.mcp.json`. Example (disabled by default):
-  ```json
-  {
-    "mcpServers": {
-      "aws-docs": {
-        "command": "uvx",
-        "args": ["awslabs.aws-documentation-mcp-server@latest"],
-        "env": { "AWS_REGION": "us-east-1" },
-        "disabled": true
-      }
+Location: `./.mcp.json` (project-level). Claude Code merges this with your user-level `~/.mcp.json`.
+
+**Included by default:**
+- `memory`: Persistent knowledge graph for session continuity
+- `sequential-thinking`: Complex problem decomposition
+
+**Enable additional servers** by editing `./.mcp.json`:
+```json
+{
+  "mcpServers": {
+    "aws-docs": {
+      "command": "uvx",
+      "args": ["awslabs.aws-documentation-mcp-server@latest"],
+      "env": { "AWS_REGION": "us-east-1" },
+      "disabled": false
     }
   }
-  ```
-- Tips: do not commit secrets; use environment variables. Toggle servers with `"disabled": true|false`.
+}
+```
+
+**Tips:**
+- Do not commit secrets; use environment variables
+- Toggle servers with `"disabled": true|false`
+- All agents now inherit MCP tools automatically (no explicit `tools:` field)
+
+## License
+
+Apache License 2.0. See `LICENSE` for details.
