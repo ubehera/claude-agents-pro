@@ -1,5 +1,5 @@
 ---
-name: agent-coordinator
+name: orchestration-coordinator
 description: Multi-agent orchestration master for complex workflows requiring coordination between multiple specialized agents. Use for breaking down large projects, managing agent dependencies, optimizing task delegation, and ensuring consistent communication protocols across agent teams.
 category: orchestrator
 complexity: complex
