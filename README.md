@@ -87,6 +87,20 @@ See `agents/README.md` for complete trigger patterns and invocation examples.
 - `commands/README.md`: Slash command catalog and usage
 - `patterns/orchestration/`: Multi-agent coordination patterns
 - `prompts/CLAUDE.md`: Operating instructions for Claude Code
+- `SYSTEM_OVERVIEW.md`: Architecture, tier system, and coordination patterns
+
+### User-Level Configuration Template
+
+**`meta-CLAUDE.md`** - Template for user-level Claude Code configuration (deploys to `~/.claude/CLAUDE.md`)
+
+This file provides:
+- Persona and communication style settings
+- Memory management and session continuity patterns
+- Tool usage optimization and MCP integration
+- DDD workflow patterns and quality gates
+- Agent orchestration and delegation examples
+
+**Important**: This is NOT project-level documentation. When deployed to `~/.claude/`, it applies to all Claude Code sessions across all projects. The "meta-" prefix is removed during installation.
 
 ## MCP Configuration
 
