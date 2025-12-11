@@ -10,7 +10,7 @@ echo "Verifying agents in: $AGENTS_DIR"
 while IFS= read -r -d '' file; do
   base=$(basename "$file")
   case "$base" in
-    README.md|TESTING.md|AGENT_CHECKLIST.md)
+    README.md|TESTING.md|AGENT_CHECKLIST.md|*-glossary.md)
       continue
       ;;
   esac

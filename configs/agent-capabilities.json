@@ -1,0 +1,947 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0",
+  "description": "Agent capability registry for intelligent routing and dispatch by agent-organizer",
+  "last_updated": "2025-12-11",
+  "agents": {
+    "00-meta": {
+      "orchestration-coordinator": {
+        "domains": [
+          "multi-agent workflows",
+          "complex coordination",
+          "task decomposition",
+          "dependency management"
+        ],
+        "keywords": [
+          "orchestrate",
+          "coordinate",
+          "multi-agent",
+          "workflow",
+          "decompose",
+          "delegate",
+          "complex project",
+          "multiple agents"
+        ],
+        "use_when": "Task requires 3+ agents or complex dependencies",
+        "complexity_score": 95,
+        "tier": 0
+      },
+      "agent-organizer": {
+        "domains": [
+          "task routing",
+          "agent dispatch",
+          "intelligent triage",
+          "agent selection"
+        ],
+        "keywords": [
+          "route",
+          "dispatch",
+          "which agent",
+          "select agent",
+          "who should handle",
+          "organize",
+          "triage"
+        ],
+        "use_when": "Ambiguous task routing or multi-domain requests",
+        "complexity_score": 90,
+        "tier": 0
+      },
+      "workflow-validator": {
+        "domains": [
+          "quality gates",
+          "standards enforcement",
+          "phase validation",
+          "compliance checking"
+        ],
+        "keywords": [
+          "validate",
+          "enforce",
+          "quality gate",
+          "standards",
+          "compliance",
+          "phase complete",
+          "checkpoint"
+        ],
+        "use_when": "Phase transition or quality gate enforcement needed",
+        "complexity_score": 85,
+        "tier": 0
+      }
+    },
+    "01-foundation": {
+      "api-platform-engineer": {
+        "domains": [
+          "REST API design",
+          "GraphQL",
+          "API contracts",
+          "OpenAPI specification",
+          "API governance"
+        ],
+        "keywords": [
+          "API",
+          "REST",
+          "GraphQL",
+          "endpoint",
+          "contract",
+          "OpenAPI",
+          "Swagger",
+          "API design",
+          "API gateway",
+          "API versioning"
+        ],
+        "use_when": "API design, contracts, gateway setup, or API governance",
+        "complexity_score": 75,
+        "tier": 1
+      },
+      "code-reviewer": {
+        "domains": [
+          "code quality",
+          "security review",
+          "PR analysis",
+          "best practices",
+          "code standards"
+        ],
+        "keywords": [
+          "review",
+          "PR",
+          "pull request",
+          "code quality",
+          "audit",
+          "code review",
+          "security scan",
+          "best practices"
+        ],
+        "use_when": "Code review, quality assessment, or security audit",
+        "complexity_score": 70,
+        "tier": 1
+      },
+      "domain-modeling-expert": {
+        "domains": [
+          "DDD",
+          "domain modeling",
+          "bounded contexts",
+          "aggregates",
+          "ubiquitous language"
+        ],
+        "keywords": [
+          "domain model",
+          "DDD",
+          "bounded context",
+          "aggregate",
+          "entity",
+          "value object",
+          "domain events",
+          "ubiquitous language"
+        ],
+        "use_when": "Domain-driven design, modeling, or architectural boundaries",
+        "complexity_score": 85,
+        "tier": 1
+      },
+      "error-diagnostician": {
+        "domains": [
+          "debugging",
+          "error analysis",
+          "stack trace",
+          "root cause analysis"
+        ],
+        "keywords": [
+          "error",
+          "bug",
+          "debug",
+          "exception",
+          "stack trace",
+          "troubleshoot",
+          "diagnose",
+          "fix"
+        ],
+        "use_when": "Debugging, error analysis, or troubleshooting issues",
+        "complexity_score": 65,
+        "tier": 1
+      },
+      "performance-optimization-specialist": {
+        "domains": [
+          "performance tuning",
+          "optimization",
+          "profiling",
+          "scalability"
+        ],
+        "keywords": [
+          "performance",
+          "optimize",
+          "slow",
+          "profiling",
+          "bottleneck",
+          "speed up",
+          "latency",
+          "throughput",
+          "scalability"
+        ],
+        "use_when": "Performance issues, optimization, or scalability concerns",
+        "complexity_score": 80,
+        "tier": 1
+      },
+      "system-design-specialist": {
+        "domains": [
+          "system architecture",
+          "scalability design",
+          "distributed systems",
+          "high-level design"
+        ],
+        "keywords": [
+          "system design",
+          "architecture",
+          "scalability",
+          "distributed",
+          "high-level design",
+          "system architecture",
+          "design patterns"
+        ],
+        "use_when": "System architecture, design patterns, or scalability design",
+        "complexity_score": 90,
+        "tier": 1
+      },
+      "test-engineer": {
+        "domains": [
+          "testing strategy",
+          "test automation",
+          "unit testing",
+          "integration testing",
+          "E2E testing"
+        ],
+        "keywords": [
+          "test",
+          "testing",
+          "unit test",
+          "integration test",
+          "E2E",
+          "TDD",
+          "test coverage",
+          "test automation"
+        ],
+        "use_when": "Testing strategy, test automation, or quality assurance",
+        "complexity_score": 70,
+        "tier": 1
+      },
+      "refactoring-specialist": {
+        "domains": [
+          "code refactoring",
+          "technical debt",
+          "code improvement",
+          "safe refactoring"
+        ],
+        "keywords": [
+          "refactor",
+          "improve",
+          "clean up",
+          "technical debt",
+          "code smell",
+          "modernize",
+          "restructure"
+        ],
+        "use_when": "Code refactoring, modernization, or technical debt reduction",
+        "complexity_score": 75,
+        "tier": 1
+      },
+      "dependency-manager": {
+        "domains": [
+          "dependency analysis",
+          "dependency updates",
+          "vulnerability management",
+          "compatibility"
+        ],
+        "keywords": [
+          "dependency",
+          "dependencies",
+          "update",
+          "upgrade",
+          "CVE",
+          "vulnerability",
+          "package",
+          "npm",
+          "pip",
+          "cargo"
+        ],
+        "use_when": "Dependency updates, security patches, or compatibility analysis",
+        "complexity_score": 60,
+        "tier": 1
+      }
+    },
+    "02-development": {
+      "python-expert": {
+        "domains": [
+          "Python",
+          "FastAPI",
+          "Django",
+          "Flask",
+          "data workflows",
+          "async Python"
+        ],
+        "keywords": [
+          "Python",
+          "FastAPI",
+          "Django",
+          "Flask",
+          "pandas",
+          "NumPy",
+          "asyncio",
+          "Python development"
+        ],
+        "use_when": "Python development, backend services, or data processing",
+        "complexity_score": 75,
+        "tier": 2
+      },
+      "typescript-architect": {
+        "domains": [
+          "TypeScript",
+          "Node.js",
+          "type systems",
+          "build tooling"
+        ],
+        "keywords": [
+          "TypeScript",
+          "Node.js",
+          "types",
+          "tsconfig",
+          "tsc",
+          "type safety",
+          "generics"
+        ],
+        "use_when": "TypeScript development, type systems, or Node.js applications",
+        "complexity_score": 75,
+        "tier": 2
+      },
+      "frontend-expert": {
+        "domains": [
+          "React",
+          "Vue",
+          "Angular",
+          "frontend architecture",
+          "UI/UX implementation"
+        ],
+        "keywords": [
+          "React",
+          "Vue",
+          "Angular",
+          "frontend",
+          "UI",
+          "component",
+          "state management",
+          "Redux",
+          "hooks"
+        ],
+        "use_when": "Frontend development, UI components, or state management",
+        "complexity_score": 75,
+        "tier": 2
+      },
+      "mobile-specialist": {
+        "domains": [
+          "React Native",
+          "iOS",
+          "Android",
+          "mobile development",
+          "cross-platform"
+        ],
+        "keywords": [
+          "mobile",
+          "React Native",
+          "iOS",
+          "Android",
+          "Swift",
+          "Kotlin",
+          "mobile app"
+        ],
+        "use_when": "Mobile development, React Native, or native mobile apps",
+        "complexity_score": 80,
+        "tier": 2
+      },
+      "rust-expert": {
+        "domains": [
+          "Rust",
+          "systems programming",
+          "performance-critical",
+          "memory safety"
+        ],
+        "keywords": [
+          "Rust",
+          "cargo",
+          "ownership",
+          "borrowing",
+          "lifetimes",
+          "performance-critical",
+          "systems programming"
+        ],
+        "use_when": "Rust development, systems programming, or CLI tools",
+        "complexity_score": 85,
+        "tier": 2
+      },
+      "go-expert": {
+        "domains": [
+          "Go",
+          "microservices",
+          "cloud-native",
+          "concurrency"
+        ],
+        "keywords": [
+          "Go",
+          "golang",
+          "goroutines",
+          "channels",
+          "microservices",
+          "cloud-native"
+        ],
+        "use_when": "Go development, cloud services, or concurrent systems",
+        "complexity_score": 80,
+        "tier": 2
+      },
+      "bash-expert": {
+        "domains": [
+          "shell scripting",
+          "bash",
+          "automation",
+          "CLI tools"
+        ],
+        "keywords": [
+          "bash",
+          "shell",
+          "script",
+          "automation",
+          "CLI",
+          "command line"
+        ],
+        "use_when": "Shell scripting, automation, or CLI tool development",
+        "complexity_score": 65,
+        "tier": 2
+      }
+    },
+    "03-specialists": {
+      "aws-cloud-architect": {
+        "domains": [
+          "AWS",
+          "cloud architecture",
+          "serverless",
+          "AWS services"
+        ],
+        "keywords": [
+          "AWS",
+          "Lambda",
+          "S3",
+          "EC2",
+          "RDS",
+          "DynamoDB",
+          "CloudFormation",
+          "serverless"
+        ],
+        "use_when": "AWS infrastructure, cloud architecture, or serverless design",
+        "complexity_score": 85,
+        "tier": 3
+      },
+      "backend-architect": {
+        "domains": [
+          "backend architecture",
+          "microservices",
+          "API design",
+          "service design"
+        ],
+        "keywords": [
+          "backend",
+          "microservices",
+          "service",
+          "API",
+          "backend architecture",
+          "service design"
+        ],
+        "use_when": "Backend architecture, microservices, or service design",
+        "complexity_score": 80,
+        "tier": 3
+      },
+      "database-architect": {
+        "domains": [
+          "database design",
+          "SQL",
+          "NoSQL",
+          "data modeling",
+          "migrations"
+        ],
+        "keywords": [
+          "database",
+          "SQL",
+          "PostgreSQL",
+          "MySQL",
+          "MongoDB",
+          "Redis",
+          "schema",
+          "migration",
+          "query optimization"
+        ],
+        "use_when": "Database design, data modeling, or query optimization",
+        "complexity_score": 80,
+        "tier": 3
+      },
+      "devops-automation-expert": {
+        "domains": [
+          "CI/CD",
+          "automation",
+          "deployment",
+          "DevOps practices"
+        ],
+        "keywords": [
+          "DevOps",
+          "CI/CD",
+          "Jenkins",
+          "GitHub Actions",
+          "GitLab CI",
+          "automation",
+          "deployment",
+          "pipeline"
+        ],
+        "use_when": "CI/CD pipelines, automation, or DevOps practices",
+        "complexity_score": 75,
+        "tier": 3
+      },
+      "kubernetes-architect": {
+        "domains": [
+          "Kubernetes",
+          "container orchestration",
+          "K8s",
+          "Helm"
+        ],
+        "keywords": [
+          "Kubernetes",
+          "K8s",
+          "kubectl",
+          "pods",
+          "deployments",
+          "services",
+          "Helm",
+          "container orchestration"
+        ],
+        "use_when": "Kubernetes orchestration, containerization, or K8s design",
+        "complexity_score": 85,
+        "tier": 3
+      },
+      "terraform-expert": {
+        "domains": [
+          "Terraform",
+          "infrastructure as code",
+          "IaC",
+          "cloud provisioning"
+        ],
+        "keywords": [
+          "Terraform",
+          "IaC",
+          "infrastructure as code",
+          "HCL",
+          "terraform plan",
+          "terraform apply",
+          "cloud provisioning"
+        ],
+        "use_when": "Infrastructure as code, Terraform, or cloud provisioning",
+        "complexity_score": 75,
+        "tier": 3
+      },
+      "event-driven-architect": {
+        "domains": [
+          "event sourcing",
+          "CQRS",
+          "event-driven architecture",
+          "message queues"
+        ],
+        "keywords": [
+          "event sourcing",
+          "CQRS",
+          "event-driven",
+          "message queue",
+          "Kafka",
+          "RabbitMQ",
+          "event store"
+        ],
+        "use_when": "Event sourcing, CQRS, or event-driven architecture",
+        "complexity_score": 90,
+        "tier": 3
+      },
+      "data-pipeline-engineer": {
+        "domains": [
+          "data pipelines",
+          "ETL",
+          "data processing",
+          "batch processing"
+        ],
+        "keywords": [
+          "data pipeline",
+          "ETL",
+          "data processing",
+          "Airflow",
+          "batch processing",
+          "data transformation"
+        ],
+        "use_when": "Data pipelines, ETL processes, or data engineering",
+        "complexity_score": 80,
+        "tier": 3
+      },
+      "full-stack-architect": {
+        "domains": [
+          "full-stack development",
+          "end-to-end architecture",
+          "frontend + backend"
+        ],
+        "keywords": [
+          "full-stack",
+          "end-to-end",
+          "frontend and backend",
+          "full application"
+        ],
+        "use_when": "Full-stack development or end-to-end feature implementation",
+        "complexity_score": 85,
+        "tier": 3
+      },
+      "observability-engineer": {
+        "domains": [
+          "monitoring",
+          "logging",
+          "tracing",
+          "metrics",
+          "observability"
+        ],
+        "keywords": [
+          "monitoring",
+          "logging",
+          "tracing",
+          "metrics",
+          "observability",
+          "Prometheus",
+          "Grafana",
+          "OpenTelemetry",
+          "logs"
+        ],
+        "use_when": "Monitoring setup, logging, tracing, or observability",
+        "complexity_score": 75,
+        "tier": 3
+      },
+      "sre-incident-responder": {
+        "domains": [
+          "incident response",
+          "SRE",
+          "production issues",
+          "reliability"
+        ],
+        "keywords": [
+          "incident",
+          "production issue",
+          "SRE",
+          "outage",
+          "downtime",
+          "emergency",
+          "critical"
+        ],
+        "use_when": "Production incidents, reliability issues, or emergency response",
+        "complexity_score": 85,
+        "tier": 3
+      }
+    },
+    "04-experts": {
+      "machine-learning-engineer": {
+        "domains": [
+          "machine learning",
+          "ML models",
+          "data science",
+          "model training"
+        ],
+        "keywords": [
+          "machine learning",
+          "ML",
+          "model",
+          "training",
+          "inference",
+          "neural network",
+          "deep learning",
+          "TensorFlow",
+          "PyTorch"
+        ],
+        "use_when": "Machine learning, model development, or ML engineering",
+        "complexity_score": 90,
+        "tier": 4
+      }
+    },
+    "06-integration": {
+      "research-librarian": {
+        "domains": [
+          "research",
+          "documentation",
+          "web search",
+          "information gathering"
+        ],
+        "keywords": [
+          "research",
+          "find",
+          "search",
+          "documentation",
+          "lookup",
+          "investigate"
+        ],
+        "use_when": "Research, documentation lookup, or information gathering",
+        "complexity_score": 60,
+        "tier": 6
+      },
+      "technical-documentation-specialist": {
+        "domains": [
+          "technical writing",
+          "documentation",
+          "API docs",
+          "developer docs"
+        ],
+        "keywords": [
+          "documentation",
+          "docs",
+          "readme",
+          "technical writing",
+          "API docs",
+          "developer documentation"
+        ],
+        "use_when": "Technical documentation, README creation, or API docs",
+        "complexity_score": 65,
+        "tier": 6
+      },
+      "product-owner": {
+        "domains": [
+          "requirements",
+          "user stories",
+          "product management",
+          "acceptance criteria"
+        ],
+        "keywords": [
+          "requirements",
+          "user story",
+          "acceptance criteria",
+          "product",
+          "feature requirements"
+        ],
+        "use_when": "Requirements gathering, user stories, or product definition",
+        "complexity_score": 70,
+        "tier": 6
+      },
+      "tech-writer": {
+        "domains": [
+          "end-user documentation",
+          "user guides",
+          "tutorials",
+          "help documentation"
+        ],
+        "keywords": [
+          "user guide",
+          "tutorial",
+          "help",
+          "end-user documentation",
+          "instructions"
+        ],
+        "use_when": "End-user documentation, tutorials, or help content",
+        "complexity_score": 65,
+        "tier": 6
+      }
+    },
+    "07-quality": {
+      "security-architect": {
+        "domains": [
+          "security",
+          "authentication",
+          "authorization",
+          "OWASP",
+          "vulnerability assessment"
+        ],
+        "keywords": [
+          "security",
+          "auth",
+          "authentication",
+          "authorization",
+          "OWASP",
+          "vulnerability",
+          "encryption",
+          "secure"
+        ],
+        "use_when": "Security design, authentication, or vulnerability assessment",
+        "complexity_score": 90,
+        "tier": 7
+      }
+    },
+    "08-finance": {
+      "quantitative-analyst": {
+        "domains": [
+          "quantitative analysis",
+          "statistical modeling",
+          "financial mathematics",
+          "risk analytics"
+        ],
+        "keywords": [
+          "quant",
+          "quantitative",
+          "statistical model",
+          "volatility",
+          "correlation",
+          "risk metrics",
+          "financial math"
+        ],
+        "use_when": "Quantitative analysis, statistical modeling, or risk analytics",
+        "complexity_score": 90,
+        "tier": 8
+      },
+      "trading-strategy-architect": {
+        "domains": [
+          "trading strategies",
+          "algorithmic trading",
+          "backtesting",
+          "strategy design"
+        ],
+        "keywords": [
+          "trading strategy",
+          "backtest",
+          "algorithmic trading",
+          "strategy design",
+          "signals",
+          "indicators"
+        ],
+        "use_when": "Trading strategy design, backtesting, or algorithmic trading",
+        "complexity_score": 90,
+        "tier": 8
+      },
+      "market-data-engineer": {
+        "domains": [
+          "market data",
+          "data feeds",
+          "tick data",
+          "real-time data"
+        ],
+        "keywords": [
+          "market data",
+          "data feed",
+          "tick data",
+          "real-time",
+          "market feed",
+          "price data"
+        ],
+        "use_when": "Market data infrastructure, data feeds, or real-time data",
+        "complexity_score": 85,
+        "tier": 8
+      },
+      "trading-ml-specialist": {
+        "domains": [
+          "machine learning for trading",
+          "predictive models",
+          "feature engineering",
+          "ML trading"
+        ],
+        "keywords": [
+          "ML trading",
+          "predictive model",
+          "feature engineering",
+          "trading ML",
+          "machine learning"
+        ],
+        "use_when": "ML-based trading, predictive models, or feature engineering",
+        "complexity_score": 95,
+        "tier": 8
+      },
+      "portfolio-manager": {
+        "domains": [
+          "portfolio management",
+          "asset allocation",
+          "portfolio optimization",
+          "rebalancing"
+        ],
+        "keywords": [
+          "portfolio",
+          "asset allocation",
+          "portfolio optimization",
+          "rebalancing",
+          "diversification"
+        ],
+        "use_when": "Portfolio management, asset allocation, or optimization",
+        "complexity_score": 85,
+        "tier": 8
+      },
+      "trading-risk-manager": {
+        "domains": [
+          "risk management",
+          "VaR",
+          "exposure management",
+          "risk metrics"
+        ],
+        "keywords": [
+          "risk management",
+          "VaR",
+          "value at risk",
+          "exposure",
+          "risk metrics",
+          "risk limits"
+        ],
+        "use_when": "Risk management, exposure monitoring, or risk analytics",
+        "complexity_score": 90,
+        "tier": 8
+      },
+      "equity-research-analyst": {
+        "domains": [
+          "equity research",
+          "fundamental analysis",
+          "company analysis",
+          "valuation"
+        ],
+        "keywords": [
+          "equity research",
+          "fundamental analysis",
+          "valuation",
+          "company analysis",
+          "financial statements"
+        ],
+        "use_when": "Equity research, fundamental analysis, or company valuation",
+        "complexity_score": 80,
+        "tier": 8
+      },
+      "algorithmic-trading-engineer": {
+        "domains": [
+          "algorithmic trading",
+          "execution algorithms",
+          "order routing",
+          "trading systems"
+        ],
+        "keywords": [
+          "algorithmic trading",
+          "execution",
+          "order routing",
+          "trading system",
+          "HFT"
+        ],
+        "use_when": "Algorithmic trading, execution systems, or order routing",
+        "complexity_score": 95,
+        "tier": 8
+      },
+      "trading-compliance-officer": {
+        "domains": [
+          "trading compliance",
+          "regulations",
+          "audit",
+          "regulatory requirements"
+        ],
+        "keywords": [
+          "compliance",
+          "regulation",
+          "audit",
+          "regulatory",
+          "SEC",
+          "FINRA"
+        ],
+        "use_when": "Trading compliance, regulatory requirements, or audits",
+        "complexity_score": 75,
+        "tier": 8
+      }
+    }
+  },
+  "routing_rules": {
+    "multi_domain_threshold": 3,
+    "complexity_escalation_threshold": 85,
+    "default_fallback": "orchestration-coordinator",
+    "disambiguation_threshold": 2
+  },
+  "scoring_weights": {
+    "keyword_match": 0.4,
+    "domain_overlap": 0.3,
+    "complexity_fit": 0.2,
+    "tier_preference": 0.1
+  }
+}

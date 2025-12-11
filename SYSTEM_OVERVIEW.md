@@ -14,6 +14,29 @@ Claude Agents Pro is a **tiered agent collection** designed for production-grade
 
 ---
 
+## Model Strategy
+
+### Philosophy: Opus 4.5 Everywhere
+
+All agents use `claude-opus-4-5-20251101` for maximum capability. No compromises.
+
+**Rationale**:
+- Every agent deserves full capability - whether writing documentation or designing distributed systems
+- Eliminates model tier complexity - no need to manage or justify model selection
+- Consistent quality across all operations - users get the same excellence everywhere
+- Simplified maintenance - single model field, no rationale needed
+
+**Configuration**:
+All agent frontmatter includes:
+```yaml
+model: claude-opus-4-5-20251101
+```
+
+**Migration**:
+Previously, agents used a tiered model approach (Sonnet for simpler tasks, Opus for complex reasoning). We've eliminated this complexity. Every agent now runs on Opus 4.5, ensuring consistent, high-quality outputs regardless of task complexity.
+
+---
+
 ## Tier Architecture
 
 ### Tier 0: Meta (Orchestration)
@@ -299,8 +322,7 @@ Users can enable additional servers by editing `.mcp.json`:
    description: Detailed description with technologies and "Use for..." triggers
    category: [orchestrator|foundation|development|specialist|expert|integration|quality|finance]
    complexity: [simple|moderate|complex|expert]
-   model: claude-sonnet-4-5-20250929
-   model_rationale: Brief justification for model selection
+   model: claude-opus-4-5-20251101
    capabilities: [list, of, key, capabilities]
    auto_activate:
      keywords: [trigger, words]

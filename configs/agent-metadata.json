@@ -5,28 +5,40 @@
       "tier": 0,
       "category": "Meta-Orchestration",
       "agents": {
-        "agent-coordinator": {
-          "quality_score": 8.5,
+        "agent-organizer": {
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "api-platform-engineer",
-            "system-design-specialist",
-            "security-architect",
-            "research-librarian"
-          ],
-          "tools": [
-            "Task",
-            "Read",
-            "Write",
-            "MultiEdit"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "orchestrate",
-            "coordinate",
-            "multi-agent",
-            "complex workflow"
+            "agent",
+            "organizer"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "orchestration-coordinator": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "coordinator",
+            "orchestration"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "workflow-validator": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "validator",
+            "workflow"
+          ],
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         }
       }
@@ -38,174 +50,128 @@
         "api-platform-engineer": {
           "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "security-architect",
-            "system-design-specialist",
-            "research-librarian"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Grep",
-            "WebFetch",
-            "Task"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "api design",
-            "rest",
-            "graphql",
-            "openapi",
-            "gateway"
+            "api",
+            "aws",
+            "design",
+            "documentation",
+            "engineer"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
         "code-reviewer": {
-          "quality_score": 8.3,
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "performance-optimization-specialist",
-            "security-architect"
-          ],
-          "tools": [
-            "Read",
-            "Grep",
-            "Glob",
-            "Task",
-            "WebSearch"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "code review",
-            "pull request",
-            "quality audit"
+            "code",
+            "review",
+            "reviewer",
+            "security"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "dependency-manager": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "dependency",
+            "manager",
+            "optimization",
+            "security"
+          ],
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
         "domain-modeling-expert": {
           "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "system-design-specialist",
-            "backend-architect",
-            "api-platform-engineer",
-            "research-librarian"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Task",
-            "WebSearch"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "domain modeling",
-            "event storming",
-            "bounded context",
-            "ddd",
-            "ubiquitous language",
-            "aggregate design",
-            "context mapping"
+            "design",
+            "domain",
+            "expert",
+            "modeling"
           ],
-          "last_updated": "2025-09-29",
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
         "error-diagnostician": {
-          "quality_score": 8.2,
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "system-design-specialist",
-            "devops-automation-expert"
-          ],
-          "tools": [
-            "Read",
-            "Grep",
-            "Bash",
-            "Glob",
-            "WebSearch",
-            "Task"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "incident",
-            "bug",
-            "stack trace",
-            "production issue"
+            "debugging",
+            "diagnostician",
+            "error"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
         "performance-optimization-specialist": {
-          "quality_score": 8.2,
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "system-design-specialist",
-            "devops-automation-expert"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Grep",
-            "Task"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "performance",
-            "latency",
-            "core web vitals",
-            "throughput"
+            "api",
+            "database",
+            "monitoring",
+            "optimization",
+            "performance"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "refactoring-specialist": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "architecture",
+            "design",
+            "refactoring",
+            "specialist"
+          ],
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
         "system-design-specialist": {
-          "quality_score": 8.2,
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "security-architect",
-            "performance-optimization-specialist",
-            "devops-automation-expert"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "WebSearch",
-            "Task"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "system design",
             "architecture",
-            "scalability",
-            "microservices"
+            "database",
+            "design",
+            "specialist",
+            "system"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
         "test-engineer": {
-          "quality_score": 8.1,
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "code-reviewer",
-            "devops-automation-expert"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Grep",
-            "Task"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "test plan",
-            "automation",
-            "coverage",
-            "quality gates"
+            "engineer",
+            "test",
+            "testing"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         }
       }
@@ -214,110 +180,107 @@
       "tier": 2,
       "category": "Development",
       "agents": {
-        "frontend-expert": {
-          "quality_score": 7.8,
+        "bash-expert": {
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "performance-optimization-specialist",
-            "security-architect"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "WebFetch"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "frontend",
-            "react",
-            "next.js",
-            "vue",
-            "ui"
+            "bash",
+            "ci/cd",
+            "expert",
+            "monitoring"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
-        "python-expert": {
-          "quality_score": 7.9,
+        "frontend-expert": {
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "backend-architect",
-            "database-architect",
-            "observability-engineer"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Task",
-            "WebSearch"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "python",
-            "fastapi",
-            "django",
-            "asyncio",
-            "celery",
-            "pandas"
+            "architecture",
+            "design",
+            "expert",
+            "frontend",
+            "optimization"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "go-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "architecture",
+            "aws",
+            "cloud",
+            "design",
+            "expert"
+          ],
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
         "mobile-specialist": {
-          "quality_score": 7.7,
-          "dependencies": [
-            "backend-architect",
-            "observability-engineer"
-          ],
-          "delegates_to": [
-            "security-architect",
-            "sre-incident-responder"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Task",
-            "WebSearch"
-          ],
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
+            "architecture",
+            "ci/cd",
             "mobile",
-            "ios",
-            "android",
-            "react native",
-            "flutter",
-            "kotlin",
-            "swift"
+            "performance",
+            "react"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "python-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "backend",
+            "design",
+            "expert",
+            "performance",
+            "python"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "rust-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "expert",
+            "optimization",
+            "performance",
+            "rust"
+          ],
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
         "typescript-architect": {
-          "quality_score": 7.9,
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "backend-architect",
-            "observability-engineer"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Task",
-            "WebSearch"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "typescript",
-            "next.js",
-            "node",
-            "bun",
-            "deno",
-            "trpc"
+            "api",
+            "architect",
+            "design",
+            "frontend",
+            "optimization"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         }
       }
@@ -327,208 +290,165 @@
       "category": "Specialists",
       "agents": {
         "aws-cloud-architect": {
-          "quality_score": 7.9,
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "security-architect",
-            "devops-automation-expert"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Task",
-            "WebSearch"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "aws",
-            "cloudformation",
-            "landing zone",
-            "serverless"
-          ],
-          "last_updated": "2025-02-20",
-          "maintainer": "ubehera"
-        },
-        "data-pipeline-engineer": {
-          "quality_score": 7.8,
-          "dependencies": [],
-          "delegates_to": [
-            "machine-learning-engineer",
-            "devops-automation-expert"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Task"
-          ],
-          "activation_patterns": [
-            "etl",
-            "streaming",
-            "spark",
-            "airflow",
-            "data pipeline"
-          ],
-          "last_updated": "2025-02-20",
-          "maintainer": "ubehera"
-        },
-        "devops-automation-expert": {
-          "quality_score": 7.9,
-          "dependencies": [],
-          "delegates_to": [
-            "security-architect",
-            "performance-optimization-specialist"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Task",
-            "Grep"
-          ],
-          "activation_patterns": [
-            "ci/cd",
-            "gitops",
-            "deployment",
-            "infrastructure as code"
-          ],
-          "last_updated": "2025-02-20",
-          "maintainer": "ubehera"
-        },
-        "full-stack-architect": {
-          "quality_score": 7.8,
-          "dependencies": [],
-          "delegates_to": [
-            "frontend-expert",
-            "api-platform-engineer"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Task",
-            "WebSearch"
-          ],
-          "activation_patterns": [
-            "full-stack",
-            "web application",
+            "architect",
             "architecture",
-            "integration"
+            "aws",
+            "cloud",
+            "design"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
         "backend-architect": {
-          "quality_score": 7.9,
-          "dependencies": [
-            "database-architect",
-            "observability-engineer"
-          ],
-          "delegates_to": [
-            "python-expert",
-            "api-platform-engineer",
-            "security-architect"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Task",
-            "WebSearch"
-          ],
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
+            "architect",
             "backend",
-            "microservices",
-            "service design",
+            "design",
             "graphql",
-            "grpc"
+            "rest"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "data-pipeline-engineer": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "architecture",
+            "data",
+            "engineer",
+            "pipeline"
+          ],
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
         "database-architect": {
-          "quality_score": 7.8,
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "backend-architect",
-            "security-architect"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Task",
-            "WebSearch"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
+            "architect",
             "database",
-            "schema",
-            "postgres",
-            "mysql",
-            "dynamodb"
+            "design",
+            "optimization",
+            "performance"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "devops-automation-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "automation",
+            "ci/cd",
+            "devops",
+            "docker",
+            "expert"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "event-driven-architect": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "architect",
+            "architecture",
+            "aws",
+            "design",
+            "driven"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "full-stack-architect": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "api",
+            "architect",
+            "architecture",
+            "backend",
+            "cloud"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "kubernetes-architect": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "architect",
+            "architecture",
+            "cloud",
+            "design",
+            "kubernetes"
+          ],
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
         "observability-engineer": {
-          "quality_score": 7.8,
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "devops-automation-expert",
-            "security-architect"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Task",
-            "WebSearch"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "observability",
-            "metrics",
-            "logging",
-            "tracing",
-            "slo",
-            "prometheus"
+            "design",
+            "engineer",
+            "observability"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
         "sre-incident-responder": {
-          "quality_score": 7.8,
-          "dependencies": [
-            "observability-engineer",
-            "devops-automation-expert"
-          ],
-          "delegates_to": [
-            "security-architect",
-            "backend-architect"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Task",
-            "WebSearch"
-          ],
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
+            "cloud",
             "incident",
-            "on-call",
-            "pager",
-            "mttr",
-            "outage",
-            "war room"
+            "kubernetes",
+            "observability",
+            "responder"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "terraform-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "aws",
+            "ci/cd",
+            "cloud",
+            "design",
+            "expert"
+          ],
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         }
       }
@@ -538,214 +458,252 @@
       "category": "Experts",
       "agents": {
         "machine-learning-engineer": {
-          "quality_score": 7.8,
-          "dependencies": [
-            "data-pipeline-engineer"
-          ],
-          "delegates_to": [
-            "security-architect",
-            "devops-automation-expert"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Task",
-            "WebSearch"
-          ],
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
-            "mlops",
-            "model deployment",
-            "training pipeline",
-            "ml monitoring"
+            "ai",
+            "engineer",
+            "learning",
+            "machine",
+            "machine learning"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         }
       }
     },
     "06-integration": {
       "tier": 6,
-      "category": "Integration & Research",
+      "category": "Integration",
       "agents": {
-        "research-librarian": {
-          "quality_score": 7.5,
+        "product-owner": {
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "api-platform-engineer",
-            "security-architect"
-          ],
+          "delegates_to": [],
           "tools": [
             "Read",
             "Write",
-            "MultiEdit",
+            "Grep",
+            "Glob",
             "WebSearch"
           ],
           "activation_patterns": [
-            "find docs",
-            "compare standards",
-            "reference",
-            "documentation"
+            "owner",
+            "product"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         },
-        "technical-documentation-specialist": {
-          "quality_score": 7.5,
+        "research-librarian": {
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "domain-modeling-expert",
-            "api-platform-engineer",
-            "system-design-specialist"
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "librarian",
+            "research"
           ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "tech-writer": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
           "tools": [
             "Read",
             "Write",
-            "MultiEdit",
+            "Edit",
             "Grep",
+            "Glob",
+            "WebSearch",
             "WebFetch"
           ],
           "activation_patterns": [
-            "documentation review",
-            "adr",
-            "readme",
-            "technical writing",
-            "c4 diagram",
-            "runbook",
-            "api documentation"
+            "api",
+            "architecture",
+            "documentation",
+            "tech",
+            "writer"
           ],
-          "last_updated": "2025-09-29",
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "technical-documentation-specialist": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "api",
+            "architecture",
+            "documentation",
+            "specialist",
+            "technical"
+          ],
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         }
       }
     },
     "07-quality": {
       "tier": 7,
-      "category": "Quality & Security",
+      "category": "Quality",
       "agents": {
         "security-architect": {
-          "quality_score": 8.4,
+          "quality_score": 8.0,
           "dependencies": [],
-          "delegates_to": [
-            "devops-automation-expert",
-            "performance-optimization-specialist"
-          ],
-          "tools": [
-            "Read",
-            "Write",
-            "MultiEdit",
-            "Bash",
-            "Grep",
-            "WebSearch",
-            "Task"
-          ],
+          "delegates_to": [],
+          "tools": [],
           "activation_patterns": [
+            "architect",
+            "architecture",
+            "design",
             "security",
-            "threat model",
-            "compliance",
-            "zero trust"
+            "testing"
           ],
-          "last_updated": "2025-02-20",
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        }
+      }
+    },
+    "08-finance": {
+      "tier": 8,
+      "category": "Finance",
+      "agents": {
+        "algorithmic-trading-engineer": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "algorithmic",
+            "api",
+            "engineer",
+            "monitoring",
+            "trading"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "equity-research-analyst": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "analyst",
+            "equity",
+            "research"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "market-data-engineer": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "data",
+            "engineer",
+            "market",
+            "monitoring",
+            "rest"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "portfolio-manager": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "manager",
+            "ml",
+            "performance",
+            "portfolio"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "quantitative-analyst": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "analyst",
+            "design",
+            "quantitative",
+            "research"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "trading-compliance-officer": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "compliance",
+            "documentation",
+            "monitoring",
+            "officer",
+            "trading"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "trading-ml-specialist": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "machine learning",
+            "ml",
+            "specialist",
+            "trading"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "trading-risk-manager": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "manager",
+            "monitoring",
+            "optimization",
+            "risk",
+            "trading"
+          ],
+          "last_updated": "2025-12-11",
+          "maintainer": "ubehera"
+        },
+        "trading-strategy-architect": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "architect",
+            "architecture",
+            "design",
+            "optimization",
+            "performance"
+          ],
+          "last_updated": "2025-12-11",
           "maintainer": "ubehera"
         }
       }
     }
-  },
-  "quality_framework": {
-    "scoring_criteria": {
-      "completeness": 0.25,
-      "accuracy": 0.25,
-      "usability": 0.2,
-      "performance": 0.15,
-      "maintainability": 0.15
-    },
-    "tier_requirements": {
-      "0": 8.5,
-      "1": 8.0,
-      "2": 7.5,
-      "3": 7.5,
-      "4": 7.5,
-      "6": 7.0,
-      "7": 7.5
-    }
-  },
-  "routing_rules": {
-    "primary_keywords": {
-      "orchestration": [
-        "agent-coordinator"
-      ],
-      "api": [
-        "api-platform-engineer"
-      ],
-      "code_review": [
-        "code-reviewer"
-      ],
-      "incident": [
-        "sre-incident-responder"
-      ],
-      "performance": [
-        "performance-optimization-specialist"
-      ],
-      "architecture": [
-        "system-design-specialist"
-      ],
-      "testing": [
-        "test-engineer"
-      ],
-      "frontend": [
-        "frontend-expert"
-      ],
-      "cloud": [
-        "aws-cloud-architect"
-      ],
-      "data": [
-        "data-pipeline-engineer"
-      ],
-      "devops": [
-        "devops-automation-expert"
-      ],
-      "full_stack": [
-        "full-stack-architect"
-      ],
-      "ml": [
-        "machine-learning-engineer"
-      ],
-      "research": [
-        "research-librarian"
-      ],
-      "security": [
-        "security-architect"
-      ],
-      "domain_modeling": [
-        "domain-modeling-expert"
-      ],
-      "documentation": [
-        "technical-documentation-specialist"
-      ],
-      "python": [
-        "python-expert"
-      ],
-      "backend": [
-        "backend-architect"
-      ],
-      "database": [
-        "database-architect"
-      ],
-      "observability": [
-        "observability-engineer"
-      ],
-      "mobile": [
-        "mobile-specialist"
-      ],
-      "typescript": [
-        "typescript-architect"
-      ]
-    },
-    "fallback_chain": [
-      "agent-coordinator",
-      "system-design-specialist",
-      "full-stack-architect"
-    ]
   }
 }

@@ -1,0 +1,243 @@
+# Quality Gate Configuration
+# Defines validation criteria for each workflow phase
+
+version: "1.0.0"
+description: "Quality gate definitions for DDD workflow phases"
+
+# Global thresholds (can be overridden per phase)
+global:
+  min_threshold: 70
+  prod_threshold: 85
+  enterprise_threshold: 95
+
+# Phase-specific quality gates
+phases:
+  phase-1-analysis:
+    name: "Requirements & Domain Analysis"
+    threshold: 95
+    artifact: "ANALYSIS_REPORT.md"
+    gates:
+      requirements_complete:
+        type: "boolean"
+        required: true
+        description: "All requirements documented with acceptance criteria"
+        checklist:
+          - "Business outcomes with measurable KPIs defined"
+          - "User personas and JTBD documented"
+          - "Acceptance criteria in Given-When-Then format"
+          - "Scope boundaries and constraints identified"
+          - "Non-functional requirements specified"
+
+      domain_model_validated:
+        type: "boolean"
+        required: true
+        description: "Domain model reviewed and validated"
+        checklist:
+          - "Bounded contexts identified and mapped"
+          - "Core domain separated from supporting/generic"
+          - "Aggregates defined with root entities"
+          - "Invariants and business rules documented"
+          - "Ubiquitous language glossary created"
+
+      architecture_documented:
+        type: "boolean"
+        required: true
+        description: "Architecture decisions and patterns documented"
+        checklist:
+          - "C4 context diagram created"
+          - "Architectural style selected with rationale (ADR)"
+          - "Technology stack documented with justification"
+          - "NFRs mapped to architectural patterns"
+          - "Integration patterns defined"
+
+      risk_assessment_complete:
+        type: "boolean"
+        required: true
+        description: "Risks identified with mitigation strategies"
+        checklist:
+          - "Technical risks identified and scored"
+          - "Business risks documented"
+          - "Mitigation strategies defined"
+          - "High-risk areas flagged for prototyping"
+          - "Dependencies and external factors noted"
+
+  phase-2-implementation:
+    name: "API, Data, and Implementation"
+    threshold: 80
+    artifact: "IMPLEMENTATION_SUMMARY.md"
+    gates:
+      test_coverage:
+        type: "metric"
+        required: true
+        operator: ">="
+        value: 80
+        unit: "percent"
+        description: "Code coverage meets minimum threshold"
+        measurement:
+          tool: "pytest-cov or jest --coverage"
+          command: "npm run test:coverage || pytest --cov"
+          parser: "coverage_percentage"
+
+      security_scan:
+        type: "boolean"
+        required: true
+        description: "Security scanning passed without critical issues"
+        checklist:
+          - "SAST scan completed (Semgrep, Snyk, or equivalent)"
+          - "Dependency vulnerability scan passed"
+          - "No critical or high severity issues"
+          - "Secret scanning passed (no exposed credentials)"
+          - "OWASP Top 10 checks passed"
+        tools:
+          - "semgrep"
+          - "npm audit"
+          - "trivy"
+          - "gitleaks"
+
+      lint_errors:
+        type: "metric"
+        required: true
+        operator: "=="
+        value: 0
+        unit: "count"
+        description: "Zero linting errors"
+        measurement:
+          tool: "eslint or pylint"
+          command: "npm run lint || pylint src/"
+          parser: "error_count"
+
+      api_contracts_defined:
+        type: "boolean"
+        required: true
+        description: "API contracts documented and validated"
+        checklist:
+          - "OpenAPI/GraphQL schema files created"
+          - "Request/response examples provided"
+          - "Error responses documented"
+          - "Authentication/authorization flows specified"
+          - "Versioning strategy implemented"
+
+      data_model_implemented:
+        type: "boolean"
+        required: true
+        description: "Data models match domain design"
+        checklist:
+          - "Database schemas created per bounded context"
+          - "Migrations scripts with rollback capability"
+          - "Indexes defined for performance"
+          - "Data integrity constraints enforced"
+          - "PII handling and encryption implemented"
+
+  phase-3-validation:
+    name: "Testing & Quality Validation"
+    threshold: 85
+    artifact: "VALIDATION_REPORT.md"
+    gates:
+      integration_tests:
+        type: "boolean"
+        required: true
+        description: "Integration tests pass for critical paths"
+        checklist:
+          - "API contract tests passing"
+          - "Database integration tests passing"
+          - "External service mocks/stubs working"
+          - "Error handling scenarios covered"
+          - "Authentication/authorization flows tested"
+        measurement:
+          tool: "pytest or jest"
+          command: "npm run test:integration || pytest tests/integration"
+          parser: "test_results"
+
+      performance_benchmarks:
+        type: "metric"
+        required: true
+        operator: "<="
+        value: 200
+        unit: "ms"
+        description: "P95 response time meets SLO"
+        measurement:
+          tool: "k6, artillery, or wrk"
+          command: "k6 run performance-test.js"
+          parser: "p95_latency"
+        slo:
+          p50: 100
+          p95: 200
+          p99: 500
+
+      documentation_complete:
+        type: "boolean"
+        required: true
+        description: "All documentation artifacts created"
+        checklist:
+          - "API documentation generated (OpenAPI/GraphQL)"
+          - "Architecture diagrams updated"
+          - "Runbook created for operations"
+          - "Troubleshooting guide included"
+          - "Deployment instructions documented"
+
+      e2e_tests:
+        type: "boolean"
+        required: false
+        description: "End-to-end tests for critical user journeys"
+        checklist:
+          - "Happy path scenarios passing"
+          - "Error recovery scenarios tested"
+          - "Cross-browser/device testing (if applicable)"
+          - "Accessibility tests passing (WCAG 2.1 AA)"
+
+      observability_configured:
+        type: "boolean"
+        required: true
+        description: "Monitoring and logging configured"
+        checklist:
+          - "Structured logging implemented"
+          - "Key metrics exposed (Prometheus/StatsD)"
+          - "Distributed tracing configured (OpenTelemetry)"
+          - "Health check endpoints implemented"
+          - "Alert rules defined for SLO violations"
+
+# Quality tier configurations
+tiers:
+  prototype:
+    description: "Proof of concept, internal experimentation"
+    phases:
+      phase-1-analysis:
+        threshold: 70
+      phase-2-implementation:
+        threshold: 60
+      phase-3-validation:
+        threshold: 60
+
+  production:
+    description: "Production-ready, customer-facing services"
+    phases:
+      phase-1-analysis:
+        threshold: 85
+      phase-2-implementation:
+        threshold: 80
+      phase-3-validation:
+        threshold: 85
+
+  enterprise:
+    description: "Mission-critical, compliance-required systems"
+    phases:
+      phase-1-analysis:
+        threshold: 95
+      phase-2-implementation:
+        threshold: 90
+      phase-3-validation:
+        threshold: 95
+
+# Gate execution order
+execution_order:
+  - phase-1-analysis
+  - phase-2-implementation
+  - phase-3-validation
+
+# Reporting configuration
+reporting:
+  format: "markdown"
+  include_checklist: true
+  include_metrics: true
+  include_recommendations: true
+  output_dir: "quality-reports"

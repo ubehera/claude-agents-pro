@@ -1,0 +1,436 @@
+{
+  "version": "1.0.0",
+  "generated": "2025-12-11T00:16:32.436246",
+  "total_agents": 45,
+  "agents": [
+    {
+      "name": "agent-organizer",
+      "description": "Intelligent agent dispatch and routing meta-layer for determining optimal agent selection based on task analysis, context, and expertise mapping. Use for routing user requests to appropriate specialists, optimizing multi-agent workflows, resolving agent conflicts, and maintaining routing intelligence across sessions.",
+      "tier": "00-meta",
+      "path": "agents/00-meta/agent-organizer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "agent-organizer"
+    },
+    {
+      "name": "orchestration-coordinator",
+      "description": "Multi-agent orchestration master for complex workflows requiring coordination between multiple specialized agents. Use for breaking down large projects, managing agent dependencies, optimizing task delegation, and ensuring consistent communication protocols across agent teams.",
+      "tier": "00-meta",
+      "path": "agents/00-meta/orchestration-coordinator.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "orchestration-coordinator"
+    },
+    {
+      "name": "workflow-validator",
+      "description": "Quality gate enforcement and standards validation agent for ensuring deliverables meet defined criteria before phase transitions. Use for validating phase completion, enforcing quality standards, verifying acceptance criteria, ensuring compliance with architectural decisions, and preventing technical debt accumulation.",
+      "tier": "00-meta",
+      "path": "agents/00-meta/workflow-validator.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "workflow-validator"
+    },
+    {
+      "name": "api-platform-engineer",
+      "description": "Expert in REST API design, GraphQL schemas, OpenAPI/Swagger specs, API gateways (Kong, Apigee, AWS API Gateway), rate limiting, OAuth 2.0/JWT auth, developer portals, API versioning, microservices communication, and API governance. Use for API design, gateway setup, API documentation, developer experience optimization, and API lifecycle management.",
+      "tier": "01-foundation",
+      "path": "agents/01-foundation/api-platform-engineer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "api-platform-engineer"
+    },
+    {
+      "name": "code-reviewer",
+      "description": "Expert code review specialist for analyzing code quality, identifying bugs, security issues, and suggesting improvements. Use when reviewing pull requests, analyzing code changes, or performing quality audits.",
+      "tier": "01-foundation",
+      "path": "agents/01-foundation/code-reviewer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "code-reviewer"
+    },
+    {
+      "name": "dependency-manager",
+      "description": "Dependency analysis, update, and security management expert for maintaining healthy dependency graphs across package ecosystems. Specializes in vulnerability remediation, version compatibility analysis, dependency updates, breaking change migration, license compliance, and supply chain security. Use for dependency updates, CVE remediation, compatibility analysis, and dependency graph optimization.",
+      "tier": "01-foundation",
+      "path": "agents/01-foundation/dependency-manager.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "dependency-manager"
+    },
+    {
+      "name": "domain-modeling-expert",
+      "description": "Strategic Domain-Driven Design specialist for bounded context identification, event storming facilitation, ubiquitous language definition, aggregate design, and context mapping. Expert in discovering business domains through collaborative modeling, defining domain boundaries, and establishing shared vocabulary. Use for Phase 2 domain modeling, event storming workshops, context map creation, aggregate root design, and strategic DDD before architectural implementation.",
+      "tier": "01-foundation",
+      "path": "agents/01-foundation/domain-modeling-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "domain-modeling-expert"
+    },
+    {
+      "name": "error-diagnostician",
+      "description": "Expert debugging and error analysis specialist for diagnosing runtime errors, compilation issues, test failures, and system problems. Use when troubleshooting errors, analyzing stack traces, or debugging complex issues.",
+      "tier": "01-foundation",
+      "path": "agents/01-foundation/error-diagnostician.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "error-diagnostician"
+    },
+    {
+      "name": "performance-optimization-specialist",
+      "description": "Performance expert for optimization, speed improvement, Core Web Vitals, database performance, caching, CDN, load balancing, API latency, memory optimization, bottleneck identification, profiling, monitoring, scalability, and system performance tuning. Use for slow applications, performance issues, optimization strategies, and scalability challenges.",
+      "tier": "01-foundation",
+      "path": "agents/01-foundation/performance-optimization-specialist.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "performance-optimization-specialist"
+    },
+    {
+      "name": "refactoring-specialist",
+      "description": "Safe code refactoring expert for improving code quality without changing behavior. Specializes in extracting functions, eliminating duplication, improving naming, reducing complexity, applying design patterns, and modernizing legacy code using test-driven refactoring techniques. Use for technical debt reduction, code modernization, architecture improvement, and maintaining backwards compatibility.",
+      "tier": "01-foundation",
+      "path": "agents/01-foundation/refactoring-specialist.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "refactoring-specialist"
+    },
+    {
+      "name": "system-design-specialist",
+      "description": "System design expert for distributed systems, microservices, scalability, load balancing, caching, database design, message queues, event-driven architecture, high availability, fault tolerance, CAP theorem, consensus algorithms, and large-scale architecture. Use for system architecture, distributed system design, scalability planning, and handling millions of users.",
+      "tier": "01-foundation",
+      "path": "agents/01-foundation/system-design-specialist.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "system-design-specialist"
+    },
+    {
+      "name": "test-engineer",
+      "description": "Expert test automation specialist for creating comprehensive test suites, implementing testing strategies, and ensuring code quality through automated testing. Use when writing tests, setting up test frameworks, or improving test coverage.",
+      "tier": "01-foundation",
+      "path": "agents/01-foundation/test-engineer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "test-engineer"
+    },
+    {
+      "name": "bash-expert",
+      "description": "Shell scripting and command-line automation specialist for Bash, Zsh, and POSIX-compliant scripts. Expert in process management, file manipulation, text processing (sed, awk, grep), system administration, error handling, pipeline composition, and cross-platform compatibility. Use for build scripts, deployment automation, system monitoring, log processing, CI/CD tooling, and infrastructure bootstrapping.",
+      "tier": "02-development",
+      "path": "agents/02-development/bash-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "bash-expert"
+    },
+    {
+      "name": "frontend-expert",
+      "description": "Frontend development expert specializing in React 18+, Vue 3, Angular 17+, modern UI patterns, component architecture, state management, performance optimization, accessibility (WCAG 2.1), responsive design, and progressive web apps. Use for UI component design, frontend architecture, build optimization, and user experience implementation.",
+      "tier": "02-development",
+      "path": "agents/02-development/frontend-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "frontend-expert"
+    },
+    {
+      "name": "go-expert",
+      "description": "Senior Go engineer for cloud-native microservices, concurrent systems, CLI tools, and distributed applications using Go 1.21+. Specializes in goroutines/channels, context patterns, interface design, standard library mastery, cloud SDK integration (AWS, GCP, Azure), Kubernetes operators, and production observability. Use for Go development, microservices architecture, cloud services, and high-concurrency systems.",
+      "tier": "02-development",
+      "path": "agents/02-development/go-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "go-expert"
+    },
+    {
+      "name": "mobile-specialist",
+      "description": "Principal mobile engineer for iOS (SwiftUI, UIKit) and Android (Kotlin, Jetpack) plus cross-platform stacks (React Native 0.73+, Flutter 3.16+). Handles architecture, native modules, performance profiling, release automation, and mobile CI/CD. Use for feature delivery, platform audits, and mobile modernization.",
+      "tier": "02-development",
+      "path": "agents/02-development/mobile-specialist.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "mobile-specialist"
+    },
+    {
+      "name": "python-expert",
+      "description": "Senior Python engineer for production services using Python 3.11+, FastAPI, Django, async workers (Celery, Dramatiq), data workflows (pandas, SQLAlchemy), type safety (PEP 484, mypy), packaging (Poetry, Hatch), and performance tuning. Use for backend feature delivery, library design, refactoring, and Python-specific troubleshooting.",
+      "tier": "02-development",
+      "path": "agents/02-development/python-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "python-expert"
+    },
+    {
+      "name": "rust-expert",
+      "description": "Senior Rust engineer for systems programming, performance-critical applications, CLI tools, WebAssembly, and embedded systems using Rust 2021+ edition. Specializes in ownership/borrowing mastery, async runtime selection (Tokio, async-std), zero-cost abstractions, unsafe code safety, FFI/interop, and production-grade error handling with thiserror/anyhow. Use for Rust development, performance optimization, memory safety verification, and systems-level programming.",
+      "tier": "02-development",
+      "path": "agents/02-development/rust-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "rust-expert"
+    },
+    {
+      "name": "typescript-architect",
+      "description": "Senior TypeScript architect for Node.js 20+, Bun, Deno, and modern frontend stacks (React 18, Next.js 14, Remix). Specializes in advanced typing, runtime safety, build tooling, monorepo design, and end-to-end type sharing. Use for TypeScript platform upgrades, API contracts, build optimization, and DX improvements.",
+      "tier": "02-development",
+      "path": "agents/02-development/typescript-architect.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "typescript-architect"
+    },
+    {
+      "name": "aws-cloud-architect",
+      "description": "AWS expert for CloudFormation, CDK, EC2, Lambda, ECS/EKS, S3, RDS, DynamoDB, VPC, IAM, Well-Architected Framework, serverless architectures, auto-scaling, cost optimization, security (KMS, WAF, GuardDuty), compliance, multi-region deployments, and cloud migration strategies. Use for AWS infrastructure design, cloud architecture, and production deployments.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/aws-cloud-architect.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "aws-cloud-architect"
+    },
+    {
+      "name": "backend-architect",
+      "description": "Principal backend architect for service design, REST/GraphQL APIs, event-driven systems, microservices decomposition, messaging (Kafka, RabbitMQ), resilience patterns (circuit breakers, retries), and deployment across containers and serverless. Use for end-to-end backend planning, implementation blueprints, and modernization efforts.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/backend-architect.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "backend-architect"
+    },
+    {
+      "name": "data-pipeline-engineer",
+      "description": "Data engineering expert for Apache Spark, Airflow, Kafka, ETL/ELT pipelines, data lakes, streaming processing, batch processing, dbt, Snowflake, BigQuery, data quality (Great Expectations), data orchestration, real-time analytics, and feature engineering. Use for data pipeline architecture, stream processing, data warehousing, and data platform development.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/data-pipeline-engineer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "data-pipeline-engineer"
+    },
+    {
+      "name": "database-architect",
+      "description": "Senior database architect for relational modeling (PostgreSQL, MySQL), distributed data stores (CockroachDB, DynamoDB, MongoDB), migration strategy, performance tuning, indexing, replication, sharding, backup/DR, and data governance. Use for schema design, query optimization, multi-region planning, and compliance-ready storage solutions.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/database-architect.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "database-architect"
+    },
+    {
+      "name": "devops-automation-expert",
+      "description": "DevOps expert for CI/CD pipelines (GitHub Actions, GitLab CI, Jenkins), infrastructure as code (Terraform, Ansible), GitOps (ArgoCD, Flux), Kubernetes, Docker, monitoring (Prometheus, Grafana), automation, deployment strategies, developer productivity, and operational excellence. Use for pipeline setup, automation, deployment, infrastructure management, and DevOps transformation.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/devops-automation-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "devops-automation-expert"
+    },
+    {
+      "name": "event-driven-architect",
+      "description": "Event-driven architecture specialist for event sourcing, CQRS, message-driven systems, saga patterns, event streaming, and distributed choreography. Expert in Apache Kafka, RabbitMQ, AWS EventBridge/SNS/SQS, event schema design, eventual consistency, and reactive patterns. Use for designing event-driven systems, implementing CQRS/ES, building message-driven microservices, and ensuring reliable event processing with idempotency and exactly-once semantics.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/event-driven-architect.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "event-driven-architect"
+    },
+    {
+      "name": "full-stack-architect",
+      "description": "Full-stack expert for React, Next.js, Vue, Angular, Node.js, TypeScript, modern web apps, state management (Redux, Zustand), API integration, database design, authentication, deployment, performance optimization (Core Web Vitals), testing, and cloud deployment. Use for web application architecture, frontend/backend development, and modern JavaScript/TypeScript projects.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/full-stack-architect.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "full-stack-architect"
+    },
+    {
+      "name": "kubernetes-architect",
+      "description": "Kubernetes orchestration and cloud-native architecture specialist for container platform design, workload scheduling, service mesh integration, autoscaling, multi-tenancy, GitOps, observability, and production operations. Expert in K8s 1.28+, Helm, Kustomize, Istio, ArgoCD, and CNCF ecosystem. Use for cluster architecture, deployment strategies, operator development, networking policies, storage orchestration, and production hardening.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/kubernetes-architect.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "kubernetes-architect"
+    },
+    {
+      "name": "observability-engineer",
+      "description": "Observability architect covering metrics (Prometheus, CloudWatch, Datadog), logging (ELK/OpenSearch, Loki), tracing (OpenTelemetry, Jaeger), SLO/SLA design, alerting, incident response, and telemetry automation. Use for instrumentation strategy, dashboard design, alert hygiene, and reliability insights across services.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/observability-engineer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "observability-engineer"
+    },
+    {
+      "name": "sre-incident-responder",
+      "description": "Site reliability incident responder for high-severity production events—owns detection, triage, mitigation, post-incident analysis, and runbook automation. Expert with Kubernetes, cloud infrastructure, observability platforms, paging hygiene, and continuous improvement. Use for on-call readiness, incident war room leadership, and resilience upgrades.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/sre-incident-responder.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "sre-incident-responder"
+    },
+    {
+      "name": "terraform-expert",
+      "description": "Infrastructure as Code specialist for Terraform/OpenTofu with expertise in multi-cloud provisioning (AWS, Azure, GCP), state management, module design, testing, security, and compliance. Expert in Terraform 1.6+, provider development, workspace management, policy as code (OPA, Sentinel), and CI/CD integration. Use for infrastructure automation, cloud resource provisioning, state migration, module development, and IaC best practices.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/terraform-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "terraform-expert"
+    },
+    {
+      "name": "machine-learning-engineer",
+      "description": "ML/AI expert for PyTorch, TensorFlow, MLOps, model training, deployment, MLflow, Kubeflow, feature engineering, model serving, distributed training, A/B testing, model monitoring, data pipelines, neural networks, deep learning, and production ML systems. Use for machine learning projects, AI implementation, model deployment, and MLOps pipelines.",
+      "tier": "04-experts",
+      "path": "agents/04-experts/machine-learning-engineer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "machine-learning-engineer"
+    },
+    {
+      "name": "product-owner",
+      "description": "Product ownership specialist for requirements analysis, user story creation, backlog management, and acceptance criteria definition. Expert in agile methodologies, user journey mapping, feature prioritization, stakeholder management, and translating business needs into actionable technical requirements. Use for requirements gathering, user story writing, backlog refinement, acceptance criteria definition, and bridging business-technical communication.",
+      "tier": "06-integration",
+      "path": "agents/06-integration/product-owner.md",
+      "tools": [
+        "Read",
+        "Write",
+        "Grep",
+        "Glob",
+        "WebSearch"
+      ],
+      "enhanced_capabilities": [],
+      "subagent_type": "product-owner"
+    },
+    {
+      "name": "research-librarian",
+      "description": "Research specialist for discovering, vetting, and summarizing authoritative sources (RFCs, vendor docs, specs, standards). Use for exploratory questions, comparative analysis, and unknown URLs. Prioritize primary sources; produce concise findings with citations and handoff links for follow‑up work.",
+      "tier": "06-integration",
+      "path": "agents/06-integration/research-librarian.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "research-librarian"
+    },
+    {
+      "name": "tech-writer",
+      "description": "Technical documentation specialist for end-user guides, API documentation, developer onboarding, tutorials, troubleshooting guides, and knowledge base articles. Expert in documentation-as-code (Markdown, MDX, reStructuredText), information architecture, content strategy, accessibility (plain language, inclusive writing), and documentation platforms (GitBook, Docusaurus, ReadTheDocs, Confluence). Use for creating user documentation, API references, quickstart guides, FAQs, and maintaining documentation systems.",
+      "tier": "06-integration",
+      "path": "agents/06-integration/tech-writer.md",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Grep",
+        "Glob",
+        "WebSearch",
+        "WebFetch"
+      ],
+      "enhanced_capabilities": [],
+      "subagent_type": "tech-writer"
+    },
+    {
+      "name": "technical-documentation-specialist",
+      "description": "Reviews and improves technical documentation quality across ADRs, READMEs, API documentation, architecture diagrams, runbooks, and specifications. Enhances structure, clarity, consistency, and completeness without creating domain content. Focuses on technical writing standards, information architecture, C4 diagrams, OpenAPI specs, and documentation patterns for maximum developer effectiveness.",
+      "tier": "06-integration",
+      "path": "agents/06-integration/technical-documentation-specialist.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "technical-documentation-specialist"
+    },
+    {
+      "name": "security-architect",
+      "description": "Security expert for application security, threat modeling, OWASP Top 10, secure coding, authentication, authorization, encryption, compliance (GDPR, PCI-DSS, SOC2), vulnerability assessment, penetration testing, security architecture, incident response, and defense-in-depth strategies. Use for security issues, compliance, threat analysis, secure design, and security implementation.",
+      "tier": "07-quality",
+      "path": "agents/07-quality/security-architect.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "security-architect"
+    },
+    {
+      "name": "algorithmic-trading-engineer",
+      "description": "Algorithmic trading execution and order management specialist for live trading systems. Expert in multi-broker integration (Alpaca, E*TRADE, Fidelity), order management systems (OMS), execution algorithms (TWAP, VWAP, iceberg), order types (market, limit, stop-loss, trailing stop, bracket orders), position reconciliation, trade logging, and real-time monitoring. Use for broker API integration, order execution, live trading deployment, and production trading system implementation.",
+      "tier": "08-finance",
+      "path": "agents/08-finance/algorithmic-trading-engineer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "algorithmic-trading-engineer"
+    },
+    {
+      "name": "equity-research-analyst",
+      "description": "Equity research and fundamental analysis specialist for stock selection and valuation. Expert in financial statement analysis, valuation models (DCF, P/E, P/B, EV/EBITDA comparables), financial ratios (ROE, ROA, debt ratios, margins), earnings analysis, industry benchmarking, and fundamental screening. Use for fundamental analysis, stock screening, valuation, financial modeling, and company research for stocks and options.",
+      "tier": "08-finance",
+      "path": "agents/08-finance/equity-research-analyst.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "equity-research-analyst"
+    },
+    {
+      "name": "market-data-engineer",
+      "description": "Financial market data specialist for real-time and historical data acquisition, processing, and quality assurance. Expert in market data feeds (WebSocket, REST APIs), time-series storage (TimescaleDB, QuestDB, InfluxDB), OHLCV data pipelines, options chain data, corporate actions, and data quality monitoring. Use for market data infrastructure, exchange connectivity, broker data integration (Alpaca, Fidelity, E*TRADE), and financial data quality management for stocks and options.",
+      "tier": "08-finance",
+      "path": "agents/08-finance/market-data-engineer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "market-data-engineer"
+    },
+    {
+      "name": "portfolio-manager",
+      "description": "Multi-strategy portfolio construction specialist. Aggregates trading signals from quantitative, fundamental, and ML sources into diversified portfolios. Handles capital allocation, rebalancing strategies, and performance attribution across multiple trading strategies.",
+      "tier": "08-finance",
+      "path": "agents/08-finance/portfolio-manager.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "portfolio-manager"
+    },
+    {
+      "name": "quantitative-analyst",
+      "description": "Quantitative analysis specialist for technical indicators, statistical models, and mathematical trading research. Expert in technical analysis (RSI, MACD, Bollinger Bands), options Greeks, statistical arbitrage, time-series analysis, volatility modeling (GARCH), mean reversion, momentum strategies, and feature engineering. Use for quant research, alpha generation, signal development, and mathematical strategy design for stocks and options.",
+      "tier": "08-finance",
+      "path": "agents/08-finance/quantitative-analyst.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "quantitative-analyst"
+    },
+    {
+      "name": "trading-compliance-officer",
+      "description": "Trading compliance and regulatory specialist for retail trading rules. Expert in Pattern Day Trader (PDT) rules, wash sale tracking, trade reporting, regulatory compliance (FINRA, SEC), best execution monitoring, audit trail generation, tax reporting (1099-B), account restrictions, and trading rule enforcement. Use for compliance checking, regulatory validation, trade reporting, tax documentation, and ensuring adherence to trading regulations for retail traders.",
+      "tier": "08-finance",
+      "path": "agents/08-finance/trading-compliance-officer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "trading-compliance-officer"
+    },
+    {
+      "name": "trading-ml-specialist",
+      "description": "Machine learning specialist for trading applications with trading-specific validation. Expert in feature engineering, supervised learning (price prediction, classification), reinforcement learning (Q-learning, PPO), walk-forward validation, overfitting detection, time-series cross-validation, and ensemble methods. Use for ML-enhanced trading strategies, price prediction, signal generation, and trading-specific machine learning pipelines.",
+      "tier": "08-finance",
+      "path": "agents/08-finance/trading-ml-specialist.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "trading-ml-specialist"
+    },
+    {
+      "name": "trading-risk-manager",
+      "description": "Trading risk management and portfolio optimization specialist for capital preservation. Expert in position sizing (Kelly criterion, fixed fractional), portfolio optimization (mean-variance, risk parity, Black-Litterman), VaR/CVaR calculations, correlation analysis, drawdown monitoring, exposure limits, and real-time risk tracking. Use for risk assessment, position sizing, portfolio construction, risk limit enforcement, and capital allocation for stocks and options portfolios.",
+      "tier": "08-finance",
+      "path": "agents/08-finance/trading-risk-manager.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "trading-risk-manager"
+    },
+    {
+      "name": "trading-strategy-architect",
+      "description": "Trading strategy design and backtesting specialist for systematic strategy development. Expert in backtesting frameworks (vectorbt, backtrader, zipline), walk-forward analysis, parameter optimization, strategy validation, performance metrics (Sharpe, Sortino, Calmar), transaction cost modeling, and multi-timeframe strategies. Use for strategy design, backtest implementation, and systematic trading system architecture for stocks and options.",
+      "tier": "08-finance",
+      "path": "agents/08-finance/trading-strategy-architect.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "trading-strategy-architect"
+    }
+  ],
+  "tiers": [
+    "00-meta",
+    "01-foundation",
+    "02-development",
+    "03-specialists",
+    "04-experts",
+    "06-integration",
+    "07-quality",
+    "08-finance"
+  ]
+}

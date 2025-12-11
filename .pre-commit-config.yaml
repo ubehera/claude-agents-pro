@@ -1,0 +1,66 @@
+# Pre-commit hooks for claude-agents-pro
+# Install: pre-commit install
+# Run manually: pre-commit run --all-files
+
+repos:
+  # Local repository hooks
+  - repo: local
+    hooks:
+      # Agent frontmatter validation
+      - id: verify-agents
+        name: Verify Agent Frontmatter
+        entry: ./scripts/verify-agents.sh
+        language: script
+        files: ^agents/.*\.md$
+        exclude: ^agents/(README|TESTING|AGENT_CHECKLIST|.*-glossary)\.md$
+        pass_filenames: false
+
+      # Quality score threshold check
+      - id: quality-check
+        name: Quality Score Check
+        entry: python3 scripts/quality-scorer.py --min-score 70 --agents-dir agents
+        language: python
+        files: ^agents/.*\.md$
+        exclude: ^agents/(README|TESTING|AGENT_CHECKLIST|.*-glossary)\.md$
+        pass_filenames: false
+        additional_dependencies: [pyyaml]
+
+      # JSON Schema validation
+      - id: schema-validate
+        name: JSON Schema Validation
+        entry: python3 scripts/schema-validator.py --ci --quiet
+        language: python
+        files: ^agents/.*\.md$
+        exclude: ^agents/(README|TESTING|AGENT_CHECKLIST|.*-glossary)\.md$
+        pass_filenames: false
+        additional_dependencies: [pyyaml, jsonschema]
+
+  # Standard pre-commit hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^(.*\.md|.*\.txt)$
+      - id: end-of-file-fixer
+        exclude: ^(.*\.md|.*\.txt)$
+      - id: check-yaml
+        files: \.(yaml|yml)$
+      - id: check-json
+        files: \.json$
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  # Markdown linting
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.38.0
+    hooks:
+      - id: markdownlint
+        args: ['--config', '.markdownlint.json', '--fix']
+        exclude: ^(CHANGELOG\.md|node_modules/)
+
+# Configuration
+fail_fast: false
+default_language_version:
+  python: python3

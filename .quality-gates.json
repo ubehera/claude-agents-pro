@@ -1,0 +1,27 @@
+{
+  "project": "claude-agents-pro",
+  "description": "Quality gate configuration for agent development",
+  "thresholds": {
+    "analysis": 95,
+    "implementation": 80,
+    "validation": 85
+  },
+  "phase1": {
+    "requirements_complete": true,
+    "domain_model_validated": true,
+    "architecture_documented": true,
+    "risks_identified": true
+  },
+  "phase2": {
+    "test_coverage": 85,
+    "security_scan": "pass",
+    "lint_errors": 0,
+    "code_review": "pass"
+  },
+  "phase3": {
+    "integration_tests": "pass",
+    "performance_benchmarks": "pass",
+    "documentation_complete": true,
+    "acceptance_criteria_met": true
+  }
+}

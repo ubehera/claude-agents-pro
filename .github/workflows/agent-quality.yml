@@ -1,0 +1,274 @@
+name: Agent Quality Gate
+
+on:
+  pull_request:
+    paths:
+      - 'agents/**/*.md'
+      - '!agents/README.md'
+      - '!agents/TESTING.md'
+      - '!agents/AGENT_CHECKLIST.md'
+      - '!agents/**/*-glossary.md'
+      - 'schemas/**/*.json'
+      - 'scripts/**/*'
+      - '.github/workflows/agent-quality.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'agents/**/*.md'
+      - '!agents/README.md'
+      - '!agents/TESTING.md'
+      - '!agents/AGENT_CHECKLIST.md'
+      - '!agents/**/*-glossary.md'
+
+jobs:
+  # Phase 1: Structural Validation
+  validate-structure:
+    name: Validate Agent Structure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate agent frontmatter
+        run: |
+          chmod +x scripts/verify-agents.sh
+          ./scripts/verify-agents.sh
+
+      - name: Check naming consistency
+        run: |
+          echo "Checking agent naming conventions..."
+
+          while IFS= read -r file; do
+            if [[ -f "$file" ]]; then
+              name=$(sed -n '1,20p' "$file" | awk -F: '/^name:/ {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2; exit}')
+              basename=$(basename "$file")
+              expected="${basename%.md}"
+
+              if [[ -n "$name" && "$name" != "$expected" ]]; then
+                echo "❌ File $file has name field '$name' but should be '$expected'"
+                exit 1
+              fi
+            fi
+          done < <(find agents -mindepth 2 -type f -name '*.md' ! -name 'README.md' ! -name 'TESTING.md' ! -name 'AGENT_CHECKLIST.md' ! -name '*-glossary.md')
+
+          echo "✅ All agent file names match their name fields"
+
+      - name: Check for duplicate names
+        run: |
+          echo "Checking for duplicate agent names..."
+
+          duplicates=$(find agents -mindepth 2 -type f -name '*.md' ! -name 'README.md' ! -name 'TESTING.md' ! -name 'AGENT_CHECKLIST.md' ! -name '*-glossary.md' -exec basename {} .md \; | sort | uniq -d)
+
+          if [[ -n "$duplicates" ]]; then
+            echo "❌ Duplicate agent names found:"
+            echo "$duplicates"
+            exit 1
+          fi
+
+          echo "✅ No duplicate agent names found"
+
+  # Phase 2: Schema Validation
+  validate-schema:
+    name: Validate JSON Schema
+    runs-on: ubuntu-latest
+    needs: validate-structure
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install pyyaml jsonschema
+
+      - name: Validate against schema
+        run: |
+          python3 scripts/schema-validator.py --ci --output schema-report.json
+
+      - name: Upload schema validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: schema-validation-report
+          path: schema-report.json
+          retention-days: 30
+
+  # Phase 3: Quality Scoring
+  quality-check:
+    name: Quality Score Validation
+    runs-on: ubuntu-latest
+    needs: validate-schema
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install pyyaml
+
+      - name: Run quality scorer
+        id: quality
+        run: |
+          # For CI, use 85 minimum score
+          # For local development (pre-commit), use 70
+          MIN_SCORE=85
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            MIN_SCORE=85
+          fi
+
+          python3 scripts/quality-scorer.py \
+            --min-score $MIN_SCORE \
+            --agents-dir agents \
+            --output quality-report.json
+
+      - name: Upload quality report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-score-report
+          path: quality-report.json
+          retention-days: 30
+
+      - name: Generate quality summary
+        if: always()
+        run: |
+          if [ -f quality-report.json ]; then
+            echo "# Quality Score Summary" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+
+            total=$(jq -r '.summary.total' quality-report.json)
+            passed=$(jq -r '.summary.passed' quality-report.json)
+            failed=$(jq -r '.summary.failed' quality-report.json)
+            avg_score=$(jq -r '.summary.average_score' quality-report.json)
+
+            echo "**Total Agents:** $total" >> $GITHUB_STEP_SUMMARY
+            echo "**Passed:** $passed" >> $GITHUB_STEP_SUMMARY
+            echo "**Failed:** $failed" >> $GITHUB_STEP_SUMMARY
+            echo "**Average Score:** $avg_score" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+
+            if [ "$failed" -gt 0 ]; then
+              echo "## Failed Agents" >> $GITHUB_STEP_SUMMARY
+              jq -r '.agents[] | select(.passed == false) | "- **\(.name)**: \(.score)/100"' quality-report.json >> $GITHUB_STEP_SUMMARY
+            fi
+          fi
+
+  # Phase 4: Generate Registry (main branch only)
+  generate-registry:
+    name: Generate Agent Registry
+    runs-on: ubuntu-latest
+    needs: quality-check
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install pyyaml
+
+      - name: Generate registry files
+        run: |
+          python3 scripts/generate-registry.py \
+            --agents-dir agents \
+            --output-metadata configs/agent-metadata.json \
+            --output-marketplace configs/marketplace.json \
+            --output-registry registry.json
+
+      - name: Validate registry files
+        run: |
+          for file in configs/agent-metadata.json configs/marketplace.json registry.json; do
+            if [ ! -f "$file" ]; then
+              echo "::error::$file was not generated"
+              exit 1
+            fi
+
+            if ! jq empty "$file" 2>/dev/null; then
+              echo "::error::$file contains invalid JSON"
+              exit 1
+            fi
+          done
+
+          echo "✅ All registry files generated successfully"
+
+      - name: Generate registry statistics
+        run: |
+          echo "# Agent Registry Statistics" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Total Agents:** $(jq -r '.total_agents' registry.json)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Tiers:**" >> $GITHUB_STEP_SUMMARY
+          jq -r '.tiers[]' registry.json | while read tier; do
+            count=$(jq -r ".agents | map(select(.tier == \"$tier\")) | length" registry.json)
+            echo "- $tier: $count agents" >> $GITHUB_STEP_SUMMARY
+          done
+
+      - name: Commit registry files
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add configs/agent-metadata.json configs/marketplace.json registry.json
+
+          if git diff --staged --quiet; then
+            echo "No changes to registry files"
+            exit 0
+          fi
+
+          git commit -m "chore: update agent registry [skip ci]"
+          git push
+
+  # Summary job
+  quality-gate-summary:
+    name: Quality Gate Summary
+    runs-on: ubuntu-latest
+    needs: [validate-structure, validate-schema, quality-check]
+    if: always()
+
+    steps:
+      - name: Check all jobs status
+        run: |
+          if [[ "${{ needs.validate-structure.result }}" != "success" ]] || \
+             [[ "${{ needs.validate-schema.result }}" != "success" ]] || \
+             [[ "${{ needs.quality-check.result }}" != "success" ]]; then
+            echo "::error::Quality gate failed. Please check the logs above for details."
+            exit 1
+          fi
+
+          echo "✅ All quality gates passed!"
+
+      - name: Generate final summary
+        if: always()
+        run: |
+          echo "# Quality Gate Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Phase | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Structure Validation | ${{ needs.validate-structure.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Schema Validation | ${{ needs.validate-schema.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Quality Check | ${{ needs.quality-check.result }} |" >> $GITHUB_STEP_SUMMARY
