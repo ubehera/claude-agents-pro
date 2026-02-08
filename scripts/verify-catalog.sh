@@ -11,25 +11,31 @@ echo "Verifying agent catalog consistency..."
 # Extract agent names from README table (lines with | starting after ## Active Agents)
 # Format: | `agent-name` | tier | domain | tools |
 readme_agents=$(sed -n '/^## Active Agents/,/^##/p' "$README" | \
-  grep '^\|' | \
+  grep '^|' | \
   grep -v '^| Agent' | \
   grep -v '^|----' | \
   grep -v '^##' | \
-  grep -oP '\| `\K[^`]+' | \
+  sed -n 's/^| *`\([^`]*\)`.*/\1/p' | \
   sort -u)
 
-# Find actual agent files (exclude README.md, TESTING.md, AGENT_CHECKLIST.md, finance-glossary.md)
+# Find actual agent files (exclude README.md, TESTING.md, AGENT_CHECKLIST.md)
 actual_agents=$(find "$AGENTS_DIR" -type f -name '*.md' \
   ! -name 'README.md' \
   ! -name 'TESTING.md' \
   ! -name 'AGENT_CHECKLIST.md' \
-  ! -name 'finance-glossary.md' \
   -exec basename {} .md \; | \
   sort -u)
 
-# Convert to arrays for comparison
-readarray -t readme_array <<< "$readme_agents"
-readarray -t actual_array <<< "$actual_agents"
+# Convert to arrays for comparison (compatible with Bash 3.2)
+readme_array=()
+while IFS= read -r line; do
+  [[ -n "$line" ]] && readme_array+=("$line")
+done <<< "$readme_agents"
+
+actual_array=()
+while IFS= read -r line; do
+  [[ -n "$line" ]] && actual_array+=("$line")
+done <<< "$actual_agents"
 
 # Count
 readme_count=${#readme_array[@]}
@@ -87,7 +93,7 @@ fi
 parent_readme="$SCRIPT_DIR/../README.md"
 if [ -f "$parent_readme" ]; then
   # Extract agent count from badge or text
-  badge_count=$(grep -oP 'agents-\K\d+' "$parent_readme" | head -1)
+  badge_count=$(grep -oE 'agents-[0-9]+' "$parent_readme" | head -1 | sed 's/agents-//')
 
   if [ -n "$badge_count" ] && [ "$badge_count" != "$actual_count" ]; then
     echo ""

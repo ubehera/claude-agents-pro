@@ -32,7 +32,7 @@ Frontmatter Fields:
   description: Brief command purpose
   args: <required> [optional] [--flag value]
   tools: Specific tools with restrictions (e.g., Bash(npm test:*))
-  model: claude-opus-4-1 or claude-sonnet-4-5
+  model: opus or sonnet
 ```
 
 ## Command Catalog
@@ -183,7 +183,7 @@ Frontmatter Fields:
    description: Clear, concise description
    args: <required> [optional] [--flag value]
    tools: Task, Read  # Minimal permissions
-   model: claude-sonnet-4-5  # Or claude-opus-4-1 for complex orchestration
+   model: sonnet  # Or opus for complex orchestration
    ---
    ```
 
@@ -195,9 +195,6 @@ Frontmatter Fields:
 
 4. **Test thoroughly**:
    ```bash
-   # Validate command structure
-   ./scripts/verify-commands.sh
-
    # Test with sample inputs
    /your-command "test input"
    ```

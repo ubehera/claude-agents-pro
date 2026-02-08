@@ -5,6 +5,7 @@ Evaluates agents against comprehensive quality metrics
 """
 
 import json
+import sys
 import yaml
 import os
 import re
@@ -16,21 +17,23 @@ from datetime import datetime
 @dataclass
 class QualityMetrics:
     """Quality scoring metrics for agents"""
-    completeness: float = 0.0      # 25% - Content coverage and thoroughness
-    accuracy: float = 0.0          # 25% - Technical accuracy and correctness
+    completeness: float = 0.0      # 20% - Content coverage and thoroughness
+    accuracy: float = 0.0          # 20% - Technical accuracy and correctness
     usability: float = 0.0         # 20% - Ease of use and clear instructions
     performance: float = 0.0       # 15% - Tool usage and efficiency
-    maintainability: float = 0.0   # 15% - Code quality and documentation
+    maintainability: float = 0.0   # 10% - Code quality and documentation
+    security: float = 0.0          # 15% - Security patterns and practices
 
     @property
     def overall_score(self) -> float:
         """Calculate weighted overall score"""
         weights = {
-            'completeness': 0.25,
-            'accuracy': 0.25,
+            'completeness': 0.20,
+            'accuracy': 0.20,
             'usability': 0.20,
             'performance': 0.15,
-            'maintainability': 0.15
+            'maintainability': 0.10,
+            'security': 0.15
         }
 
         return (
@@ -38,7 +41,8 @@ class QualityMetrics:
             self.accuracy * weights['accuracy'] +
             self.usability * weights['usability'] +
             self.performance * weights['performance'] +
-            self.maintainability * weights['maintainability']
+            self.maintainability * weights['maintainability'] +
+            self.security * weights['security']
         )
 
 class AgentQualityScorer:
@@ -63,7 +67,19 @@ class AgentQualityScorer:
             'tool_optimization_threshold': 7,  # Max recommended tools
             'code_example_requirement': True,
             'mcp_integration_bonus': 0.2,
-            'collaboration_section_bonus': 0.1
+            'collaboration_section_bonus': 0.1,
+            'security_patterns': {
+                'hardcoded_secrets': r'(api[_-]?key|secret[_-]?key|password|token)\s*[:=]\s*["\'][^"\']{8,}',
+                'dangerous_commands': r'rm\s+-rf\s+[/$~]|sudo\s+rm|chmod\s+777|>\s*/dev/sda',
+                'secrets_file_refs': r'\.(env|pem|key|credentials|secrets)\b',
+                'prompt_injection': r'ignore\s+(previous|above|all)\s+instructions|do\s+whatever|you\s+are\s+now',
+                'unsafe_eval': r'eval\s*\(|exec\s*\('
+            },
+            'positive_security_patterns': [
+                'authentication', 'authorization', 'encryption', 'validation',
+                'sanitize', 'escape', 'OWASP', 'security', 'vulnerability',
+                'secure', 'protect', 'permission', 'access control'
+            ]
         }
 
     def evaluate_agent(self, agent_file: Path) -> Tuple[QualityMetrics, Dict]:
@@ -81,13 +97,15 @@ class AgentQualityScorer:
             usability = self._evaluate_usability(frontmatter, body)
             performance = self._evaluate_performance(frontmatter, body)
             maintainability = self._evaluate_maintainability(frontmatter, body)
+            security = self._evaluate_security(frontmatter, body)
 
             metrics = QualityMetrics(
                 completeness=completeness,
                 accuracy=accuracy,
                 usability=usability,
                 performance=performance,
-                maintainability=maintainability
+                maintainability=maintainability,
+                security=security
             )
 
             # Detailed analysis
@@ -117,7 +135,7 @@ class AgentQualityScorer:
             return {}, content
 
     def _evaluate_completeness(self, frontmatter: Dict, body: str) -> float:
-        """Evaluate content completeness (25%)"""
+        """Evaluate content completeness (20%)"""
         score = 0.0
 
         # Required frontmatter fields (20%)
@@ -149,7 +167,7 @@ class AgentQualityScorer:
         return min(score, 1.0)
 
     def _evaluate_accuracy(self, frontmatter: Dict, body: str) -> float:
-        """Evaluate technical accuracy (25%)"""
+        """Evaluate technical accuracy (20%)"""
         score = 0.0
 
         # Proper YAML structure (30%)
@@ -259,6 +277,64 @@ class AgentQualityScorer:
         score += doc_score * 0.15
 
         return min(score, 1.0)
+
+    def _evaluate_security(self, frontmatter: Dict, body: str) -> float:
+        """Evaluate security patterns and practices (15%)"""
+        score = 1.0  # Start with perfect score, deduct for issues
+
+        security_patterns = self.quality_standards['security_patterns']
+        content = body.lower()
+
+        # Check for negative patterns (deductions)
+        deductions = 0.0
+
+        # Hardcoded secrets (-0.3 per occurrence, max -0.6)
+        secret_matches = len(re.findall(security_patterns['hardcoded_secrets'], body, re.IGNORECASE))
+        if secret_matches > 0:
+            # Check if it's in a "don't do this" context
+            if not re.search(r'(avoid|never|don\'t|do not|bad practice)', content):
+                deductions += min(secret_matches * 0.3, 0.6)
+
+        # Dangerous commands (-0.25 per occurrence, max -0.5)
+        dangerous_matches = len(re.findall(security_patterns['dangerous_commands'], body))
+        if dangerous_matches > 0:
+            # Check if it's in a warning/cautionary context
+            if not re.search(r'(warning|caution|danger|never|avoid)', content):
+                deductions += min(dangerous_matches * 0.25, 0.5)
+
+        # Secret file references with read operations (-0.15)
+        if re.search(security_patterns['secrets_file_refs'], body, re.IGNORECASE):
+            if re.search(r'(read|cat|source|load)\s', body, re.IGNORECASE):
+                # Check if it's educational context (e.g., .env.example)
+                if not re.search(r'\.example|example\.|template|sample', body, re.IGNORECASE):
+                    deductions += 0.15
+
+        # Prompt injection patterns (-0.4)
+        if re.search(security_patterns['prompt_injection'], body, re.IGNORECASE):
+            deductions += 0.4
+
+        # Unsafe eval/exec without safety context (-0.2)
+        if re.search(security_patterns['unsafe_eval'], body):
+            if not re.search(r'(sandbox|validate|safe|trusted|escape)', content):
+                deductions += 0.2
+
+        # Apply deductions
+        score = max(0.0, score - deductions)
+
+        # Bonus for positive security patterns (up to +0.3)
+        positive_patterns = self.quality_standards['positive_security_patterns']
+        positive_count = sum(1 for pattern in positive_patterns if pattern.lower() in content)
+        bonus = min(positive_count * 0.03, 0.3)
+
+        # Additional bonus for security-focused agents
+        name = frontmatter.get('name', '').lower()
+        description = frontmatter.get('description', '').lower()
+        if 'security' in name or 'security' in description:
+            # Security agents get bonus for comprehensive coverage
+            if positive_count >= 5:
+                bonus += 0.1
+
+        return min(score + bonus, 1.0)
 
     def _validate_yaml_structure(self, frontmatter: Dict) -> bool:
         """Validate YAML frontmatter structure"""
@@ -396,7 +472,8 @@ class AgentQualityScorer:
                 'accuracy': round(metrics.accuracy, 2),
                 'usability': round(metrics.usability, 2),
                 'performance': round(metrics.performance, 2),
-                'maintainability': round(metrics.maintainability, 2)
+                'maintainability': round(metrics.maintainability, 2),
+                'security': round(metrics.security, 2)
             },
             'analysis': {
                 'word_count': len(body.split()),
@@ -404,7 +481,9 @@ class AgentQualityScorer:
                 'sections': body.count('## '),
                 'tools_specified': len(frontmatter.get('tools', [])) if frontmatter.get('tools') else 0,
                 'mcp_integration': 'mcp__' in body.lower() or 'mcp' in body.lower(),
-                'collaboration_section': 'collaborative' in body.lower()
+                'collaboration_section': 'collaborative' in body.lower(),
+                'security_mentions': self._count_security_mentions(body),
+                'security_issues': self._detect_security_issues(body)
             },
             'recommendations': self._generate_recommendations(metrics, frontmatter, body),
             'tier_classification': self._classify_tier(metrics.overall_score),
@@ -430,19 +509,51 @@ class AgentQualityScorer:
         if metrics.maintainability < 0.8:
             recommendations.append("Improve documentation structure and add collaboration patterns")
 
+        if metrics.security < 0.8:
+            recommendations.append("Review for security issues and add security best practices guidance")
+
+        if metrics.security < 0.6:
+            recommendations.append("CRITICAL: Address potential security vulnerabilities in agent prompt")
+
         return recommendations
+
+    def _count_security_mentions(self, body: str) -> int:
+        """Count positive security pattern mentions"""
+        positive_patterns = self.quality_standards['positive_security_patterns']
+        content = body.lower()
+        return sum(1 for pattern in positive_patterns if pattern.lower() in content)
+
+    def _detect_security_issues(self, body: str) -> List[str]:
+        """Detect potential security issues in agent content"""
+        issues = []
+        security_patterns = self.quality_standards['security_patterns']
+
+        if re.search(security_patterns['hardcoded_secrets'], body, re.IGNORECASE):
+            issues.append("potential_hardcoded_secret")
+
+        if re.search(security_patterns['dangerous_commands'], body):
+            issues.append("dangerous_command_pattern")
+
+        if re.search(security_patterns['prompt_injection'], body, re.IGNORECASE):
+            issues.append("prompt_injection_vector")
+
+        if re.search(security_patterns['unsafe_eval'], body):
+            if not re.search(r'(sandbox|validate|safe|trusted|escape)', body.lower()):
+                issues.append("unsafe_eval_exec")
+
+        return issues
 
     def _classify_tier(self, score: float) -> str:
         """Classify agent tier based on quality score"""
-        if score >= 9.0:
+        if score >= 0.90:
             return "Tier 0 - Meta (Orchestration)"
-        elif score >= 8.0:
+        elif score >= 0.80:
             return "Tier 1 - Foundation"
-        elif score >= 7.5:
+        elif score >= 0.75:
             return "Tier 2 - Specialist"
-        elif score >= 7.0:
+        elif score >= 0.70:
             return "Tier 3 - Expert"
-        elif score >= 6.5:
+        elif score >= 0.65:
             return "Tier 4 - Professional"
         else:
             return "Tier 5 - Developing"
@@ -492,7 +603,7 @@ class AgentQualityScorer:
     def _calculate_tier_distribution(self, scores: List[float]) -> Dict[str, int]:
         """Calculate distribution of agents across quality tiers"""
         distribution = {
-            'Tier 0 - Meta': 0,
+            'Tier 0 - Meta (Orchestration)': 0,
             'Tier 1 - Foundation': 0,
             'Tier 2 - Specialist': 0,
             'Tier 3 - Expert': 0,
@@ -514,6 +625,8 @@ def main():
     parser.add_argument("--agents-dir", default="agents", help="Directory containing agent files")
     parser.add_argument("--output", default="quality-report.json", help="Output report file")
     parser.add_argument("--agent", help="Evaluate specific agent file")
+    parser.add_argument('--min-score', type=float, default=None,
+                        help='Minimum quality score (0-100). Exit with error if any agent scores below this.')
 
     args = parser.parse_args()
 
@@ -533,12 +646,33 @@ def main():
             print("\nRecommendations:")
             for rec in analysis['recommendations']:
                 print(f"  - {rec}")
+
+        # Enforce --min-score for single agent
+        if args.min_score is not None:
+            score_pct = metrics.overall_score * 100
+            if score_pct < args.min_score:
+                print(f"\nFAIL: {agent_path.name} scored {score_pct:.1f}, below minimum {args.min_score}")
+                sys.exit(1)
     else:
         # Evaluate all agents
         report = scorer.generate_quality_report(args.output)
         print(f"Quality report generated: {args.output}")
         print(f"Total agents evaluated: {report['summary']['total_agents']}")
         print(f"Average quality score: {report['summary']['average_score']:.2f}")
+
+        # Enforce --min-score across all agents
+        if args.min_score is not None:
+            failing_agents = []
+            for agent_path, data in report['agents'].items():
+                score_pct = data['metrics'].overall_score * 100
+                if score_pct < args.min_score:
+                    failing_agents.append((agent_path, score_pct))
+
+            if failing_agents:
+                print(f"\nFAILING AGENTS (below {args.min_score}):")
+                for name, score_pct in sorted(failing_agents, key=lambda x: x[1]):
+                    print(f"  {name}: {score_pct:.1f}")
+                sys.exit(1)
 
 if __name__ == "__main__":
     main()

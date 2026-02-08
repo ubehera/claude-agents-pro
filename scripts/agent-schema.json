@@ -22,7 +22,7 @@
     },
     "model": {
       "type": "string",
-      "enum": ["claude-haiku-3-5-20250110", "claude-sonnet-4-5-20250929", "claude-opus-4-1-20250805"],
+      "enum": ["claude-opus-4-6", "claude-sonnet-4-5", "claude-haiku-4-5"],
       "description": "Specific Claude model for this agent (optional, defaults to user's default model)"
     },
     "model_rationale": {
@@ -40,7 +40,8 @@
         "specialist",
         "expert",
         "integration",
-        "enterprise"
+        "enterprise",
+        "platform"
       ],
       "description": "Agent category for organizational purposes"
     },

@@ -2,7 +2,7 @@
 description: Complete quality review and deployment pipeline
 args: [target] [--env dev|staging|prod] [--checks all|security|performance]
 tools: Task, TodoWrite, Read, Bash(git:*), Bash(gh:*)
-model: claude-opus-4-1
+model: opus
 ---
 
 # /review-and-deploy - Quality Review & Deployment Pipeline
@@ -186,7 +186,7 @@ development:
 4. Post-rollback analysis coordination
 
 ### Post-Incident Analysis
-**Agent**: `agent-coordinator`
+**Agent**: `orchestration-coordinator`
 1. Multi-agent retrospective coordination
 2. Root cause analysis compilation
 3. Process improvement recommendations

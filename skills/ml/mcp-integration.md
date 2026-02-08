@@ -1,6 +1,7 @@
 ---
 name: mcp-integration
 description: Integrate Model Context Protocol (MCP) servers into Claude Code plugins for external tool and service integration. Use when adding MCP servers, configuring external services, or setting up tool access.
+trigger_keywords: [mcp integration, mcp plugin, mcp config, stdio, sse, mcp server setup, mcp.json, claude code mcp]
 ---
 
 # MCP Integration for Claude Code Plugins
@@ -14,6 +15,18 @@ Model Context Protocol (MCP) enables Claude Code plugins to integrate with exter
 - Provide multiple related tools from a single service
 - Handle OAuth and complex authentication flows
 - Bundle MCP servers with plugins for automatic setup
+
+## Core Concepts
+
+- **Transport Types**: MCP supports stdio (local processes), SSE (server-sent events), HTTP, and WebSocket transports. Use stdio for local/bundled servers, SSE/HTTP for cloud services, and WebSocket for real-time streaming.
+
+- **Tool Namespacing**: MCP tools are namespaced as `mcp__<plugin>_<server>__<tool>`. Pre-allow specific tools in command frontmatter rather than wildcards to maintain security boundaries.
+
+- **Environment Variable Injection**: Use `${VARIABLE}` syntax for credentials and `${CLAUDE_PLUGIN_ROOT}` for portable paths. Never hardcode secrets or absolute paths in configuration.
+
+- **Server Lifecycle**: MCP servers are long-running processes. Use stdio for embedded servers that start with the plugin, or connect to external HTTP/SSE endpoints for shared infrastructure.
+
+- **Security Model**: MCP tools execute with plugin permissions. Validate all inputs, use HTTPS for remote connections, scope OAuth tokens narrowly, and implement rate limiting for external APIs.
 
 ## MCP Server Types
 

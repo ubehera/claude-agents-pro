@@ -29,6 +29,18 @@ Master Retrieval-Augmented Generation (RAG) to build LLM applications that provi
 - Building documentation assistants
 - Creating research tools with source citation
 
+## Core Concepts
+
+- **Embedding Space Semantics**: Embeddings map text to vector space where similar meanings cluster together. Choose embedding models based on your domain - general-purpose (text-embedding-3-large) or domain-specific (e.g., legal, medical embeddings).
+
+- **Chunking Strategy**: Chunk size directly impacts retrieval quality. Smaller chunks (200-500 tokens) give precise retrieval but may lose context. Larger chunks (1000-2000 tokens) preserve context but reduce precision. Use overlap (10-20%) to maintain continuity.
+
+- **Hybrid Search**: Combine dense (embedding) and sparse (BM25/keyword) retrieval. Dense excels at semantic similarity; sparse handles exact terms and rare words. Weight fusion (0.6 dense / 0.4 sparse) often outperforms either alone.
+
+- **Reranking Stage**: Initial retrieval optimizes for recall (find all relevant docs). Add a cross-encoder reranker to optimize for precision (rank the most relevant highest). This two-stage approach balances speed and quality.
+
+- **Grounding and Citation**: RAG reduces hallucination only if the LLM actually uses retrieved context. Prompt for explicit citations, include source metadata, and validate that answers are entailed by the retrieved documents.
+
 ## Core Components
 
 ### 1. Vector Databases

@@ -3,7 +3,7 @@ name: full-stack-architect
 description: Full-stack expert for React, Next.js, Vue, Angular, Node.js, TypeScript, modern web apps, state management (Redux, Zustand), API integration, database design, authentication, deployment, performance optimization (Core Web Vitals), testing, and cloud deployment. Use for web application architecture, frontend/backend development, and modern JavaScript/TypeScript projects.
 category: specialist
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - React and Next.js expertise
   - Node.js backend development

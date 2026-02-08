@@ -8,6 +8,14 @@ trigger_keywords: [garch, egarch, volatility surface, vol surface, implied volat
 
 Advanced volatility modeling with GARCH, volatility surfaces, and term structure analysis.
 
+## Core Concepts
+
+- **Implied vs Realized**: Implied volatility (from options prices) reflects expected future vol; realized is actual historical vol. IV typically exceeds RV (volatility risk premium)
+- **Volatility Clustering**: High volatility tends to follow high volatility (GARCH effect); use for vol forecasting
+- **Term Structure**: Short-term IV vs long-term IV; steep term structure suggests mean reversion, flat/inverted suggests stress
+- **Volatility Smile/Skew**: OTM puts typically have higher IV than OTM calls (crash protection premium); quantify with risk reversal
+- **Yang-Zhang Estimator**: Best volatility estimator for stocks with overnight gaps; uses OHLC data efficiently
+
 ## Realized Volatility
 
 ### Historical Volatility Estimators

@@ -129,9 +129,9 @@ class AgentParser:
 
         # Validate model
         valid_models = [
-            'claude-sonnet-4-5-20250929',
-            'claude-opus-4-5-20251101',
-            'claude-haiku-4-5-20250929'
+            'claude-opus-4-6',
+            'claude-sonnet-4-5',
+            'claude-haiku-4-5'
         ]
         if 'model' in metadata and metadata['model'] not in valid_models:
             errors.append(f"Invalid model: {metadata['model']}")

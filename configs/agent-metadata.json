@@ -14,7 +14,7 @@
             "agent",
             "organizer"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "orchestration-coordinator": {
@@ -26,7 +26,7 @@
             "coordinator",
             "orchestration"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "workflow-validator": {
@@ -38,7 +38,7 @@
             "validator",
             "workflow"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         }
       }
@@ -59,7 +59,7 @@
             "documentation",
             "engineer"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "code-reviewer": {
@@ -73,7 +73,7 @@
             "reviewer",
             "security"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "dependency-manager": {
@@ -87,7 +87,7 @@
             "optimization",
             "security"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "domain-modeling-expert": {
@@ -101,7 +101,7 @@
             "expert",
             "modeling"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "error-diagnostician": {
@@ -114,7 +114,7 @@
             "diagnostician",
             "error"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "performance-optimization-specialist": {
@@ -129,7 +129,7 @@
             "optimization",
             "performance"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "refactoring-specialist": {
@@ -143,7 +143,7 @@
             "refactoring",
             "specialist"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "system-design-specialist": {
@@ -158,7 +158,7 @@
             "specialist",
             "system"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "test-engineer": {
@@ -171,7 +171,7 @@
             "test",
             "testing"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         }
       }
@@ -180,6 +180,21 @@
       "tier": 2,
       "category": "Development",
       "agents": {
+        "angular-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "angular",
+            "architecture",
+            "expert",
+            "frontend",
+            "optimization"
+          ],
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
         "bash-expert": {
           "quality_score": 8.0,
           "dependencies": [],
@@ -191,7 +206,37 @@
             "expert",
             "monitoring"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
+        "csharp-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "architecture",
+            "cloud",
+            "csharp",
+            "expert",
+            "optimization"
+          ],
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
+        "django-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "design",
+            "django",
+            "expert",
+            "optimization",
+            "python"
+          ],
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "frontend-expert": {
@@ -206,7 +251,7 @@
             "frontend",
             "optimization"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "go-expert": {
@@ -221,7 +266,51 @@
             "design",
             "expert"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
+        "java-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "architecture",
+            "cloud",
+            "design",
+            "expert",
+            "java"
+          ],
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
+        "kotlin-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "architecture",
+            "design",
+            "expert",
+            "kotlin"
+          ],
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
+        "laravel-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "api",
+            "architecture",
+            "expert",
+            "laravel",
+            "optimization"
+          ],
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "mobile-specialist": {
@@ -236,7 +325,7 @@
             "performance",
             "react"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "python-expert": {
@@ -251,7 +340,22 @@
             "performance",
             "python"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
+        "rails-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "database",
+            "expert",
+            "optimization",
+            "performance",
+            "rails"
+          ],
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "rust-expert": {
@@ -265,7 +369,22 @@
             "performance",
             "rust"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
+        "spring-boot-expert": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "architecture",
+            "boot",
+            "cloud",
+            "expert",
+            "observability"
+          ],
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "typescript-architect": {
@@ -280,7 +399,7 @@
             "frontend",
             "optimization"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         }
       }
@@ -301,7 +420,22 @@
             "cloud",
             "design"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
+        "azure-cloud-architect": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "architect",
+            "architecture",
+            "azure",
+            "cloud",
+            "design"
+          ],
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "backend-architect": {
@@ -316,7 +450,20 @@
             "graphql",
             "rest"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
+        "chaos-engineer": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "chaos",
+            "engineer",
+            "testing"
+          ],
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "data-pipeline-engineer": {
@@ -330,7 +477,7 @@
             "engineer",
             "pipeline"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "database-architect": {
@@ -345,7 +492,7 @@
             "optimization",
             "performance"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "devops-automation-expert": {
@@ -360,7 +507,7 @@
             "docker",
             "expert"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "event-driven-architect": {
@@ -375,7 +522,7 @@
             "design",
             "driven"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "full-stack-architect": {
@@ -390,7 +537,22 @@
             "backend",
             "cloud"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
+        "gcp-cloud-architect": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "ai",
+            "architect",
+            "architecture",
+            "cloud",
+            "design"
+          ],
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "kubernetes-architect": {
@@ -405,7 +567,7 @@
             "design",
             "kubernetes"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "observability-engineer": {
@@ -418,7 +580,7 @@
             "engineer",
             "observability"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "sre-incident-responder": {
@@ -433,7 +595,7 @@
             "observability",
             "responder"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "terraform-expert": {
@@ -448,7 +610,7 @@
             "design",
             "expert"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         }
       }
@@ -457,6 +619,20 @@
       "tier": 4,
       "category": "Experts",
       "agents": {
+        "llm-architect": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "ai",
+            "architect",
+            "design",
+            "ml"
+          ],
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
         "machine-learning-engineer": {
           "quality_score": 8.0,
           "dependencies": [],
@@ -469,7 +645,54 @@
             "machine",
             "machine learning"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
+        "prompt-engineer": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "design",
+            "engineer",
+            "optimization",
+            "prompt"
+          ],
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        }
+      }
+    },
+    "05-platform": {
+      "tier": 5,
+      "category": "Platform",
+      "agents": {
+        "dx-optimizer": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "documentation",
+            "optimization",
+            "optimizer"
+          ],
+          "last_updated": "2026-02-08",
+          "maintainer": "ubehera"
+        },
+        "git-workflow-manager": {
+          "quality_score": 8.0,
+          "dependencies": [],
+          "delegates_to": [],
+          "tools": [],
+          "activation_patterns": [
+            "design",
+            "manager",
+            "optimization",
+            "workflow"
+          ],
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         }
       }
@@ -482,18 +705,12 @@
           "quality_score": 8.0,
           "dependencies": [],
           "delegates_to": [],
-          "tools": [
-            "Read",
-            "Write",
-            "Grep",
-            "Glob",
-            "WebSearch"
-          ],
+          "tools": [],
           "activation_patterns": [
             "owner",
             "product"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "research-librarian": {
@@ -505,22 +722,14 @@
             "librarian",
             "research"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "tech-writer": {
           "quality_score": 8.0,
           "dependencies": [],
           "delegates_to": [],
-          "tools": [
-            "Read",
-            "Write",
-            "Edit",
-            "Grep",
-            "Glob",
-            "WebSearch",
-            "WebFetch"
-          ],
+          "tools": [],
           "activation_patterns": [
             "api",
             "architecture",
@@ -528,7 +737,7 @@
             "tech",
             "writer"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "technical-documentation-specialist": {
@@ -543,7 +752,7 @@
             "specialist",
             "technical"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         }
       }
@@ -564,7 +773,7 @@
             "security",
             "testing"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         }
       }
@@ -585,7 +794,7 @@
             "monitoring",
             "trading"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "equity-research-analyst": {
@@ -598,7 +807,7 @@
             "equity",
             "research"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "market-data-engineer": {
@@ -613,7 +822,7 @@
             "monitoring",
             "rest"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "portfolio-manager": {
@@ -627,7 +836,7 @@
             "performance",
             "portfolio"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "quantitative-analyst": {
@@ -641,7 +850,7 @@
             "quantitative",
             "research"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "trading-compliance-officer": {
@@ -656,7 +865,7 @@
             "officer",
             "trading"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "trading-ml-specialist": {
@@ -670,7 +879,7 @@
             "specialist",
             "trading"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "trading-risk-manager": {
@@ -685,7 +894,7 @@
             "risk",
             "trading"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         },
         "trading-strategy-architect": {
@@ -700,7 +909,7 @@
             "optimization",
             "performance"
           ],
-          "last_updated": "2025-12-11",
+          "last_updated": "2026-02-08",
           "maintainer": "ubehera"
         }
       }

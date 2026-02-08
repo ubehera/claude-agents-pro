@@ -23,6 +23,14 @@ Test-Driven Development (TDD) is writing tests before implementation code. The c
 - Configuration files
 - Generated code
 
+## Core Concepts
+
+- **Red-Green-Refactor Cycle**: Write failing test (RED), implement minimal code to pass (GREEN), improve code quality (REFACTOR) - this order is non-negotiable
+- **Watching Tests Fail Proves They Work**: If you didn't see the test fail first, you don't know it tests the right thing - tests written after implementation pass immediately and prove nothing
+- **Minimal Implementation**: Write only enough code to make the failing test pass - no extra features, no premature optimization, no untested functionality
+- **Tests Drive Design**: Difficulty writing tests signals design problems - if testing is hard, the interface is too coupled or complex
+- **Sunk Cost Fallacy**: Code written without TDD should be deleted and restarted test-first - unverified code is technical debt regardless of time invested
+
 ## The Iron Law
 
 ```

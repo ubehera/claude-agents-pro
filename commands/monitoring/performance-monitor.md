@@ -2,7 +2,7 @@
 description: Monitor agent performance and system resource utilization
 args: [--duration 5m|1h|24h] [--metrics cpu|memory|disk|network] [--export-format json|csv]
 tools: Bash(ps:*), Bash(top:*), Bash(df:*), Read, Write
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 ## Objective

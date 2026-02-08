@@ -1,6 +1,7 @@
 ---
 name: debugging-strategies
 description: Master systematic debugging techniques, profiling tools, and root cause analysis to efficiently track down bugs across any codebase or technology stack. Use when investigating bugs, performance issues, or unexpected behavior.
+trigger_keywords: [debug, debugger, breakpoint, stack trace, profiling, memory leak, git bisect, root cause, crash dump, performance issue]
 ---
 
 # Debugging Strategies
@@ -16,6 +17,14 @@ Transform debugging from frustrating guesswork into systematic problem-solving w
 - Analyzing crash dumps and stack traces
 - Profiling application performance
 - Investigating memory leaks
+
+## Core Concepts
+
+- **Reproducibility First**: A bug you cannot reproduce is a bug you cannot fix - invest time creating minimal, consistent reproduction steps before diving into code
+- **Binary Search Elimination**: Systematically halve the problem space using git bisect, comment-out sections, or conditional breakpoints until you isolate the root cause
+- **Observability Layers**: Combine logs (what happened), metrics (how often), and traces (request flow) - each layer reveals different aspects of system behavior
+- **State vs. Logic Bugs**: Distinguish between incorrect data (state) and incorrect operations (logic) - state bugs require examining inputs/transformations, logic bugs require code path analysis
+- **Production Debugging Safety**: Never modify production directly - use feature flags, debug endpoints, log level changes, and distributed tracing to diagnose without risking stability
 
 ## Core Principles
 

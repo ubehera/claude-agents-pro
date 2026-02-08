@@ -2,7 +2,7 @@
 description: Automated release preparation with quality gates and validation
 args: [--version major|minor|patch|x.y.z] [--pre-release alpha|beta|rc] [--dry-run]
 tools: Bash(git:*), Bash(npm version:*), Read, Write, Grep
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 ## Objective

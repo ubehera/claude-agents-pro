@@ -8,6 +8,14 @@ trigger_keywords: [aws, azure, gcp, google cloud, multi-cloud, cloud migration, 
 
 Production-grade patterns for multi-cloud infrastructure across AWS, GCP, and Azure with service mapping, cost optimization, and disaster recovery.
 
+## Core Concepts
+
+- **Cloud Agnosticism**: Abstract cloud-specific APIs behind interfaces (storage, compute, database) to enable portability - use Terraform, Pulumi, or Crossplane for infrastructure abstraction
+- **Data Gravity**: Data transfer costs and latency often dictate architecture - keep compute close to data, minimize cross-cloud egress, replicate strategically
+- **Vendor Lock-in Spectrum**: Balance portability vs. managed service benefits - use cloud-native for commodity services (storage, compute), abstract for differentiated features
+- **Active-Active vs. Active-Passive**: Active-active provides better availability but requires data synchronization complexity; active-passive simplifies consistency but increases RTO
+- **Unified Observability**: Centralize monitoring, logging, and tracing across clouds using vendor-neutral tools (Prometheus, OpenTelemetry, Grafana) for consistent operational visibility
+
 ## Cloud Service Comparison
 
 ### Compute Services

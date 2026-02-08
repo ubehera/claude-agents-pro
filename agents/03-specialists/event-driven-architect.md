@@ -4,7 +4,7 @@ description: |
   Event-driven architecture specialist for event sourcing, CQRS, message-driven systems, saga patterns, event streaming, and distributed choreography. Expert in Apache Kafka, RabbitMQ, AWS EventBridge/SNS/SQS, event schema design, eventual consistency, and reactive patterns. Use for designing event-driven systems, implementing CQRS/ES, building message-driven microservices, and ensuring reliable event processing with idempotency and exactly-once semantics.
 category: specialist
 complexity: expert
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Event sourcing and CQRS patterns
   - Message broker design (Kafka, RabbitMQ, NATS)

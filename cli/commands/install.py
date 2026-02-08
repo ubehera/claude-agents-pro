@@ -8,6 +8,8 @@ from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich.panel import Panel
 from typing import Optional
 
+from ..utils.agent_finder import find_agent_file
+
 console = Console()
 
 
@@ -162,20 +164,4 @@ def install(
                 console.print(f"[yellow]Warning:[/yellow] Could not install CLAUDE.md: {e}")
 
 
-def _find_agent_file(agents_dir: Path, agent_name: str) -> Optional[Path]:
-    """Find an agent file by name across all tiers."""
-    # Try exact match first
-    for tier_dir in agents_dir.glob("[0-9][0-9]-*"):
-        if tier_dir.is_dir():
-            agent_file = tier_dir / f"{agent_name}.md"
-            if agent_file.exists():
-                return agent_file
-
-    # Try fuzzy match
-    for tier_dir in agents_dir.glob("[0-9][0-9]-*"):
-        if tier_dir.is_dir():
-            for agent_file in tier_dir.glob("*.md"):
-                if agent_name.lower() in agent_file.stem.lower():
-                    return agent_file
-
-    return None
+_find_agent_file = find_agent_file  # backward-compat alias

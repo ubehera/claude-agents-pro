@@ -2,7 +2,7 @@
 description: Automated cleanup and maintenance for optimal repository health
 args: [--scope git|files|cache|logs] [--aggressive] [--schedule daily|weekly|monthly]
 tools: Bash(git gc:*), Bash(git clean:*), Bash(find:*), Read, Write, Grep
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 ## Objective

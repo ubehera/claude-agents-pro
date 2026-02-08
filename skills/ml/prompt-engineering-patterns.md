@@ -26,6 +26,18 @@ Master advanced prompt engineering techniques to maximize LLM performance, relia
 - Debugging and refining prompts that produce inconsistent outputs
 - Implementing system prompts for specialized AI assistants
 
+## Core Concepts
+
+- **Instruction Following Hierarchy**: LLMs process prompts in order. Place system instructions first, then task context, examples, input data, and output format. Later content can override earlier content, so structure accordingly.
+
+- **Few-Shot Learning**: 2-5 examples dramatically improve task performance. Select examples by semantic similarity to the input, ensure diversity of patterns, and place the most relevant example closest to the input.
+
+- **Chain-of-Thought (CoT)**: Explicit reasoning steps improve accuracy on complex tasks. Use "Let's think step by step" for zero-shot CoT, or provide reasoning traces in few-shot examples for even better results.
+
+- **Prompt Robustness**: Production prompts must handle edge cases. Test with adversarial inputs, ambiguous queries, and out-of-distribution examples. Add explicit fallback instructions for uncertainty.
+
+- **Structured Output Control**: Specify exact output formats (JSON schemas, markdown templates) in the prompt. Include format examples and validation instructions to ensure parseable, consistent responses.
+
 ## Core Capabilities
 
 ### 1. Few-Shot Learning

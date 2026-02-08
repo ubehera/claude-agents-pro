@@ -1,6 +1,7 @@
 ---
 name: network-security
 description: Implement network security controls including firewalls, network segmentation, TLS/SSL, VPNs, and zero-trust architecture to protect applications and infrastructure.
+trigger_keywords: [network security, firewall, iptables, tls, ssl, vpn, wireguard, zero trust, network segmentation, vlan, ids, ips, suricata]
 tags:
   - security
   - network-security
@@ -24,6 +25,18 @@ Comprehensive network security implementation covering firewalls, network segmen
 - **Zero Trust**: Implement zero-trust network architecture
 - **Incident Response**: Contain network-based attacks
 - **Security Hardening**: Strengthen network defenses
+
+## Core Concepts
+
+- **Defense in Depth**: Network security requires multiple overlapping controls - perimeter firewalls, network segmentation, host-based firewalls, IDS/IPS, and TLS encryption. Assume any single layer can be bypassed.
+
+- **Zero Trust Model**: Never trust, always verify. All network traffic should be authenticated and encrypted, regardless of source. Microsegmentation limits lateral movement even if perimeter is breached.
+
+- **Encryption in Transit**: All data in motion must use TLS 1.2+ (preferably 1.3). Disable legacy protocols (SSLv3, TLS 1.0/1.1). Use HSTS headers and certificate pinning for critical applications.
+
+- **Network Segmentation**: Separate networks by trust level (DMZ, internal, database tier). Use VLANs, security groups, and firewall rules to enforce boundaries. Default deny all, explicitly allow required traffic.
+
+- **Monitoring and Detection**: Deploy IDS/IPS (Suricata, Snort) to detect malicious traffic. Log all firewall decisions. Alert on anomalous traffic patterns. Maintain network flow records for forensics.
 
 ## Network Security Layers
 

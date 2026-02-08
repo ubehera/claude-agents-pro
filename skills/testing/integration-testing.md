@@ -26,6 +26,14 @@ Integration tests validate interactions between components, services, and extern
 - Authentication and authorization flows
 - Data transformation pipelines
 
+## Core Concepts
+
+- **Real Dependencies, Isolated Data**: Use actual databases and services (via test containers or transaction rollback) but ensure each test has independent data - shared state breaks test isolation
+- **Contract Testing**: Verify API responses match documented schemas and external service contracts - catching contract drift early prevents production failures
+- **Transaction Boundaries**: Wrap tests in database transactions for automatic rollback, or explicitly clean up data between tests to prevent pollution
+- **Mock External Services**: Use MSW, Nock, or similar tools to mock third-party APIs (Stripe, email providers) while testing real internal service interactions
+- **Realistic Error Scenarios**: Test API failures, network timeouts, and invalid responses from dependencies - happy path testing misses production failure modes
+
 ## The Testing Pyramid Position
 
 ```

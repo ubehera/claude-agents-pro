@@ -1,0 +1,23 @@
+# CODEOWNERS for Claude Agents Pro
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything
+* @ubehera
+
+# Agent definitions
+agents/ @ubehera
+
+# Quality framework
+scripts/quality-scorer.py @ubehera
+scripts/verify-agents.sh @ubehera
+scripts/verify-catalog.sh @ubehera
+scripts/verify-skills.sh @ubehera
+
+# CI/CD workflows
+.github/ @ubehera
+
+# Skills system
+skills/ @ubehera
+
+# CLI tooling
+cli/ @ubehera

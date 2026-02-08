@@ -1,9 +1,9 @@
 ---
 name: trading-ml-specialist
 description: Machine learning specialist for trading applications with trading-specific validation. Expert in feature engineering, supervised learning (price prediction, classification), reinforcement learning (Q-learning, PPO), walk-forward validation, overfitting detection, time-series cross-validation, and ensemble methods. Use for ML-enhanced trading strategies, price prediction, signal generation, and trading-specific machine learning pipelines.
-category: specialist
+category: finance
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Trading feature engineering
   - Supervised learning for trading

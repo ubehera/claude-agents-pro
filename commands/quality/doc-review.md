@@ -2,7 +2,7 @@
 description: Technical documentation quality review and improvement recommendations
 args: <doc-path> [--type adr|readme|api|architecture|runbook] [--level basic|standard|comprehensive]
 tools: Task, Read, Write
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 # /doc-review - Technical Documentation Quality Review

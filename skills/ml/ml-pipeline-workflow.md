@@ -31,6 +31,18 @@ This skill provides comprehensive guidance for building production ML pipelines 
 - Creating DAG-based ML orchestration
 - Integrating ML components into production systems
 
+## Core Concepts
+
+- **DAG-Based Orchestration**: ML pipelines are directed acyclic graphs where nodes are tasks and edges are dependencies. Orchestrators (Airflow, Dagster, Kubeflow) manage execution order, retries, and parallelization.
+
+- **Artifact Versioning**: Track data, models, and code together. Use DVC for data versioning, MLflow for model registry, and git for code. Every training run should be reproducible from its version references.
+
+- **Feature/Training/Serving Skew**: Production failures often stem from differences between training and serving. Use feature stores (Feast) to ensure consistent feature computation and validate that serving data matches training distributions.
+
+- **Continuous Training Triggers**: Models degrade over time. Implement automated retraining triggered by schedule, data drift detection, or performance degradation. Include validation gates before promoting new models.
+
+- **Deployment Strategies**: Use shadow mode for initial validation, canary releases (5-10% traffic) for gradual rollout, and maintain instant rollback capability. Monitor prediction distributions and business metrics post-deployment.
+
 ## Core Capabilities
 
 ### 1. Pipeline Architecture

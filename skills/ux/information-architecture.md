@@ -8,6 +8,14 @@ trigger_keywords: [information architecture, ia, site map, navigation, taxonomy,
 
 Organizing and structuring content for optimal findability and user comprehension.
 
+## Core Concepts
+
+- **IA Triad (Users, Content, Context)**: Effective architecture balances user mental models, content characteristics, and business constraints - ignoring any pillar leads to failure
+- **Organization Schemes**: Exact schemes (alphabetical, chronological) vs. ambiguous schemes (topic, task, audience) - choose based on content type and user behavior patterns
+- **Shallow Over Deep**: Prefer wider structures (5-7 items per level, 3-4 levels max) over deep hierarchies - cognitive load per level matters more than total clicks
+- **Labeling System**: Use user vocabulary (not internal jargon), be specific ("Blog" not "Resources"), and validate labels through card sorting and tree testing
+- **Multiple Navigation Paths**: Content rarely fits in one place; support different finding strategies through cross-links, faceted navigation, and supplemental navigation (search, breadcrumbs, sitemaps)
+
 ## IA Fundamentals
 
 ### The IA Triad

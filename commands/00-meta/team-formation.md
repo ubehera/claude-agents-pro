@@ -2,7 +2,7 @@
 description: Dynamic agent team composition for different project types
 args: <project-type> [--scope small|medium|large] [--priority speed|quality|security]
 tools: Task, TodoWrite, Read
-model: claude-opus-4-1
+model: opus
 ---
 
 # /team-formation - Dynamic Agent Team Composition
@@ -209,7 +209,7 @@ devops:
 - **Team Lead**: Primary architect for domain (system-design-specialist, api-platform-engineer, etc.)
 - **Quality Lead**: `code-reviewer` or `test-engineer` for quality coordination
 - **Operations Lead**: `devops-automation-expert` or `sre-incident-responder`
-- **Coordinator**: `agent-coordinator` for complex multi-team projects
+- **Coordinator**: `orchestration-coordinator` for complex multi-team projects
 
 ### Communication Protocols
 - **Daily Standups**: Progress synchronization across agents

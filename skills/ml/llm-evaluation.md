@@ -28,6 +28,18 @@ Master comprehensive evaluation strategies for LLM applications, from automated 
 - Establishing baselines and tracking progress over time
 - Debugging unexpected model behavior
 
+## Core Concepts
+
+- **Multi-Dimensional Evaluation**: No single metric captures LLM quality. Combine automated metrics (BLEU, ROUGE), semantic similarity (BERTScore), task-specific metrics, and human evaluation for comprehensive assessment.
+
+- **Reference-Based vs Reference-Free**: Reference-based metrics compare outputs to gold standards but require expensive labeled data. Reference-free approaches (LLM-as-Judge) scale better but require careful prompt design and calibration.
+
+- **Statistical Significance**: Small test sets produce noisy results. Use bootstrapping for confidence intervals, require p-values < 0.05 for comparisons, and calculate effect sizes (Cohen's d) to understand practical significance.
+
+- **Regression Testing Suites**: Maintain versioned test sets that capture known behaviors. Run automated evaluations on every prompt/model change. Flag regressions exceeding thresholds before deployment.
+
+- **LLM-as-Judge Calibration**: When using LLMs to evaluate other LLMs, validate correlation with human judgments. Use structured rubrics, multiple judges, and position debiasing to improve reliability.
+
 ## Core Evaluation Types
 
 ### 1. Automated Metrics

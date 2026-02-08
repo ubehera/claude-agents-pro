@@ -29,6 +29,18 @@ Master the LangChain framework for building sophisticated LLM applications with 
 
 ## Core Concepts
 
+- **Chains as Composable Units**: Chains encapsulate LLM calls with pre/post-processing. Design chains as pure functions with clear inputs/outputs to enable composition, testing, and reuse across applications.
+
+- **Memory Window Management**: LLMs have fixed context windows. Use ConversationSummaryMemory for long sessions, BufferWindowMemory for recent context, or VectorStoreMemory for semantic retrieval of relevant history.
+
+- **LCEL (LangChain Expression Language)**: The declarative syntax for building chains using `|` pipe operators. Enables streaming, parallel execution, and fallbacks with cleaner code than imperative chain construction.
+
+- **Retrieval-Augmented Generation**: Combine document retrieval with generation. The retriever fetches relevant chunks, the chain stuffs them into context, and the LLM generates grounded responses with source citations.
+
+- **Callback-Based Observability**: Implement BaseCallbackHandler for logging, metrics, and debugging. Track token usage, latency, and errors across all chain/agent operations for production monitoring.
+
+## LangChain Components
+
 ### 1. Agents
 Autonomous systems that use LLMs to decide which actions to take.
 

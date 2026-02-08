@@ -2,7 +2,7 @@
 description: Automated Git workflow management with branch strategies and PR automation
 args: [--workflow gitflow|github|gitlab] [--action init|feature|hotfix|release] [--auto-pr]
 tools: Bash(git:*), Bash(gh pr:*), Bash(glab mr:*), Read, Grep
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 ## Objective

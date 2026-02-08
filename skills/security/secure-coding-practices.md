@@ -1,6 +1,7 @@
 ---
 name: secure-coding-practices
 description: Apply secure coding principles and patterns to prevent common vulnerabilities across languages including input validation, error handling, authentication, and data protection.
+trigger_keywords: [secure coding, input validation, sql injection, xss prevention, csrf, secure session, password hashing, encryption, sanitization, owasp]
 tags:
   - security
   - secure-coding
@@ -23,6 +24,18 @@ Language-agnostic secure coding principles and patterns to prevent vulnerabiliti
 - **Training**: Teach secure coding to development teams
 - **Security Hardening**: Strengthen application defenses
 - **Vulnerability Remediation**: Fix identified security issues
+
+## Core Concepts
+
+- **Input Validation**: All external input is untrusted. Validate at boundaries using whitelisting (not blacklisting). Sanitize for the specific output context (HTML, SQL, shell). Reject invalid input rather than attempting to "fix" it.
+
+- **Least Privilege**: Code should run with minimal permissions. Database connections should use read-only accounts when writes aren't needed. Service accounts should have scoped permissions. Drop privileges as early as possible.
+
+- **Fail Securely**: When errors occur, fail closed (deny access) not open. Never expose sensitive information in error messages. Log security events for monitoring. Handle exceptions explicitly - never swallow security-related errors.
+
+- **Defense in Depth**: Never rely on a single security control. Layer authentication, authorization, input validation, output encoding, and encryption. If one layer fails, others should still protect the system.
+
+- **Secure by Default**: Ship with security enabled. Disable dangerous features unless explicitly enabled. Use secure defaults for all configurations. Make the secure path the easy path.
 
 ## Core Secure Coding Principles
 

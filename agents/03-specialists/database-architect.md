@@ -3,7 +3,7 @@ name: database-architect
 description: Senior database architect for relational modeling (PostgreSQL, MySQL), distributed data stores (CockroachDB, DynamoDB, MongoDB), migration strategy, performance tuning, indexing, replication, sharding, backup/DR, and data governance. Use for schema design, query optimization, multi-region planning, and compliance-ready storage solutions.
 category: specialist
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Relational database design (PostgreSQL, MySQL)
   - NoSQL systems (DynamoDB, MongoDB)

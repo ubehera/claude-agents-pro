@@ -2,7 +2,7 @@
 description: Multi-agent workflow orchestration for complex tasks
 args: <task-description> [--agents list] [--strategy sequential|parallel]
 tools: Task, TodoWrite, Read, Write
-model: claude-opus-4-1
+model: opus
 ---
 
 # /orchestrate - Multi-Agent Workflow Orchestration

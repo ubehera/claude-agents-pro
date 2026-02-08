@@ -1,0 +1,4 @@
+# Python dependencies for Claude Agents Pro scripts
+# Install: pip install -r requirements.txt
+
+PyYAML>=6.0.1

@@ -3,7 +3,7 @@ name: workflow-validator
 description: Quality gate enforcement and standards validation agent for ensuring deliverables meet defined criteria before phase transitions. Use for validating phase completion, enforcing quality standards, verifying acceptance criteria, ensuring compliance with architectural decisions, and preventing technical debt accumulation.
 category: quality
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Quality gate enforcement
   - Standards validation

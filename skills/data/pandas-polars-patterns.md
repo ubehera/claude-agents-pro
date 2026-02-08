@@ -8,6 +8,14 @@ trigger_keywords: [pandas, polars, dataframe, data manipulation, aggregation, gr
 
 High-performance data manipulation patterns using pandas and polars for production data pipelines.
 
+## Core Concepts
+
+- **Vectorization Over Iteration**: Never use `iterrows()` or row-by-row loops - vectorized operations are 10-100x faster because they leverage SIMD instructions and avoid Python interpreter overhead
+- **Memory-Aware Processing**: DataFrames live in memory - use appropriate dtypes (int32 vs int64, category vs object), chunk large files, and monitor memory with `df.memory_usage(deep=True)`
+- **Lazy vs Eager Evaluation**: Polars lazy mode (`scan_*`) builds a query plan optimized before execution; pandas is always eager - choose based on dataset size and transformation complexity
+- **Copy Semantics**: Pandas views vs copies cause subtle bugs - use `.copy()` explicitly, understand `SettingWithCopyWarning`, and prefer method chaining to avoid ambiguity
+- **Schema Consistency**: Define and enforce column types at read time, validate schemas between pipeline stages, and document expected dtypes for downstream consumers
+
 ## Performance Comparison
 
 ### When to Use Pandas

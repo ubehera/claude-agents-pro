@@ -2,7 +2,7 @@
 description: Execute comprehensive testing workflow with coverage and quality gates
 args: [scope] [--coverage-target 80] [--type unit|integration|e2e|all]
 tools: Task, Bash(npm test:*), Bash(pytest:*), Bash(go test:*), Read, Grep
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 # Comprehensive Testing Workflow

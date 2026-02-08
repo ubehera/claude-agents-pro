@@ -8,6 +8,14 @@ trigger_keywords: [quantconnect, lean engine, qcalgorithm, AddEquity, universe s
 
 Comprehensive QuantConnect algorithm development using the Lean engine framework.
 
+## Core Concepts
+
+- **Event-Driven Architecture**: Lean processes data through event handlers (OnData, OnEndOfDay); design around events, not loops
+- **Resolution Hierarchy**: Tick < Second < Minute < Hour < Daily; higher resolution = more data but slower backtests
+- **Universe Selection**: Dynamic security selection (CoarseUniverse, FineUniverse) for scalable strategy development
+- **Algorithm Framework**: Modular design with Alpha, Portfolio Construction, Risk Management, and Execution models
+- **Warm-Up Period**: Initialize indicators with historical data before trading; prevents false signals at strategy start
+
 ## QCAlgorithm Basics
 
 ### Algorithm Structure

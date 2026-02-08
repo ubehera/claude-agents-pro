@@ -8,6 +8,14 @@ trigger_keywords: [data warehouse, snowflake, bigquery, redshift, dimensional mo
 
 Modern data warehouse design patterns for Snowflake, BigQuery, and Redshift with dimensional modeling and dbt.
 
+## Core Concepts
+
+- **Dimensional Modeling**: Structure data around business processes using fact tables (measures/metrics) and dimension tables (descriptive attributes) - facts answer "how much/many", dimensions answer "who/what/when/where"
+- **Grain Definition**: Always define the grain (one row represents what?) before building fact tables - granularity determines what questions can be answered and cannot be changed without rebuilding
+- **Surrogate Keys**: Use synthetic integer keys for dimensions instead of natural business keys - they handle SCD changes, improve join performance, and isolate the warehouse from source system key changes
+- **Incremental Processing**: Load only changed data using watermarks, change data capture, or merge operations - full table scans are expensive and don't scale
+- **Separation of Concerns**: Maintain distinct layers (bronze/silver/gold or staging/intermediate/marts) - each layer has a specific purpose, testing requirements, and access patterns
+
 ## Core Architectures
 
 ### Medallion Architecture (Bronze-Silver-Gold)

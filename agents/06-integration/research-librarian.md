@@ -3,7 +3,7 @@ name: research-librarian
 description: Research specialist for discovering, vetting, and summarizing authoritative sources (RFCs, vendor docs, specs, standards). Use for exploratory questions, comparative analysis, and unknown URLs. Prioritize primary sources; produce concise findings with citations and handoff links for follow‑up work.
 category: integration
 complexity: simple
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Research and source discovery
   - Authoritative source vetting

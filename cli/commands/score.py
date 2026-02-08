@@ -7,6 +7,8 @@ from rich.table import Table
 from rich.panel import Panel
 import sys
 
+from ..utils.agent_finder import find_agent_file
+
 console = Console()
 
 
@@ -99,14 +101,7 @@ def score(agent_name: str, agents_dir: Path, output: Path, min_score: float):
             console.print(f"\n[green]✓[/green] Report saved to {output}")
 
 
-def _find_agent_file(agents_dir: Path, agent_name: str) -> Path | None:
-    """Find an agent file by name."""
-    for tier_dir in agents_dir.glob("[0-9][0-9]-*"):
-        if tier_dir.is_dir():
-            agent_file = tier_dir / f"{agent_name}.md"
-            if agent_file.exists():
-                return agent_file
-    return None
+_find_agent_file = find_agent_file  # backward-compat alias
 
 
 def _display_single_score(name: str, metrics, analysis: dict, min_score: float):
@@ -132,11 +127,12 @@ def _display_single_score(name: str, metrics, analysis: dict, min_score: float):
     table.add_column("Status", style="white")
 
     metric_weights = {
-        'Completeness': (metrics.completeness, '25%'),
-        'Accuracy': (metrics.accuracy, '25%'),
+        'Completeness': (metrics.completeness, '20%'),
+        'Accuracy': (metrics.accuracy, '20%'),
         'Usability': (metrics.usability, '20%'),
         'Performance': (metrics.performance, '15%'),
-        'Maintainability': (metrics.maintainability, '15%')
+        'Maintainability': (metrics.maintainability, '10%'),
+        'Security': (metrics.security, '15%')
     }
 
     for metric_name, (score, weight) in metric_weights.items():

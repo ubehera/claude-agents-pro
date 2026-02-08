@@ -8,6 +8,14 @@ trigger_keywords: [ux metrics, sus, system usability scale, nps, net promoter sc
 
 Measuring and analyzing user experience through quantitative methods.
 
+## Core Concepts
+
+- **HEART Framework**: Google's Goals-Signals-Metrics approach measuring Happiness (satisfaction), Engagement (usage depth), Adoption (new users), Retention (return rate), and Task Success (completion/errors)
+- **System Usability Scale (SUS)**: 10-question post-task questionnaire yielding 0-100 score; 68 is average, 80+ is excellent - enables benchmarking across products and over time
+- **Task Success Rate**: Percentage of users completing defined tasks successfully; primary usability metric combining binary success with error rate and time-on-task for comprehensive view
+- **Leading vs. Lagging Indicators**: Leading metrics predict future outcomes (engagement signals); lagging metrics confirm past performance (revenue, churn) - track both for actionable insights
+- **Statistical Significance**: A/B tests require adequate sample size and confidence levels (typically 95%) before drawing conclusions - avoid acting on random noise
+
 ## UX Metrics Framework
 
 ### The HEART Framework

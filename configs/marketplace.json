@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2025-12-11",
+  "last_updated": "2026-02-08",
   "registry": {
     "name": "Claude Agents Pro Marketplace",
     "description": "Production-ready Claude Code agents with tiered orchestration system",
@@ -42,6 +42,13 @@
       "description": "Advanced specialists for ML, AI, and specialized domains",
       "level": 4,
       "complexity": "expert"
+    },
+    {
+      "id": "05-platform",
+      "name": "Platform",
+      "description": "Developer experience and platform engineering specialists",
+      "level": 5,
+      "complexity": "moderate"
     },
     {
       "id": "06-integration",
@@ -127,14 +134,14 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "OpenAPI",
-        "AWS",
-        "OAuth",
         "GraphQL",
+        "AWS",
+        "REST",
         "API",
+        "OpenAPI",
         "Microservices",
         "JWT",
-        "REST"
+        "OAuth"
       ],
       "tags": [
         "api",
@@ -319,6 +326,31 @@
       "path": "agents/01-foundation/test-engineer.md"
     },
     {
+      "id": "angular-expert",
+      "name": "angular-expert",
+      "tier": "02-development",
+      "category": "Development",
+      "description": "Senior Angular architect for Angular 17+, signals, standalone components, new control flow syntax, RxJS optimization, NgRx state management, micro-frontend architecture with Module Federation, and enterprise application patterns. Specializes in performance optimization, change detection strategies, and large-scale Angular migrations. Use for Angular development, enterprise frontend architecture, RxJS patterns, and Angular migrations.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "complex",
+      "capabilities": [
+        "Frontend",
+        "Angular",
+        "Performance"
+      ],
+      "tags": [
+        "angular",
+        "architecture",
+        "expert",
+        "frontend",
+        "optimization",
+        "performance"
+      ],
+      "tools": [],
+      "path": "agents/02-development/angular-expert.md"
+    },
+    {
       "id": "bash-expert",
       "name": "bash-expert",
       "tier": "02-development",
@@ -328,8 +360,8 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "CI/CD",
-        "Monitoring"
+        "Monitoring",
+        "CI/CD"
       ],
       "tags": [
         "bash",
@@ -341,6 +373,54 @@
       "path": "agents/02-development/bash-expert.md"
     },
     {
+      "id": "csharp-expert",
+      "name": "csharp-expert",
+      "tier": "02-development",
+      "category": "Development",
+      "description": "Senior C# engineer for .NET 8+ production services, ASP.NET Core minimal APIs, Entity Framework Core, Blazor, high-performance code with Span<T>/ValueTask, cross-platform development with MAUI, and Azure cloud integration. Specializes in clean architecture, async patterns, source generators, and production hardening. Use for .NET development, ASP.NET Core APIs, C# performance optimization, and enterprise .NET architecture.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "complex",
+      "capabilities": [
+        "Azure",
+        "Performance"
+      ],
+      "tags": [
+        "architecture",
+        "cloud",
+        "csharp",
+        "expert",
+        "optimization",
+        "performance"
+      ],
+      "tools": [],
+      "path": "agents/02-development/csharp-expert.md"
+    },
+    {
+      "id": "django-expert",
+      "name": "django-expert",
+      "tier": "02-development",
+      "category": "Development",
+      "description": "Senior Django developer for Django 5+ and Django REST Framework, async views, Celery task queues, Channels WebSockets, ORM optimization (select_related/prefetch_related), multi-tenant SaaS patterns, and production deployment. Specializes in query optimization, signal design, middleware, and Django's batteries-included philosophy. Use for Django web development, DRF APIs, Django ORM optimization, and Python web applications.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "complex",
+      "capabilities": [
+        "REST",
+        "Python"
+      ],
+      "tags": [
+        "design",
+        "django",
+        "expert",
+        "optimization",
+        "python",
+        "rest"
+      ],
+      "tools": [],
+      "path": "agents/02-development/django-expert.md"
+    },
+    {
       "id": "frontend-expert",
       "name": "frontend-expert",
       "tier": "02-development",
@@ -350,11 +430,11 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "React",
         "Vue",
+        "Performance",
         "Angular",
         "Frontend",
-        "Performance"
+        "React"
       ],
       "tags": [
         "architecture",
@@ -378,12 +458,12 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "AWS",
-        "Observability",
         "Go",
-        "GCP",
-        "Microservices",
+        "Observability",
         "Kubernetes",
+        "GCP",
+        "AWS",
+        "Microservices",
         "Azure"
       ],
       "tags": [
@@ -399,6 +479,74 @@
       "path": "agents/02-development/go-expert.md"
     },
     {
+      "id": "java-expert",
+      "name": "java-expert",
+      "tier": "02-development",
+      "category": "Development",
+      "description": "Enterprise Java architect for Java 21+ LTS, Spring Boot 3.x, microservices decomposition, reactive programming (WebFlux, Project Reactor), virtual threads, GraalVM native images, and JVM performance tuning. Specializes in hexagonal architecture, CQRS, event sourcing, and cloud-native Java deployments. Use for enterprise Java development, Spring ecosystem architecture, JVM optimization, and microservices design.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "complex",
+      "capabilities": [
+        "Java",
+        "Microservices",
+        "CQRS",
+        "Performance"
+      ],
+      "tags": [
+        "architecture",
+        "cloud",
+        "design",
+        "expert",
+        "java",
+        "optimization",
+        "performance"
+      ],
+      "tools": [],
+      "path": "agents/02-development/java-expert.md"
+    },
+    {
+      "id": "kotlin-expert",
+      "name": "kotlin-expert",
+      "tier": "02-development",
+      "category": "Development",
+      "description": "Senior Kotlin engineer for Kotlin 2.0+, coroutines and Flow, Kotlin Multiplatform (KMP), Android development with Jetpack Compose, server-side Ktor, and functional patterns with Arrow. Specializes in structured concurrency, multiplatform code sharing, and idiomatic Kotlin design. Use for Kotlin development, Android apps, KMP projects, coroutine architecture, and server-side Kotlin.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "complex",
+      "capabilities": [],
+      "tags": [
+        "architecture",
+        "design",
+        "expert",
+        "kotlin"
+      ],
+      "tools": [],
+      "path": "agents/02-development/kotlin-expert.md"
+    },
+    {
+      "id": "laravel-expert",
+      "name": "laravel-expert",
+      "tier": "02-development",
+      "category": "Development",
+      "description": "Senior Laravel developer for Laravel 11+, Eloquent ORM optimization, Livewire reactive components, Horizon queue management, Sanctum/Passport authentication, and PHP 8.3+ modern patterns. Specializes in N+1 query prevention, eager loading strategies, multi-tenant SaaS architecture, and Laravel ecosystem integration (Nova, Forge, Vapor). Use for Laravel development, PHP web applications, Eloquent optimization, and Laravel API development.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "complex",
+      "capabilities": [
+        "API"
+      ],
+      "tags": [
+        "api",
+        "architecture",
+        "expert",
+        "laravel",
+        "optimization"
+      ],
+      "tools": [],
+      "path": "agents/02-development/laravel-expert.md"
+    },
+    {
       "id": "mobile-specialist",
       "name": "mobile-specialist",
       "tier": "02-development",
@@ -408,10 +556,10 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "CI/CD",
         "React",
         "Mobile",
-        "Performance"
+        "Performance",
+        "CI/CD"
       ],
       "tags": [
         "architecture",
@@ -449,6 +597,28 @@
       "path": "agents/02-development/python-expert.md"
     },
     {
+      "id": "rails-expert",
+      "name": "rails-expert",
+      "tier": "02-development",
+      "category": "Development",
+      "description": "Senior Ruby on Rails engineer for Rails 7.1+, Hotwire (Turbo/Stimulus), Action Cable real-time features, Active Record optimization, Sidekiq background processing, and convention-over-configuration development. Specializes in N+1 query prevention, Russian doll caching, multi-database support, and rapid full-stack delivery. Use for Rails development, Ruby web applications, Hotwire reactivity, and Rails performance optimization.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "complex",
+      "capabilities": [
+        "Performance"
+      ],
+      "tags": [
+        "database",
+        "expert",
+        "optimization",
+        "performance",
+        "rails"
+      ],
+      "tools": [],
+      "path": "agents/02-development/rails-expert.md"
+    },
+    {
       "id": "rust-expert",
       "name": "rust-expert",
       "tier": "02-development",
@@ -470,6 +640,35 @@
       "path": "agents/02-development/rust-expert.md"
     },
     {
+      "id": "spring-boot-expert",
+      "name": "spring-boot-expert",
+      "tier": "02-development",
+      "category": "Development",
+      "description": "Senior Spring Boot engineer for Spring Boot 3.x, Spring Cloud microservices, reactive programming with WebFlux/Project Reactor, Spring Security 6 with OAuth2, GraalVM native images, and cloud-native Java deployment. Specializes in auto-configuration, Actuator observability, TestContainers integration testing, and Spring Cloud patterns (Gateway, Config, Resilience4j). Use for Spring Boot services, Spring Cloud architecture, reactive Java APIs, and Spring ecosystem integration.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "complex",
+      "capabilities": [
+        "Observability",
+        "Testing",
+        "Security",
+        "Microservices",
+        "Java"
+      ],
+      "tags": [
+        "architecture",
+        "boot",
+        "cloud",
+        "expert",
+        "observability",
+        "security",
+        "spring",
+        "testing"
+      ],
+      "tools": [],
+      "path": "agents/02-development/spring-boot-expert.md"
+    },
+    {
       "id": "typescript-architect",
       "name": "typescript-architect",
       "tier": "02-development",
@@ -479,10 +678,10 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "React",
         "API",
-        "Frontend",
-        "TypeScript"
+        "React",
+        "TypeScript",
+        "Frontend"
       ],
       "tags": [
         "api",
@@ -523,6 +722,33 @@
       "path": "agents/03-specialists/aws-cloud-architect.md"
     },
     {
+      "id": "azure-cloud-architect",
+      "name": "azure-cloud-architect",
+      "tier": "03-specialists",
+      "category": "Specialists",
+      "description": "Azure expert for ARM templates, Bicep, Azure DevOps, AKS, Azure Functions, Cosmos DB, Azure SQL, Virtual Networks, Entra ID (Azure AD), Azure Well-Architected Framework, Landing Zones, cost management, security (Key Vault, Defender, Sentinel), compliance, and hybrid cloud with Azure Arc. Use for Azure infrastructure design, cloud architecture, Azure migrations, and enterprise Azure deployments.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "complex",
+      "capabilities": [
+        "Security",
+        "Azure",
+        "DevOps"
+      ],
+      "tags": [
+        "architect",
+        "architecture",
+        "azure",
+        "cloud",
+        "design",
+        "devops",
+        "security",
+        "sql"
+      ],
+      "tools": [],
+      "path": "agents/03-specialists/azure-cloud-architect.md"
+    },
+    {
       "id": "backend-architect",
       "name": "backend-architect",
       "tier": "03-specialists",
@@ -532,11 +758,11 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "Event-Driven",
-        "GraphQL",
         "Backend",
+        "REST",
         "Microservices",
-        "REST"
+        "Event-Driven",
+        "GraphQL"
       ],
       "tags": [
         "architect",
@@ -547,6 +773,26 @@
       ],
       "tools": [],
       "path": "agents/03-specialists/backend-architect.md"
+    },
+    {
+      "id": "chaos-engineer",
+      "name": "chaos-engineer",
+      "tier": "03-specialists",
+      "category": "Specialists",
+      "description": "Chaos engineering specialist for designing and executing resilience testing, failure injection, game days, and system reliability validation. Use for chaos experiments, disaster recovery testing, and building resilient systems.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "moderate",
+      "capabilities": [
+        "Testing"
+      ],
+      "tags": [
+        "chaos",
+        "engineer",
+        "testing"
+      ],
+      "tools": [],
+      "path": "agents/03-specialists/chaos-engineer.md"
     },
     {
       "id": "data-pipeline-engineer",
@@ -577,10 +823,10 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "DynamoDB",
         "MongoDB",
-        "PostgreSQL",
-        "Performance"
+        "DynamoDB",
+        "Performance",
+        "PostgreSQL"
       ],
       "tags": [
         "architect",
@@ -602,12 +848,12 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "Terraform",
-        "DevOps",
-        "CI/CD",
         "Kubernetes",
+        "Docker",
+        "DevOps",
         "Monitoring",
-        "Docker"
+        "CI/CD",
+        "Terraform"
       ],
       "tags": [
         "automation",
@@ -632,9 +878,9 @@
       "complexity": "complex",
       "capabilities": [
         "AWS",
-        "Event-Driven",
+        "Microservices",
         "CQRS",
-        "Microservices"
+        "Event-Driven"
       ],
       "tags": [
         "architect",
@@ -657,16 +903,16 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "React",
-        "Vue",
-        "TypeScript",
-        "Testing",
-        "JavaScript",
-        "Angular",
-        "API",
         "Backend",
+        "Vue",
+        "JavaScript",
+        "Performance",
+        "Testing",
+        "API",
+        "Angular",
+        "TypeScript",
         "Frontend",
-        "Performance"
+        "React"
       ],
       "tags": [
         "api",
@@ -687,6 +933,31 @@
       ],
       "tools": [],
       "path": "agents/03-specialists/full-stack-architect.md"
+    },
+    {
+      "id": "gcp-cloud-architect",
+      "name": "gcp-cloud-architect",
+      "tier": "03-specialists",
+      "category": "Specialists",
+      "description": "Google Cloud expert for Terraform on GCP, GKE, Cloud Run, Cloud Functions, BigQuery, Spanner, Cloud SQL, VPC, IAM, Organization Policies, Google Cloud Well-Architected Framework, data analytics pipelines, and AI/ML platform (Vertex AI). Use for GCP infrastructure design, cloud architecture, data platform engineering, and Google Cloud deployments.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "complex",
+      "capabilities": [
+        "GCP",
+        "Terraform"
+      ],
+      "tags": [
+        "ai",
+        "architect",
+        "architecture",
+        "cloud",
+        "design",
+        "ml",
+        "sql"
+      ],
+      "tools": [],
+      "path": "agents/03-specialists/gcp-cloud-architect.md"
     },
     {
       "id": "kubernetes-architect",
@@ -765,13 +1036,13 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "Terraform",
-        "Testing",
-        "AWS",
         "GCP",
-        "CI/CD",
+        "AWS",
+        "Testing",
         "Security",
-        "Azure"
+        "CI/CD",
+        "Azure",
+        "Terraform"
       ],
       "tags": [
         "aws",
@@ -787,6 +1058,25 @@
       "path": "agents/03-specialists/terraform-expert.md"
     },
     {
+      "id": "llm-architect",
+      "name": "llm-architect",
+      "tier": "04-experts",
+      "category": "Experts",
+      "description": "LLM system architect for designing production AI/ML systems including RAG pipelines, prompt engineering infrastructure, LLM orchestration, agent frameworks, and AI-native applications. Use for LLM integration, AI system design, and production AI deployment.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "moderate",
+      "capabilities": [],
+      "tags": [
+        "ai",
+        "architect",
+        "design",
+        "ml"
+      ],
+      "tools": [],
+      "path": "agents/04-experts/llm-architect.md"
+    },
+    {
       "id": "machine-learning-engineer",
       "name": "machine-learning-engineer",
       "tier": "04-experts",
@@ -796,10 +1086,10 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "Deep Learning",
+        "MLOps",
         "Testing",
         "Machine Learning",
-        "MLOps",
+        "Deep Learning",
         "Monitoring"
       ],
       "tags": [
@@ -816,6 +1106,62 @@
       "path": "agents/04-experts/machine-learning-engineer.md"
     },
     {
+      "id": "prompt-engineer",
+      "name": "prompt-engineer",
+      "tier": "04-experts",
+      "category": "Experts",
+      "description": "Prompt engineering specialist for designing, optimizing, and evaluating LLM prompts for production applications. Use for prompt design, few-shot learning, chain-of-thought prompting, and prompt optimization.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "moderate",
+      "capabilities": [],
+      "tags": [
+        "design",
+        "engineer",
+        "optimization",
+        "prompt"
+      ],
+      "tools": [],
+      "path": "agents/04-experts/prompt-engineer.md"
+    },
+    {
+      "id": "dx-optimizer",
+      "name": "dx-optimizer",
+      "tier": "05-platform",
+      "category": "Platform",
+      "description": "Developer experience (DX) optimization specialist for improving development workflows, tooling, onboarding, local development environments, documentation, and team productivity. Use for identifying friction points, optimizing developer tooling, improving onboarding, and streamlining development processes.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "complex",
+      "capabilities": [],
+      "tags": [
+        "documentation",
+        "optimization",
+        "optimizer"
+      ],
+      "tools": [],
+      "path": "agents/05-platform/dx-optimizer.md"
+    },
+    {
+      "id": "git-workflow-manager",
+      "name": "git-workflow-manager",
+      "tier": "05-platform",
+      "category": "Platform",
+      "description": "Git workflow automation specialist for branch strategies (GitFlow, trunk-based, GitHub Flow), commit conventions (conventional commits, semantic versioning), PR automation, release management, repository hygiene, and team collaboration patterns. Use for Git workflow design, branch strategy implementation, PR automation, and release process optimization.",
+      "model": "opus",
+      "model_rationale": "",
+      "complexity": "complex",
+      "capabilities": [],
+      "tags": [
+        "design",
+        "manager",
+        "optimization",
+        "workflow"
+      ],
+      "tools": [],
+      "path": "agents/05-platform/git-workflow-manager.md"
+    },
+    {
       "id": "product-owner",
       "name": "product-owner",
       "tier": "06-integration",
@@ -829,13 +1175,7 @@
         "owner",
         "product"
       ],
-      "tools": [
-        "Read",
-        "Write",
-        "Grep",
-        "Glob",
-        "WebSearch"
-      ],
+      "tools": [],
       "path": "agents/06-integration/product-owner.md"
     },
     {
@@ -874,15 +1214,7 @@
         "tech",
         "writer"
       ],
-      "tools": [
-        "Read",
-        "Write",
-        "Edit",
-        "Grep",
-        "Glob",
-        "WebSearch",
-        "WebFetch"
-      ],
+      "tools": [],
       "path": "agents/06-integration/tech-writer.md"
     },
     {
@@ -895,8 +1227,8 @@
       "model_rationale": "",
       "complexity": "complex",
       "capabilities": [
-        "OpenAPI",
-        "API"
+        "API",
+        "OpenAPI"
       ],
       "tags": [
         "api",
@@ -1126,23 +1458,24 @@
     }
   ],
   "statistics": {
-    "total_agents": 45,
+    "total_agents": 60,
     "by_tier": {
       "00-meta": 3,
       "01-foundation": 9,
-      "02-development": 7,
-      "03-specialists": 11,
-      "04-experts": 1,
+      "02-development": 15,
+      "03-specialists": 14,
+      "04-experts": 3,
+      "05-platform": 2,
       "06-integration": 4,
       "07-quality": 1,
       "08-finance": 9
     },
     "by_model": {
-      "opus": 45
+      "opus": 60
     },
     "by_complexity": {
-      "complex": 39,
-      "moderate": 6
+      "complex": 51,
+      "moderate": 9
     }
   }
 }

@@ -8,6 +8,14 @@ trigger_keywords: [factor investing, fama french, alpha research, factor model, 
 
 Systematic factor-based investing with multi-factor models, alpha decomposition, and factor timing strategies.
 
+## Core Concepts
+
+- **Risk Premium vs Alpha**: Factors represent systematic risk premia (compensation for bearing risk); true alpha is excess return unexplained by factors
+- **Factor Crowding**: When too much capital chases a factor, expected returns decline and reversal risk increases
+- **Factor Decay**: Factor returns weaken over time as strategies become commoditized; momentum especially prone to crashes
+- **Cross-Sectional vs Time-Series**: Cross-sectional factors compare stocks to each other; time-series factors compare to own history
+- **Factor Orthogonalization**: Isolate pure factor exposure by controlling for other factors; prevents unintended bets
+
 ## Core Factor Framework
 
 ### Classic Factors (Fama-French Extended)

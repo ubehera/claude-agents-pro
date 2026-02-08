@@ -3,7 +3,7 @@ name: domain-modeling-expert
 description: Strategic Domain-Driven Design specialist for bounded context identification, event storming facilitation, ubiquitous language definition, aggregate design, and context mapping. Expert in discovering business domains through collaborative modeling, defining domain boundaries, and establishing shared vocabulary. Use for Phase 2 domain modeling, event storming workshops, context map creation, aggregate root design, and strategic DDD before architectural implementation.
 category: foundation
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Domain-Driven Design (DDD)
   - Event storming facilitation

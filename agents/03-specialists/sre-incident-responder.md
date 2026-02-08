@@ -3,7 +3,7 @@ name: sre-incident-responder
 description: Site reliability incident responder for high-severity production events—owns detection, triage, mitigation, post-incident analysis, and runbook automation. Expert with Kubernetes, cloud infrastructure, observability platforms, paging hygiene, and continuous improvement. Use for on-call readiness, incident war room leadership, and resilience upgrades.
 category: specialist
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Incident detection and triage
   - Production incident mitigation
@@ -16,6 +16,10 @@ capabilities:
 auto_activate:
   keywords: [incident, SRE, outage, production issue, on-call, post-mortem, mitigation, reliability]
   conditions: [production incidents, incident response, SRE operations, post-incident analysis]
+skills:
+  - postmortem-writing
+  - incident-runbook-templates
+  - on-call-handoff-patterns
 examples:
   - trigger: "Production outage: API latency spiked from 100ms to 5s affecting 50% users"
     commentary: "Invoked when coordinating incident response, leads war room, analyzes metrics/logs/traces, executes rollback via ArgoCD, restores service, documents timeline and mitigation steps."

@@ -1,9 +1,9 @@
 ---
 name: typescript-architect
 description: Senior TypeScript architect for Node.js 20+, Bun, Deno, and modern frontend stacks (React 18, Next.js 14, Remix). Specializes in advanced typing, runtime safety, build tooling, monorepo design, and end-to-end type sharing. Use for TypeScript platform upgrades, API contracts, build optimization, and DX improvements.
-category: specialist
+category: development
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - TypeScript 5.4+ advanced typing
   - Node.js, Bun, Deno runtime expertise
@@ -16,6 +16,10 @@ capabilities:
 auto_activate:
   keywords: [TypeScript, Node.js, Next.js, Remix, tRPC, monorepo, type safety, build optimization]
   conditions: [TypeScript projects, type-safe development, monorepo setup, build optimization]
+skills:
+  - typescript-advanced-types
+  - modern-javascript-patterns
+  - javascript-testing-patterns
 examples:
   - trigger: "Setup TypeScript monorepo with Next.js, tRPC, and Prisma"
     commentary: "Configures pnpm workspaces with project references, sets up shared tsconfig bases, implements type-safe tRPC endpoints with Zod schemas, configures Turborepo caching for <10s builds."

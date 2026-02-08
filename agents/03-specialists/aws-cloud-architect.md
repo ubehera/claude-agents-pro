@@ -3,7 +3,7 @@ name: aws-cloud-architect
 description: AWS expert for CloudFormation, CDK, EC2, Lambda, ECS/EKS, S3, RDS, DynamoDB, VPC, IAM, Well-Architected Framework, serverless architectures, auto-scaling, cost optimization, security (KMS, WAF, GuardDuty), compliance, multi-region deployments, and cloud migration strategies. Use for AWS infrastructure design, cloud architecture, and production deployments.
 category: specialist
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - AWS infrastructure design
   - CloudFormation and CDK

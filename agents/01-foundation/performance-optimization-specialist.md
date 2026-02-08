@@ -3,7 +3,7 @@ name: performance-optimization-specialist
 description: Performance expert for optimization, speed improvement, Core Web Vitals, database performance, caching, CDN, load balancing, API latency, memory optimization, bottleneck identification, profiling, monitoring, scalability, and system performance tuning. Use for slow applications, performance issues, optimization strategies, and scalability challenges.
 category: foundation
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Performance optimization
   - Core Web Vitals improvement

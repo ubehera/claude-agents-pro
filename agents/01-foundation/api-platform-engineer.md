@@ -3,7 +3,7 @@ name: api-platform-engineer
 description: Expert in REST API design, GraphQL schemas, OpenAPI/Swagger specs, API gateways (Kong, Apigee, AWS API Gateway), rate limiting, OAuth 2.0/JWT auth, developer portals, API versioning, microservices communication, and API governance. Use for API design, gateway setup, API documentation, developer experience optimization, and API lifecycle management.
 category: foundation
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - REST API design
   - GraphQL schema design
@@ -16,6 +16,8 @@ capabilities:
 auto_activate:
   keywords: [API, REST, GraphQL, endpoint, OpenAPI, Swagger, gateway, OAuth, JWT]
   conditions: [API design tasks, authentication implementation, API documentation, gateway configuration]
+skills:
+  - openapi-spec-generation
 examples:
   - trigger: "Design REST API for user management with OAuth2 authentication"
     commentary: "Invoked for greenfield API design. Delivers OpenAPI 3.0 spec with endpoints, schemas, error codes, rate limiting, and OAuth2 flows. Includes Kong gateway configuration."

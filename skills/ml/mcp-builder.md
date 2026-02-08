@@ -1,6 +1,7 @@
 ---
 name: mcp-builder
 description: Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services.
+trigger_keywords: [mcp server, model context protocol, mcp tool, llm integration, mcp development, mcp sdk, build mcp]
 ---
 
 # MCP Server Development Guide
@@ -8,6 +9,18 @@ description: Guide for creating high-quality MCP (Model Context Protocol) server
 ## Overview
 
 Create high-quality MCP servers that enable LLMs to effectively interact with external services. The quality of an MCP server is measured by how well it enables LLMs to accomplish real-world tasks.
+
+## Core Concepts
+
+- **Tool Design for Agents**: LLMs select tools based on descriptions, not implementation. Write tool descriptions that clearly explain what the tool does, when to use it, expected inputs, and what success/failure looks like.
+
+- **Workflow Tools vs API Wrappers**: Don't mirror API endpoints 1:1. Design tools that complete user workflows (e.g., `schedule_meeting` that checks availability AND creates the event) rather than forcing multi-tool orchestration.
+
+- **Context Window Awareness**: Agent context is precious. Return concise, high-signal responses. Implement pagination, filtering, and truncation. Provide summary vs detailed modes for large result sets.
+
+- **Actionable Error Messages**: Error responses should guide agents toward correct usage. Include specific fix suggestions like "Try using filter='active' to reduce results" rather than generic error codes.
+
+- **Tool Annotations**: Use MCP annotations (`readOnlyHint`, `destructiveHint`, `idempotentHint`) to help agents understand tool behavior and make safer decisions about when to use them.
 
 ## High-Level Workflow
 

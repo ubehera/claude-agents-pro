@@ -3,7 +3,7 @@ name: code-reviewer
 description: Expert code review specialist for analyzing code quality, identifying bugs, security issues, and suggesting improvements. Use when reviewing pull requests, analyzing code changes, or performing quality audits.
 category: foundation
 complexity: moderate
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Code quality analysis
   - Security vulnerability detection

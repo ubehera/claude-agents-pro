@@ -1,6 +1,7 @@
 ---
 name: testing-anti-patterns
 description: Use when writing or changing tests, adding mocks, or tempted to add test-only methods to production code - prevents testing mock behavior, production pollution with test-only methods, and mocking without understanding dependencies
+trigger_keywords: [mock, test anti-pattern, tdd, incomplete mock, test-only methods, over-mocking, test smell, integration test]
 ---
 
 # Testing Anti-Patterns
@@ -12,6 +13,14 @@ Tests must verify real behavior, not mock behavior. Mocks are a means to isolate
 **Core principle:** Test what the code does, not what the mocks do.
 
 **Following strict TDD prevents these anti-patterns.**
+
+## Core Concepts
+
+- **Mocks Are Isolation Tools, Not Test Subjects**: Mocks exist to isolate code under test from slow or external dependencies - asserting on mock existence or call counts tests the test, not the code
+- **Production Code Purity**: Never add methods, properties, or constructors to production classes solely for testing - test utilities belong in test files, not alongside production code
+- **Understand Before Mocking**: Know what side effects the real code produces before deciding what to mock - mocking too high breaks tests that depend on those side effects
+- **Complete Mock Data**: Mock the full data structure as it exists in production, not just fields your immediate test uses - incomplete mocks hide bugs that surface in production
+- **TDD Prevents Anti-Patterns**: Writing tests first naturally avoids these issues - you see the test fail for the right reason before implementing
 
 ## The Iron Laws
 

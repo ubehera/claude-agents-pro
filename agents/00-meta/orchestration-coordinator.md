@@ -3,7 +3,7 @@ name: orchestration-coordinator
 description: Multi-agent orchestration master for complex workflows requiring coordination between multiple specialized agents. Use for breaking down large projects, managing agent dependencies, optimizing task delegation, and ensuring consistent communication protocols across agent teams.
 category: orchestrator
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Multi-agent orchestration
   - Task decomposition
@@ -14,6 +14,9 @@ capabilities:
 auto_activate:
   keywords: [orchestrate, coordinate, multi-agent, workflow, decompose, delegate]
   conditions: [complex projects, multi-domain tasks, cross-agent coordination, workflow optimization]
+skills:
+  - context-driven-development
+  - track-management
 examples:
   - trigger: "Build a multi-service microservices platform with API gateway, authentication, and monitoring"
     commentary: "Invoked for complex multi-domain projects requiring coordination between api-platform-engineer, backend-architect, security-architect, and observability-engineer. Decomposes requirements, sequences work, manages dependencies."

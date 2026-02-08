@@ -2,7 +2,7 @@
 description: End-to-end feature development orchestrating system design, API development, frontend implementation, database modeling, and deployment with integrated testing and quality gates
 args: <feature-name> [--architecture microservices|monolith] [--quality mvp|standard|enterprise]
 tools: Task, TodoWrite, Read, Write, MultiEdit
-model: claude-opus-4-1
+model: opus
 ---
 
 # /full-stack-feature - Complete Feature Development Pipeline
@@ -292,7 +292,7 @@ tools:
 - **Performance Degradation**: Automatic optimization recommendations
 
 ### Escalation Procedures
-- Critical issues → `agent-coordinator` for multi-agent resolution
+- Critical issues → `orchestration-coordinator` for multi-agent resolution
 - Security concerns → `security-architect` immediate assessment
 - Performance issues → `performance-optimization-specialist` priority review
 - Infrastructure problems → `sre-incident-responder` rapid response

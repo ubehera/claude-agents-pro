@@ -2,7 +2,7 @@
 description: Quick fixes for common development issues
 args: <issue-type> [--auto-fix]
 tools: Task, Read, Grep
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 # Quick Fix Assistant

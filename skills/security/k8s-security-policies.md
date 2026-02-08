@@ -1,6 +1,7 @@
 ---
 name: k8s-security-policies
 description: Implement Kubernetes security policies including NetworkPolicy, PodSecurityPolicy, and RBAC for production-grade security. Use when securing Kubernetes clusters, implementing network isolation, or enforcing pod security standards.
+trigger_keywords: [kubernetes security, network policy, pod security, rbac, k8s rbac, security context, gatekeeper, istio authorization, pod security standards]
 ---
 
 # Kubernetes Security Policies
@@ -15,6 +16,18 @@ Comprehensive guide for implementing NetworkPolicy, PodSecurityPolicy, RBAC, and
 - Create security policies for compliance
 - Implement admission control
 - Secure multi-tenant clusters
+
+## Core Concepts
+
+- **Defense in Depth**: Kubernetes security requires multiple layers - NetworkPolicies for network isolation, Pod Security Standards for container hardening, RBAC for access control, and admission controllers for policy enforcement. No single layer provides complete protection.
+
+- **Least Privilege Principle**: Pods should run as non-root with read-only filesystems and dropped capabilities. RBAC should grant minimal permissions - prefer Role over ClusterRole, and avoid wildcard permissions. Use `automountServiceAccountToken: false` when pods don't need API access.
+
+- **Network Segmentation**: Default Kubernetes networking allows all pod-to-pod traffic. NetworkPolicies create "deny by default" zones and explicitly allow required traffic. Start with a deny-all policy and add specific ingress/egress rules.
+
+- **Attack Surface Reduction**: Disable hostNetwork, hostPID, and hostIPC. Block privileged containers and capability escalation. Use seccompProfile and AppArmor/SELinux for system call filtering. Container images should be minimal and scanned for vulnerabilities.
+
+- **Admission Control**: Gatekeeper/OPA or Kyverno enforce policies at admission time, preventing non-compliant resources from being created. This is the last line of defense before workloads run in the cluster.
 
 ## Pod Security Standards
 

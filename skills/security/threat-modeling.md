@@ -1,6 +1,7 @@
 ---
 name: threat-modeling
 description: Apply STRIDE, PASTA, and MITRE ATT&CK frameworks to identify security threats, assess risks, and design mitigations for applications and systems.
+trigger_keywords: [stride, pasta, mitre attack, threat model, attack tree, dfd, risk assessment, attack vector, security threat, ttp]
 tags:
   - security
   - threat-modeling
@@ -24,6 +25,18 @@ Systematic threat identification and risk assessment using industry-standard fra
 - **Compliance**: Meet security standards (NIST, ISO 27001)
 - **Risk Assessment**: Prioritize security investments
 - **Threat Intelligence**: Map real-world threats to your systems
+
+## Core Concepts
+
+- **Trust Boundaries**: Identify where data crosses trust levels (user to server, service to database). Threats concentrate at these boundaries. Every trust boundary crossing requires validation, authentication, or encryption.
+
+- **Attack Surface**: The sum of all entry points an attacker can target. Minimize by disabling unused features, closing unnecessary ports, removing default accounts. Smaller attack surface = fewer vulnerabilities.
+
+- **Threat vs Risk**: Threats are potential attacks; risk = likelihood x impact. Not all threats require mitigation. Prioritize based on attacker capability, asset value, and existing controls. Accept, mitigate, transfer, or avoid each risk.
+
+- **Attacker Mindset**: Think like an adversary. What assets are valuable? What's the easiest path to compromise? Use STRIDE to systematically identify threats, ATT&CK to understand real-world tactics and techniques.
+
+- **Defense Prioritization**: Address high-impact, high-likelihood threats first. Perfect security is impossible. Apply mitigations at trust boundaries. Document accepted risks with business justification.
 
 ## Threat Modeling Frameworks
 

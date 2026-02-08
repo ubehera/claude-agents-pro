@@ -10,7 +10,7 @@ Use this checklist before opening a PR for any agent in `agents/`.
 - [ ] Present at top with `---` fences
 - [ ] Includes `name` (kebab-case, unique)
 - [ ] Includes concise, specific `description` (drives routing)
-- [ ] Optional `tools` declared and minimal (only what’s needed)
+- [ ] No `tools:` field required (agents inherit all tools automatically)
 
 ## Content Quality
 - [ ] Short, actionable guidance; avoids generic filler
@@ -19,17 +19,18 @@ Use this checklist before opening a PR for any agent in `agents/`.
 
 ## Validation
 - [ ] Install locally via `./scripts/install-agents.sh --user` (use `--project` when needed)
-- [ ] Run `./scripts/verify-agents.sh` to confirm frontmatter, filenames, and tools
+- [ ] Run `./scripts/verify-agents.sh` to confirm frontmatter and filenames
 - [ ] Restart Claude Code to load changes
 - [ ] Test prompts that should trigger the agent and confirm selection
-- [ ] Verify tool restrictions behave as intended
 
 ## Documentation
 - [ ] Update `agents/README.md` (matrix/triggers) if adding/renaming
 - [ ] Update `../CLAUDE.md` if standards or workflows change
-- [ ] Review `SYSTEM_OVERVIEW.md` and `docs/IMPLEMENTATION_ROADMAP.md` for alignment
+- [ ] Review `SYSTEM_OVERVIEW.md` for alignment
 - [ ] Confirm `README.md` remains accurate
 
 ## Configuration & Security
 - [ ] Review `.mcp.json` if adding servers; no credentials committed
-- [ ] Prefer minimal `tools` to reduce permissions and improve performance
+
+## Tool Philosophy
+Agents inherit all available tools automatically and do **not** use an explicit `tools:` field in frontmatter. Tool sets documented in the agent catalog (`agents/README.md`) represent typical usage patterns for reference, not restrictions. If you need least-privilege deployments, fork the agent and add explicit `tools:` fields for your environment.

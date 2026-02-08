@@ -1,9 +1,9 @@
 ---
 name: trading-strategy-architect
 description: Trading strategy design and backtesting specialist for systematic strategy development. Expert in backtesting frameworks (vectorbt, backtrader, zipline), walk-forward analysis, parameter optimization, strategy validation, performance metrics (Sharpe, Sortino, Calmar), transaction cost modeling, and multi-timeframe strategies. Use for strategy design, backtest implementation, and systematic trading system architecture for stocks and options.
-category: specialist
+category: finance
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Backtesting frameworks (vectorbt, backtrader)
   - Walk-forward analysis

@@ -1,9 +1,9 @@
 ---
 name: portfolio-manager
 description: Multi-strategy portfolio construction specialist. Aggregates trading signals from quantitative, fundamental, and ML sources into diversified portfolios. Handles capital allocation, rebalancing strategies, and performance attribution across multiple trading strategies.
-category: specialist
+category: finance
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Multi-strategy portfolio construction
   - Signal aggregation

@@ -8,6 +8,18 @@ trigger_keywords: [validation, defense in depth, multi-layer validation, input v
 
 Multi-layer validation pattern that validates at every layer data passes through, making bugs structurally impossible rather than just handled.
 
+## Core Concepts
+
+- **Layer Independence**: Each validation layer must work independently. If entry validation is bypassed (mocks, internal calls), business logic validation still catches invalid data. Never assume upstream validation occurred.
+
+- **Fail-Fast Principle**: Validate as early as possible in the call stack. Rejecting bad data at the API boundary is cheaper than catching it in database transactions. Early failures produce clearer error messages.
+
+- **Environment-Aware Guards**: Production and test environments need different protections. Tests should refuse operations on real data; production should refuse operations on system directories. Use environment guards, not just generic validation.
+
+- **Validation as Documentation**: Explicit validation checks document invariants. When code says `if (!path) throw`, it documents that null paths are never acceptable. Future developers understand constraints without reading docs.
+
+- **Anti-pattern - Single Point of Validation**: Relying on one validation layer creates fragile systems. Code paths change, refactoring moves logic, mocks bypass checks. Multiple independent layers ensure at least one catches bad data.
+
 ## Core Principle
 
 **Single validation**: "We fixed the bug"

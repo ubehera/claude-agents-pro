@@ -1,7 +1,7 @@
 ---
 description: Install, validate, and manage Claude Code agents with automated quality checks
 tools: Bash(./scripts/install-agents.sh:*), Bash(./scripts/verify-agents.sh:*), Read, Write, Grep, Glob
-model: claude-sonnet-4-5
+model: sonnet
 args: [action] [agent-name]
 ---
 

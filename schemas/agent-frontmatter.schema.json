@@ -32,7 +32,8 @@
         "quality",
         "finance",
         "research",
-        "security"
+        "security",
+        "platform"
       ],
       "description": "Agent tier category for orchestration and routing."
     },
@@ -54,9 +55,9 @@
     },
     "model": {
       "type": "string",
-      "pattern": "^(claude-|gpt-|sonnet|opus|haiku)",
-      "description": "Recommended model ID for agent execution (e.g., claude-sonnet-4-5, claude-opus-4-5).",
-      "examples": ["claude-sonnet-4-5", "claude-opus-4-5", "claude-haiku-4"]
+      "pattern": "^(claude-|sonnet|opus|haiku)",
+      "description": "Recommended model ID for agent execution (e.g., claude-opus-4-6, claude-sonnet-4-5).",
+      "examples": ["claude-opus-4-6", "claude-sonnet-4-5", "claude-haiku-4-5"]
     },
     "model_rationale": {
       "type": "string",
@@ -346,8 +347,8 @@
       "category": "foundation",
       "complexity": "complex",
       "classification": "🟠 COMPLEX",
-      "model": "claude-sonnet-4-5",
-      "model_rationale": "Sonnet 4.5 provides optimal balance for API design tasks requiring schema generation, authentication flow design, and integration pattern selection within ~20K token context.",
+      "model": "claude-opus-4-6",
+      "model_rationale": "Maximum capability for optimal results",
       "tools": [
         "Read",
         "Write",
@@ -403,7 +404,7 @@
         }
       },
       "delegation_patterns": {
-        "upstream": ["agent-coordinator", "backend-architect"],
+        "upstream": ["orchestration-coordinator", "backend-architect"],
         "downstream": ["security-architect", "database-architect"],
         "coordination": "sequential"
       },

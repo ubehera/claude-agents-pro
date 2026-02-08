@@ -21,6 +21,14 @@ Flaky tests pass inconsistently due to race conditions, timing dependencies, or 
 - Tests fail under load or in parallel execution
 - Tests timeout in CI but pass locally
 
+## Core Concepts
+
+- **Condition-Based Waiting**: Replace arbitrary delays with polling loops that check actual state - flakiness comes from guessing timing instead of waiting for conditions
+- **Race Condition Prevention**: Ensure async operations complete with proper `await` before assertions - missing awaits cause intermittent failures
+- **Environment Independence**: Tests must pass consistently across fast dev machines and slow CI environments - design for worst-case timing
+- **Deterministic State**: Never depend on external state, test order, or system time - each test should produce identical results on every run
+- **Debug-First Diagnosis**: Add logging to wait functions, identify the actual timing dependency, then replace the guess with a condition check
+
 ## Root Causes of Flaky Tests
 
 ### 1. Arbitrary Timeouts

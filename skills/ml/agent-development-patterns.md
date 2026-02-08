@@ -26,6 +26,18 @@ Master patterns for building autonomous AI agents that can reason, take actions,
 - Building production-grade agent systems
 - Debugging agent behavior and decision-making
 
+## Core Concepts
+
+- **Agent Loop (Observe-Think-Act-Learn)**: The fundamental cycle where agents perceive their environment, reason about it, take actions, and update their knowledge. Production agents implement this with explicit state management and error recovery at each stage.
+
+- **Tool Abstraction**: Agents interact with external systems through well-defined tool interfaces. Tool descriptions must be precise as LLMs use them for selection. Include input schemas, output types, error modes, and usage examples.
+
+- **Memory Architecture**: Separate short-term (conversation buffer), working (task context), and long-term (vector store) memory. Use semantic retrieval for long-term recall and sliding windows for conversation context.
+
+- **ReAct Pattern**: The standard reasoning pattern that alternates between Thought (reasoning), Action (tool call), and Observation (result). This explicit structure improves reliability and enables debugging of agent decisions.
+
+- **Orchestration vs. Autonomy Trade-off**: More autonomous agents are flexible but harder to control. Production systems often use constrained autonomy with explicit guardrails, approval gates, and fallback behaviors.
+
 ## Core Agent Architecture
 
 ### Basic Agent Loop

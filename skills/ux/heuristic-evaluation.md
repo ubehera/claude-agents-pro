@@ -8,6 +8,14 @@ trigger_keywords: [heuristic evaluation, nielsen heuristics, usability heuristic
 
 Expert inspection methods for identifying usability issues without user testing.
 
+## Core Concepts
+
+- **Nielsen's 10 Heuristics**: Industry-standard usability principles (visibility, consistency, error prevention, etc.) providing systematic framework for expert evaluation
+- **Severity Rating Scale**: 0-4 scale (Cosmetic to Catastrophic) combining frequency, impact, and persistence factors to prioritize findings for remediation
+- **Multiple Evaluator Approach**: 3-5 independent evaluators find 75%+ of issues; single evaluator misses over half - aggregation essential for comprehensive coverage
+- **Cognitive Walkthrough**: Step-by-step task analysis evaluating learnability through four questions about goal visibility, action discoverability, association, and feedback
+- **Actionable Recommendations**: Each finding must include specific location, heuristic violated, clear description, and concrete solution - vague findings cannot be fixed
+
 ## Nielsen's 10 Usability Heuristics
 
 ### Complete Heuristics Reference

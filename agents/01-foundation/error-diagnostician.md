@@ -3,7 +3,7 @@ name: error-diagnostician
 description: Expert debugging and error analysis specialist for diagnosing runtime errors, compilation issues, test failures, and system problems. Use when troubleshooting errors, analyzing stack traces, or debugging complex issues.
 category: foundation
 complexity: moderate
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Error diagnosis
   - Debugging

@@ -1,6 +1,9 @@
 ---
 name: finance-glossary
 description: Canonical terminology and domain boundaries for finance trading agents
+category: finance
+complexity: simple
+model: claude-opus-4-6
 ---
 
 # Finance Domain - Ubiquitous Language Glossary

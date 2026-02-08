@@ -8,6 +8,14 @@ trigger_keywords: [futures, futures contract, contango, backwardation, roll, bas
 
 Comprehensive guide to futures contract mechanics, term structure analysis, and trading strategies.
 
+## Core Concepts
+
+- **Contango vs Backwardation**: Contango (futures > spot) incurs negative roll yield; backwardation (futures < spot) generates positive carry
+- **Cost of Carry**: Futures price = Spot + Storage + Financing - Convenience Yield; drives fair value calculations
+- **Basis Risk**: Hedging imperfection when futures and spot don't move perfectly together
+- **Roll Yield**: P&L from rolling expiring contracts; can dominate returns in commodity strategies
+- **Mark-to-Market**: Daily settlement of gains/losses requiring margin management and cash flow planning
+
 ## Futures Contract Mechanics
 
 ### Contract Specifications

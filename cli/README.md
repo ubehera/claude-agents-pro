@@ -143,7 +143,7 @@ Example output:
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
 Metadata:
-  Model: claude-sonnet-4-5-20250929
+  Model: claude-opus-4-6
   Rationale: Balanced performance for complex analysis
   File: /Users/you/.claude/agents/01-foundation/api-platform-engineer.md
 

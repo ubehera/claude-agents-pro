@@ -2,7 +2,7 @@
 description: Comprehensive code review with quality gates
 args: [scope] [--level standard|strict|security]
 tools: Task, Read, Grep, Glob
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 # Code Review Orchestration

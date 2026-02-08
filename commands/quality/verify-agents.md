@@ -2,7 +2,7 @@
 description: Run the repository agent verification suite
 args: [--fix]
 tools: Bash(./scripts/verify-agents.sh:*)
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 ## Purpose

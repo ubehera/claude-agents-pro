@@ -2,7 +2,7 @@
 description: Install Claude Code agents for user or project scopes
 args: [--user|--project] [--select agent1,agent2] [--dry-run]
 tools: Bash(./scripts/install-agents.sh:*)
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 ## Objective

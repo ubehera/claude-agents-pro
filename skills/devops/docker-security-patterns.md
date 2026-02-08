@@ -8,6 +8,14 @@ trigger_keywords: [docker, dockerfile, multi-stage build, buildkit, docker secur
 
 Production-grade Docker patterns for security, optimization, and best practices using multi-stage builds, BuildKit, and security scanning.
 
+## Core Concepts
+
+- **Principle of Least Privilege**: Containers should run as non-root users with minimal capabilities - use `USER` directive and `--cap-drop=ALL` to reduce attack surface
+- **Immutable Infrastructure**: Container images are immutable artifacts - never patch running containers, rebuild and redeploy instead
+- **Defense in Depth**: Layer security controls: minimal base images, vulnerability scanning, read-only filesystems, network policies, and runtime protection
+- **Supply Chain Security**: Verify image provenance, sign images with Docker Content Trust, scan dependencies with Trivy/Snyk, use trusted base images from verified publishers
+- **Build Reproducibility**: Pin exact versions for base images and dependencies, use BuildKit cache mounts for deterministic builds, avoid `latest` tags in production
+
 ## Multi-Stage Builds
 
 ### Node.js Application

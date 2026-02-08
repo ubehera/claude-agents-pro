@@ -14,9 +14,9 @@ This document provides comprehensive testing procedures for validating the ubehe
 
 # Confirm expected agents exist in Claude Code's directory
 find ~/.claude/agents -maxdepth 1 -type f -name '*.md' \
-  | grep -E '(agent-coordinator|api-platform-engineer|code-reviewer|error-diagnostician|performance-optimization-specialist|system-design-specialist|test-engineer|frontend-expert|aws-cloud-architect|data-pipeline-engineer|devops-automation-expert|full-stack-architect|machine-learning-engineer|research-librarian|security-architect)'
+  | grep -E '(orchestration-coordinator|api-platform-engineer|code-reviewer|error-diagnostician|performance-optimization-specialist|system-design-specialist|test-engineer|frontend-expert|aws-cloud-architect|data-pipeline-engineer|devops-automation-expert|full-stack-architect|machine-learning-engineer|research-librarian|security-architect)'
 
-# Count should be 34 agents (22 original + 9 finance + 3 additional)
+# Count should be 51 agents
 find ~/.claude/agents -maxdepth 1 -type f -name '*.md' | wc -l
 ```
 
@@ -130,7 +130,7 @@ Test each agent's automatic invocation by using trigger keywords from their enha
 **Expected Result:** Should invoke `research-librarian`
 
 
-### 11. agent-coordinator
+### 11. orchestration-coordinator
 **Test Phrases:**
 - [ ] "Coordinate multiple specialists for a payments launch"
 - [ ] "Break this monolith migration into agent-sized tasks"
@@ -138,7 +138,7 @@ Test each agent's automatic invocation by using trigger keywords from their enha
 - [ ] "Manage dependencies across frontend, backend, and data teams"
 - [ ] "Run a quality gate across all outputs"
 
-**Expected Result:** Should invoke `agent-coordinator`
+**Expected Result:** Should invoke `orchestration-coordinator`
 
 ### 12. code-reviewer
 **Test Phrases:**
@@ -192,7 +192,7 @@ Test that each agent includes security and DevOps context:
 
 ### Content Validation
 - [ ] **Code Examples**: All code examples are syntactically correct
-- [ ] **Tool Restrictions**: Each agent uses only allowed Claude Code tools
+- [ ] **Tool Usage**: Each agent uses tools appropriate to its domain (agents inherit all tools automatically)
 - [ ] **Frontmatter Format**: YAML frontmatter is properly formatted
 - [ ] **Description Quality**: Descriptions include comprehensive trigger keywords
 
@@ -248,16 +248,12 @@ Test scenarios that should involve multiple agents:
 
 ## Performance Testing
 
-### Tool Restriction Validation
-- [ ] **api-platform-engineer**: Uses only Read, Write, MultiEdit, Bash, Grep, WebFetch
-- [ ] **aws-cloud-architect**: Uses only Read, Write, MultiEdit, Bash, Task, WebSearch
-- [ ] **data-pipeline-engineer**: Uses only Read, Write, MultiEdit, Bash, Task
-- [ ] **devops-automation-expert**: Uses only Read, Write, MultiEdit, Bash, Task, Grep
-- [ ] **full-stack-architect**: Uses only Read, Write, MultiEdit, Bash, Task, WebSearch
-- [ ] **machine-learning-engineer**: Uses only Read, Write, MultiEdit, Bash, Task, WebSearch
-- [ ] **performance-optimization-specialist**: Uses only Read, Write, MultiEdit, Bash, Grep, Task
-- [ ] **security-architect**: Uses only Read, Write, MultiEdit, Bash, Grep, WebSearch
-- [ ] **system-design-specialist**: Uses only Read, Write, MultiEdit, WebSearch, Task
+### Tool Usage Validation
+Agents inherit all available tools automatically (no explicit `tools:` field in frontmatter). The lists below represent **typical usage patterns** for reference, not restrictions. Verify that agents use tools appropriate to their domain:
+- [ ] **Foundation agents**: Primarily use Read, Write, Edit, Bash, Grep for code-level work
+- [ ] **Specialist agents**: Use Bash, Task, WebSearch as needed for infrastructure and research
+- [ ] **Expert agents**: Use Task for delegation, WebSearch/WebFetch for research
+- [ ] **Finance agents**: Use Bash, Read, Write for data analysis and scripting
 
 ### Response Quality
 - [ ] **Response Time**: Agents respond within reasonable time
@@ -299,7 +295,7 @@ system-design-specialist      | __/5          |
 ```
 
 ### Overall Assessment
-- **Total Test Cases**: 45 individual invocation tests + collaboration tests
+- **Total Test Cases**: Individual invocation tests (5 per agent) + collaboration tests
 - **Pass Threshold**: >90% for production readiness
 - **Critical Issues**: Document any agents that fail multiple tests
 - **Performance Impact**: Note any significant response time changes
@@ -310,7 +306,7 @@ system-design-specialist      | __/5          |
 1. **Agent Not Invoked**: Check description keywords, restart Claude Code
 2. **Wrong Agent Selected**: Refine trigger keywords in description
 3. **MCP Tools Not Working**: Verify MCP server configuration
-4. **Performance Degradation**: Check tool restrictions and complexity
+4. **Performance Degradation**: Check agent complexity and prompt length
 
 ### Resolution Steps
 1. **Review agent descriptions** for clarity

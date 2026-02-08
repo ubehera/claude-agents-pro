@@ -8,6 +8,20 @@ trigger_keywords: [fastapi, fast api, async api, pydantic, sqlalchemy async, asy
 
 Production-ready FastAPI project structure with async patterns, dependency injection, repository pattern, and comprehensive error handling for high-performance Python APIs.
 
+## Core Concepts
+
+- **Layered Architecture**: Separate concerns into controllers (routes), services (business logic), and repositories (data access). This enables independent testing, easier refactoring, and clear ownership boundaries.
+
+- **Dependency Injection**: FastAPI's `Depends()` system provides compile-time wiring of dependencies. Use it for database sessions, configuration, authentication, and cross-cutting concerns. Prefer constructor injection for testability.
+
+- **Repository Pattern**: Abstract data access behind repository interfaces. The repository owns SQL/ORM queries; services own business rules. This prevents query duplication and makes switching databases feasible.
+
+- **Async-First Design**: Use `async def` for all I/O-bound operations (database, HTTP calls, file I/O). Blocking calls in async endpoints starve the event loop. Use `run_in_executor()` for unavoidable sync code.
+
+- **Pydantic Schemas as Contracts**: Define separate schemas for Create, Update, and Response. Never expose ORM models directly in API responses. Use `model_config = {"from_attributes": True}` for ORM-to-schema conversion.
+
+- **Anti-pattern - Fat Controllers**: Avoid business logic in route handlers. Controllers should only validate input, call services, and format output. When a route handler exceeds 15 lines, extract to a service.
+
 ## Project Structure
 
 ```

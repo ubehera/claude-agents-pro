@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "generated": "2025-12-11T00:16:32.436246",
-  "total_agents": 45,
+  "generated": "2026-02-08T08:59:33.697726",
+  "total_agents": 60,
   "agents": [
     {
       "name": "agent-organizer",
@@ -112,6 +112,15 @@
       "subagent_type": "test-engineer"
     },
     {
+      "name": "angular-expert",
+      "description": "Senior Angular architect for Angular 17+, signals, standalone components, new control flow syntax, RxJS optimization, NgRx state management, micro-frontend architecture with Module Federation, and enterprise application patterns. Specializes in performance optimization, change detection strategies, and large-scale Angular migrations. Use for Angular development, enterprise frontend architecture, RxJS patterns, and Angular migrations.",
+      "tier": "02-development",
+      "path": "agents/02-development/angular-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "angular-expert"
+    },
+    {
       "name": "bash-expert",
       "description": "Shell scripting and command-line automation specialist for Bash, Zsh, and POSIX-compliant scripts. Expert in process management, file manipulation, text processing (sed, awk, grep), system administration, error handling, pipeline composition, and cross-platform compatibility. Use for build scripts, deployment automation, system monitoring, log processing, CI/CD tooling, and infrastructure bootstrapping.",
       "tier": "02-development",
@@ -119,6 +128,24 @@
       "tools": [],
       "enhanced_capabilities": [],
       "subagent_type": "bash-expert"
+    },
+    {
+      "name": "csharp-expert",
+      "description": "Senior C# engineer for .NET 8+ production services, ASP.NET Core minimal APIs, Entity Framework Core, Blazor, high-performance code with Span<T>/ValueTask, cross-platform development with MAUI, and Azure cloud integration. Specializes in clean architecture, async patterns, source generators, and production hardening. Use for .NET development, ASP.NET Core APIs, C# performance optimization, and enterprise .NET architecture.",
+      "tier": "02-development",
+      "path": "agents/02-development/csharp-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "csharp-expert"
+    },
+    {
+      "name": "django-expert",
+      "description": "Senior Django developer for Django 5+ and Django REST Framework, async views, Celery task queues, Channels WebSockets, ORM optimization (select_related/prefetch_related), multi-tenant SaaS patterns, and production deployment. Specializes in query optimization, signal design, middleware, and Django's batteries-included philosophy. Use for Django web development, DRF APIs, Django ORM optimization, and Python web applications.",
+      "tier": "02-development",
+      "path": "agents/02-development/django-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "django-expert"
     },
     {
       "name": "frontend-expert",
@@ -139,6 +166,33 @@
       "subagent_type": "go-expert"
     },
     {
+      "name": "java-expert",
+      "description": "Enterprise Java architect for Java 21+ LTS, Spring Boot 3.x, microservices decomposition, reactive programming (WebFlux, Project Reactor), virtual threads, GraalVM native images, and JVM performance tuning. Specializes in hexagonal architecture, CQRS, event sourcing, and cloud-native Java deployments. Use for enterprise Java development, Spring ecosystem architecture, JVM optimization, and microservices design.",
+      "tier": "02-development",
+      "path": "agents/02-development/java-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "java-expert"
+    },
+    {
+      "name": "kotlin-expert",
+      "description": "Senior Kotlin engineer for Kotlin 2.0+, coroutines and Flow, Kotlin Multiplatform (KMP), Android development with Jetpack Compose, server-side Ktor, and functional patterns with Arrow. Specializes in structured concurrency, multiplatform code sharing, and idiomatic Kotlin design. Use for Kotlin development, Android apps, KMP projects, coroutine architecture, and server-side Kotlin.",
+      "tier": "02-development",
+      "path": "agents/02-development/kotlin-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "kotlin-expert"
+    },
+    {
+      "name": "laravel-expert",
+      "description": "Senior Laravel developer for Laravel 11+, Eloquent ORM optimization, Livewire reactive components, Horizon queue management, Sanctum/Passport authentication, and PHP 8.3+ modern patterns. Specializes in N+1 query prevention, eager loading strategies, multi-tenant SaaS architecture, and Laravel ecosystem integration (Nova, Forge, Vapor). Use for Laravel development, PHP web applications, Eloquent optimization, and Laravel API development.",
+      "tier": "02-development",
+      "path": "agents/02-development/laravel-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "laravel-expert"
+    },
+    {
       "name": "mobile-specialist",
       "description": "Principal mobile engineer for iOS (SwiftUI, UIKit) and Android (Kotlin, Jetpack) plus cross-platform stacks (React Native 0.73+, Flutter 3.16+). Handles architecture, native modules, performance profiling, release automation, and mobile CI/CD. Use for feature delivery, platform audits, and mobile modernization.",
       "tier": "02-development",
@@ -157,6 +211,15 @@
       "subagent_type": "python-expert"
     },
     {
+      "name": "rails-expert",
+      "description": "Senior Ruby on Rails engineer for Rails 7.1+, Hotwire (Turbo/Stimulus), Action Cable real-time features, Active Record optimization, Sidekiq background processing, and convention-over-configuration development. Specializes in N+1 query prevention, Russian doll caching, multi-database support, and rapid full-stack delivery. Use for Rails development, Ruby web applications, Hotwire reactivity, and Rails performance optimization.",
+      "tier": "02-development",
+      "path": "agents/02-development/rails-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "rails-expert"
+    },
+    {
       "name": "rust-expert",
       "description": "Senior Rust engineer for systems programming, performance-critical applications, CLI tools, WebAssembly, and embedded systems using Rust 2021+ edition. Specializes in ownership/borrowing mastery, async runtime selection (Tokio, async-std), zero-cost abstractions, unsafe code safety, FFI/interop, and production-grade error handling with thiserror/anyhow. Use for Rust development, performance optimization, memory safety verification, and systems-level programming.",
       "tier": "02-development",
@@ -164,6 +227,15 @@
       "tools": [],
       "enhanced_capabilities": [],
       "subagent_type": "rust-expert"
+    },
+    {
+      "name": "spring-boot-expert",
+      "description": "Senior Spring Boot engineer for Spring Boot 3.x, Spring Cloud microservices, reactive programming with WebFlux/Project Reactor, Spring Security 6 with OAuth2, GraalVM native images, and cloud-native Java deployment. Specializes in auto-configuration, Actuator observability, TestContainers integration testing, and Spring Cloud patterns (Gateway, Config, Resilience4j). Use for Spring Boot services, Spring Cloud architecture, reactive Java APIs, and Spring ecosystem integration.",
+      "tier": "02-development",
+      "path": "agents/02-development/spring-boot-expert.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "spring-boot-expert"
     },
     {
       "name": "typescript-architect",
@@ -184,6 +256,15 @@
       "subagent_type": "aws-cloud-architect"
     },
     {
+      "name": "azure-cloud-architect",
+      "description": "Azure expert for ARM templates, Bicep, Azure DevOps, AKS, Azure Functions, Cosmos DB, Azure SQL, Virtual Networks, Entra ID (Azure AD), Azure Well-Architected Framework, Landing Zones, cost management, security (Key Vault, Defender, Sentinel), compliance, and hybrid cloud with Azure Arc. Use for Azure infrastructure design, cloud architecture, Azure migrations, and enterprise Azure deployments.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/azure-cloud-architect.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "azure-cloud-architect"
+    },
+    {
       "name": "backend-architect",
       "description": "Principal backend architect for service design, REST/GraphQL APIs, event-driven systems, microservices decomposition, messaging (Kafka, RabbitMQ), resilience patterns (circuit breakers, retries), and deployment across containers and serverless. Use for end-to-end backend planning, implementation blueprints, and modernization efforts.",
       "tier": "03-specialists",
@@ -191,6 +272,15 @@
       "tools": [],
       "enhanced_capabilities": [],
       "subagent_type": "backend-architect"
+    },
+    {
+      "name": "chaos-engineer",
+      "description": "Chaos engineering specialist for designing and executing resilience testing, failure injection, game days, and system reliability validation. Use for chaos experiments, disaster recovery testing, and building resilient systems.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/chaos-engineer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "chaos-engineer"
     },
     {
       "name": "data-pipeline-engineer",
@@ -238,6 +328,15 @@
       "subagent_type": "full-stack-architect"
     },
     {
+      "name": "gcp-cloud-architect",
+      "description": "Google Cloud expert for Terraform on GCP, GKE, Cloud Run, Cloud Functions, BigQuery, Spanner, Cloud SQL, VPC, IAM, Organization Policies, Google Cloud Well-Architected Framework, data analytics pipelines, and AI/ML platform (Vertex AI). Use for GCP infrastructure design, cloud architecture, data platform engineering, and Google Cloud deployments.",
+      "tier": "03-specialists",
+      "path": "agents/03-specialists/gcp-cloud-architect.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "gcp-cloud-architect"
+    },
+    {
       "name": "kubernetes-architect",
       "description": "Kubernetes orchestration and cloud-native architecture specialist for container platform design, workload scheduling, service mesh integration, autoscaling, multi-tenancy, GitOps, observability, and production operations. Expert in K8s 1.28+, Helm, Kustomize, Istio, ArgoCD, and CNCF ecosystem. Use for cluster architecture, deployment strategies, operator development, networking policies, storage orchestration, and production hardening.",
       "tier": "03-specialists",
@@ -274,6 +373,15 @@
       "subagent_type": "terraform-expert"
     },
     {
+      "name": "llm-architect",
+      "description": "LLM system architect for designing production AI/ML systems including RAG pipelines, prompt engineering infrastructure, LLM orchestration, agent frameworks, and AI-native applications. Use for LLM integration, AI system design, and production AI deployment.",
+      "tier": "04-experts",
+      "path": "agents/04-experts/llm-architect.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "llm-architect"
+    },
+    {
       "name": "machine-learning-engineer",
       "description": "ML/AI expert for PyTorch, TensorFlow, MLOps, model training, deployment, MLflow, Kubeflow, feature engineering, model serving, distributed training, A/B testing, model monitoring, data pipelines, neural networks, deep learning, and production ML systems. Use for machine learning projects, AI implementation, model deployment, and MLOps pipelines.",
       "tier": "04-experts",
@@ -283,17 +391,38 @@
       "subagent_type": "machine-learning-engineer"
     },
     {
+      "name": "prompt-engineer",
+      "description": "Prompt engineering specialist for designing, optimizing, and evaluating LLM prompts for production applications. Use for prompt design, few-shot learning, chain-of-thought prompting, and prompt optimization.",
+      "tier": "04-experts",
+      "path": "agents/04-experts/prompt-engineer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "prompt-engineer"
+    },
+    {
+      "name": "dx-optimizer",
+      "description": "Developer experience (DX) optimization specialist for improving development workflows, tooling, onboarding, local development environments, documentation, and team productivity. Use for identifying friction points, optimizing developer tooling, improving onboarding, and streamlining development processes.",
+      "tier": "05-platform",
+      "path": "agents/05-platform/dx-optimizer.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "dx-optimizer"
+    },
+    {
+      "name": "git-workflow-manager",
+      "description": "Git workflow automation specialist for branch strategies (GitFlow, trunk-based, GitHub Flow), commit conventions (conventional commits, semantic versioning), PR automation, release management, repository hygiene, and team collaboration patterns. Use for Git workflow design, branch strategy implementation, PR automation, and release process optimization.",
+      "tier": "05-platform",
+      "path": "agents/05-platform/git-workflow-manager.md",
+      "tools": [],
+      "enhanced_capabilities": [],
+      "subagent_type": "git-workflow-manager"
+    },
+    {
       "name": "product-owner",
       "description": "Product ownership specialist for requirements analysis, user story creation, backlog management, and acceptance criteria definition. Expert in agile methodologies, user journey mapping, feature prioritization, stakeholder management, and translating business needs into actionable technical requirements. Use for requirements gathering, user story writing, backlog refinement, acceptance criteria definition, and bridging business-technical communication.",
       "tier": "06-integration",
       "path": "agents/06-integration/product-owner.md",
-      "tools": [
-        "Read",
-        "Write",
-        "Grep",
-        "Glob",
-        "WebSearch"
-      ],
+      "tools": [],
       "enhanced_capabilities": [],
       "subagent_type": "product-owner"
     },
@@ -311,15 +440,7 @@
       "description": "Technical documentation specialist for end-user guides, API documentation, developer onboarding, tutorials, troubleshooting guides, and knowledge base articles. Expert in documentation-as-code (Markdown, MDX, reStructuredText), information architecture, content strategy, accessibility (plain language, inclusive writing), and documentation platforms (GitBook, Docusaurus, ReadTheDocs, Confluence). Use for creating user documentation, API references, quickstart guides, FAQs, and maintaining documentation systems.",
       "tier": "06-integration",
       "path": "agents/06-integration/tech-writer.md",
-      "tools": [
-        "Read",
-        "Write",
-        "Edit",
-        "Grep",
-        "Glob",
-        "WebSearch",
-        "WebFetch"
-      ],
+      "tools": [],
       "enhanced_capabilities": [],
       "subagent_type": "tech-writer"
     },
@@ -429,6 +550,7 @@
     "02-development",
     "03-specialists",
     "04-experts",
+    "05-platform",
     "06-integration",
     "07-quality",
     "08-finance"

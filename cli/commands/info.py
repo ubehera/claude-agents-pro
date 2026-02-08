@@ -7,6 +7,7 @@ from rich.panel import Panel
 from rich.markdown import Markdown
 from rich.syntax import Syntax
 
+from ..utils.agent_finder import find_agent_file
 from ..utils.agent_parser import AgentParser
 
 console = Console()
@@ -63,23 +64,7 @@ def info(agent_name: str, scope: str, agents_dir: Path, full: bool):
     _display_agent_info(agent_data, agent_file, full)
 
 
-def _find_agent_file(agents_dir: Path, agent_name: str) -> Path | None:
-    """Find an agent file by name."""
-    # Try exact match first
-    for tier_dir in agents_dir.glob("[0-9][0-9]-*"):
-        if tier_dir.is_dir():
-            agent_file = tier_dir / f"{agent_name}.md"
-            if agent_file.exists():
-                return agent_file
-
-    # Try fuzzy match
-    for tier_dir in agents_dir.glob("[0-9][0-9]-*"):
-        if tier_dir.is_dir():
-            for agent_file in tier_dir.glob("*.md"):
-                if agent_name.lower() in agent_file.stem.lower():
-                    return agent_file
-
-    return None
+_find_agent_file = find_agent_file  # backward-compat alias
 
 
 def _display_agent_info(agent_data: dict, agent_file: Path, show_full: bool):

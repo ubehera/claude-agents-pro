@@ -2,7 +2,7 @@
 description: Surface the mandatory checklist before updating agents
 args:
 tools: Read
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 ## Purpose

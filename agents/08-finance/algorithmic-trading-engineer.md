@@ -1,9 +1,9 @@
 ---
 name: algorithmic-trading-engineer
 description: Algorithmic trading execution and order management specialist for live trading systems. Expert in multi-broker integration (Alpaca, E*TRADE, Fidelity), order management systems (OMS), execution algorithms (TWAP, VWAP, iceberg), order types (market, limit, stop-loss, trailing stop, bracket orders), position reconciliation, trade logging, and real-time monitoring. Use for broker API integration, order execution, live trading deployment, and production trading system implementation.
-category: specialist
+category: finance
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Multi-broker integration (Alpaca, E*TRADE, Fidelity)
   - Order management systems (OMS)

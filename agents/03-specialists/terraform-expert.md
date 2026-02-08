@@ -4,7 +4,7 @@ description: |
   Infrastructure as Code specialist for Terraform/OpenTofu with expertise in multi-cloud provisioning (AWS, Azure, GCP), state management, module design, testing, security, and compliance. Expert in Terraform 1.6+, provider development, workspace management, policy as code (OPA, Sentinel), and CI/CD integration. Use for infrastructure automation, cloud resource provisioning, state migration, module development, and IaC best practices.
 category: specialist
 complexity: expert
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Terraform/OpenTofu 1.6+ development
   - Multi-cloud provisioning (AWS, Azure, GCP)

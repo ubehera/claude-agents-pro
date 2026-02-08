@@ -3,7 +3,7 @@ name: devops-automation-expert
 description: DevOps expert for CI/CD pipelines (GitHub Actions, GitLab CI, Jenkins), infrastructure as code (Terraform, Ansible), GitOps (ArgoCD, Flux), Kubernetes, Docker, monitoring (Prometheus, Grafana), automation, deployment strategies, developer productivity, and operational excellence. Use for pipeline setup, automation, deployment, infrastructure management, and DevOps transformation.
 category: specialist
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - CI/CD pipelines (GitHub Actions, Jenkins)
   - Infrastructure as Code (Terraform, Ansible)

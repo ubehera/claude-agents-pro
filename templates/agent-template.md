@@ -5,8 +5,8 @@ description: >
   [Use cases]: Use for [scenario 1], [scenario 2], [scenario 3], and [scenario 4].
 category: foundation
 complexity: moderate
-model: claude-sonnet-4-5-20250929
-model_rationale: Balanced performance for complex analysis requiring deep technical expertise
+model: claude-opus-4-6
+model_rationale: Maximum capability for optimal results
 capabilities:
   - capability-1
   - capability-2

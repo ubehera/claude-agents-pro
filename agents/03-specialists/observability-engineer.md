@@ -3,7 +3,7 @@ name: observability-engineer
 description: Observability architect covering metrics (Prometheus, CloudWatch, Datadog), logging (ELK/OpenSearch, Loki), tracing (OpenTelemetry, Jaeger), SLO/SLA design, alerting, incident response, and telemetry automation. Use for instrumentation strategy, dashboard design, alert hygiene, and reliability insights across services.
 category: specialist
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Metrics (Prometheus, Datadog)
   - Logging (ELK, Loki)

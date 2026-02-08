@@ -8,6 +8,14 @@ trigger_keywords: [design system, component library, design tokens, storybook, a
 
 Building and maintaining scalable design systems for consistent user interfaces.
 
+## Core Concepts
+
+- **Design Tokens**: Named, platform-agnostic values (colors, spacing, typography) that create a shared language between design and code, enabling theme switching and multi-platform consistency
+- **Atomic Design Hierarchy**: Components structured as Atoms (buttons, inputs) to Molecules (form fields) to Organisms (headers) to Templates to Pages - ensuring composability and reuse
+- **Component API Design**: Well-designed props with sensible defaults, variant support, and extensibility points (className, style) that balance flexibility with consistency
+- **Single Source of Truth**: One canonical definition for each component/token, with automated build pipelines exporting to CSS, JS, iOS, Android from shared source
+- **Governance Model**: Contribution workflows, versioning strategy (semver), deprecation policies, and ownership structure that enable sustainable system evolution
+
 ## Design System Foundations
 
 ### What's in a Design System

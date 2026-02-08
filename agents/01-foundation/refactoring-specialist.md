@@ -3,7 +3,7 @@ name: refactoring-specialist
 description: Safe code refactoring expert for improving code quality without changing behavior. Specializes in extracting functions, eliminating duplication, improving naming, reducing complexity, applying design patterns, and modernizing legacy code using test-driven refactoring techniques. Use for technical debt reduction, code modernization, architecture improvement, and maintaining backwards compatibility.
 category: foundation
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Safe refactoring techniques
   - Code smell detection

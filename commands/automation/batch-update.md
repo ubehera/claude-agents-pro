@@ -2,7 +2,7 @@
 description: Batch update agents with version control and rollback capability
 args: [--pattern glob] [--action update|validate|rollback] [--dry-run] [--parallel]
 tools: Bash(git:*), Read, Write, MultiEdit, Grep
-model: claude-opus-4-1
+model: opus
 ---
 
 ## Objective

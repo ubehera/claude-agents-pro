@@ -3,7 +3,7 @@ name: rust-expert
 description: Senior Rust engineer for systems programming, performance-critical applications, CLI tools, WebAssembly, and embedded systems using Rust 2021+ edition. Specializes in ownership/borrowing mastery, async runtime selection (Tokio, async-std), zero-cost abstractions, unsafe code safety, FFI/interop, and production-grade error handling with thiserror/anyhow. Use for Rust development, performance optimization, memory safety verification, and systems-level programming.
 category: development
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Rust 2021+ development
   - Ownership and borrowing mastery

@@ -2,7 +2,7 @@
 description: Synchronize with upstream repositories and manage dependency updates
 args: [--source upstream|origin] [--strategy merge|rebase] [--auto-resolve] [--dry-run]
 tools: Bash(git fetch:*), Bash(git merge:*), Bash(git rebase:*), Bash(git status:*), Grep, Read
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 ## Objective

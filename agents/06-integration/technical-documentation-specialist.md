@@ -3,7 +3,7 @@ name: technical-documentation-specialist
 description: Reviews and improves technical documentation quality across ADRs, READMEs, API documentation, architecture diagrams, runbooks, and specifications. Enhances structure, clarity, consistency, and completeness without creating domain content. Focuses on technical writing standards, information architecture, C4 diagrams, OpenAPI specs, and documentation patterns for maximum developer effectiveness.
 category: integration
 complexity: moderate
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Technical documentation review
   - ADR quality improvement
@@ -16,6 +16,10 @@ capabilities:
 auto_activate:
   keywords: [documentation, ADR, README, technical writing, C4 diagram, OpenAPI, runbook, documentation review]
   conditions: [documentation improvement, technical writing, documentation consistency, ADR review]
+skills:
+  - architecture-decision-records
+  - openapi-spec-generation
+  - changelog-automation
 examples:
   - trigger: "Review ADR for caching strategy decision and improve clarity"
     commentary: "Analyzes ADR structure, identifies missing alternatives section, clarifies trade-offs with concrete metrics, adds implementation notes with phased rollout plan, fixes heading hierarchy and formatting."

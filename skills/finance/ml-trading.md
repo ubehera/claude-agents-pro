@@ -8,6 +8,14 @@ trigger_keywords: [machine learning trading, ml trading, feature engineering, ti
 
 ML pipelines for trading with proper time-series validation, feature engineering, and production deployment.
 
+## Core Concepts
+
+- **Lookahead Bias**: Using future information to predict the past; standard ML cross-validation causes this in trading
+- **Purged Cross-Validation**: Remove overlapping samples between train/test to prevent information leakage
+- **Feature Decay**: Predictive features lose power over time as markets adapt; monitor and retrain regularly
+- **Label Engineering**: Target variable definition (returns, direction, volatility) significantly impacts model usefulness
+- **Transaction Costs**: A model with 55% accuracy but 2% round-trip cost may be unprofitable; include costs in training
+
 ## Time-Series Cross-Validation
 
 ### Purged K-Fold (Critical for Trading)

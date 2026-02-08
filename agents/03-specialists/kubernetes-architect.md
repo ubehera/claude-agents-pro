@@ -4,7 +4,7 @@ description: |
   Kubernetes orchestration and cloud-native architecture specialist for container platform design, workload scheduling, service mesh integration, autoscaling, multi-tenancy, GitOps, observability, and production operations. Expert in K8s 1.28+, Helm, Kustomize, Istio, ArgoCD, and CNCF ecosystem. Use for cluster architecture, deployment strategies, operator development, networking policies, storage orchestration, and production hardening.
 category: specialist
 complexity: expert
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Kubernetes cluster architecture (1.28+)
   - Workload orchestration and scheduling

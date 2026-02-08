@@ -1,6 +1,7 @@
 ---
 name: security-testing
 description: Implement comprehensive security testing including penetration testing, DAST, fuzzing, and automated security test suites to identify vulnerabilities before production.
+trigger_keywords: [security testing, pentest, penetration testing, dast, fuzzing, zap, burp suite, sqlmap, security scan, api security test]
 tags:
   - security
   - testing
@@ -24,6 +25,18 @@ Comprehensive security testing strategies from automated scanning to manual pene
 - **API Security**: Test authentication, authorization, input validation
 - **Penetration Testing**: Simulate real-world attacks
 - **Regression Testing**: Ensure fixes don't introduce new issues
+
+## Core Concepts
+
+- **Testing Pyramid**: Combine automated scanning (DAST/SAST), manual testing, and penetration testing. Automated tools find common vulnerabilities; skilled testers find business logic flaws. Neither alone is sufficient.
+
+- **Shift Left Security**: Integrate security testing early in SDLC. Run SAST in IDE and CI/CD pipelines. Catch vulnerabilities before code reaches production where fixes are 30x more expensive.
+
+- **Authenticated vs Unauthenticated**: Always test both attack surfaces. Many vulnerabilities only appear to authenticated users. Configure scanners with valid credentials to test post-authentication functionality.
+
+- **False Positives vs True Positives**: Automated scanners produce noise. Validate findings manually before reporting. Prioritize based on exploitability and business impact, not just CVSS scores.
+
+- **Continuous Security Testing**: One-time penetration tests are insufficient. Automate security tests in CI/CD. Monitor for new vulnerabilities in dependencies. Retest after every significant change.
 
 ## Security Testing Types
 

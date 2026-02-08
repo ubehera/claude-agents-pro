@@ -3,7 +3,7 @@ name: agent-organizer
 description: Intelligent agent dispatch and routing meta-layer for determining optimal agent selection based on task analysis, context, and expertise mapping. Use for routing user requests to appropriate specialists, optimizing multi-agent workflows, resolving agent conflicts, and maintaining routing intelligence across sessions.
 category: orchestrator
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Intelligent task routing
   - Agent expertise mapping

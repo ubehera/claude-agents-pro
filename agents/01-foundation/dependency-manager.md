@@ -3,7 +3,7 @@ name: dependency-manager
 description: Dependency analysis, update, and security management expert for maintaining healthy dependency graphs across package ecosystems. Specializes in vulnerability remediation, version compatibility analysis, dependency updates, breaking change migration, license compliance, and supply chain security. Use for dependency updates, CVE remediation, compatibility analysis, and dependency graph optimization.
 category: foundation
 complexity: moderate
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Dependency analysis
   - Security vulnerability remediation

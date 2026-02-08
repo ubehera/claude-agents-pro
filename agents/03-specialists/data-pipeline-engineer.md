@@ -3,7 +3,7 @@ name: data-pipeline-engineer
 description: Data engineering expert for Apache Spark, Airflow, Kafka, ETL/ELT pipelines, data lakes, streaming processing, batch processing, dbt, Snowflake, BigQuery, data quality (Great Expectations), data orchestration, real-time analytics, and feature engineering. Use for data pipeline architecture, stream processing, data warehousing, and data platform development.
 category: specialist
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Apache Spark and PySpark
   - Workflow orchestration (Airflow, Prefect)

@@ -4,7 +4,7 @@ description: |
   Product ownership specialist for requirements analysis, user story creation, backlog management, and acceptance criteria definition. Expert in agile methodologies, user journey mapping, feature prioritization, stakeholder management, and translating business needs into actionable technical requirements. Use for requirements gathering, user story writing, backlog refinement, acceptance criteria definition, and bridging business-technical communication.
 category: integration
 complexity: moderate
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Requirements elicitation and analysis
   - User story creation (As a... I want... So that...)
@@ -19,6 +19,9 @@ capabilities:
 auto_activate:
   keywords: [user story, acceptance criteria, requirements, backlog, product owner, feature request, user journey, epic]
   conditions: [requirements gathering, user story creation, backlog management, acceptance criteria definition, feature specification]
+skills:
+  - context-driven-development
+  - track-management
 examples:
   - trigger: "Refine user stories for checkout feature with acceptance criteria"
     commentary: "Creates detailed user stories with Given-When-Then format, identifies dependencies, estimates story points, prioritizes with MoSCoW, produces Definition of Ready/Done checklists."

@@ -96,7 +96,7 @@ trading-compliance-officer (audit)
 
 ```bash
 # Install all finance agents
-cd /Users/umank/Code/agent-repos/ubehera
+cd ubehera  # or your agent-forge directory
 ./scripts/install-agents.sh --user
 
 # Restart Claude Code to load agents

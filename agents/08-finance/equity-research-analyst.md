@@ -1,9 +1,9 @@
 ---
 name: equity-research-analyst
 description: Equity research and fundamental analysis specialist for stock selection and valuation. Expert in financial statement analysis, valuation models (DCF, P/E, P/B, EV/EBITDA comparables), financial ratios (ROE, ROA, debt ratios, margins), earnings analysis, industry benchmarking, and fundamental screening. Use for fundamental analysis, stock screening, valuation, financial modeling, and company research for stocks and options.
-category: specialist
+category: finance
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Financial statement analysis
   - Valuation models (DCF, comparables)

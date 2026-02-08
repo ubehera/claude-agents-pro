@@ -3,7 +3,7 @@ name: backend-architect
 description: Principal backend architect for service design, REST/GraphQL APIs, event-driven systems, microservices decomposition, messaging (Kafka, RabbitMQ), resilience patterns (circuit breakers, retries), and deployment across containers and serverless. Use for end-to-end backend planning, implementation blueprints, and modernization efforts.
 category: specialist
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Backend service architecture
   - Domain-driven design

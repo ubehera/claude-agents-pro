@@ -1,9 +1,18 @@
 ---
 name: monorepo-management
 description: Master monorepo management with Turborepo, Nx, and pnpm workspaces for efficient multi-package repositories with optimized builds. Use when setting up monorepos or managing shared dependencies.
+trigger_keywords: [monorepo, turborepo, nx workspace, pnpm workspace, workspace, changesets, lerna, multi-package, shared dependencies]
 ---
 
 # Monorepo Management
+
+## Core Concepts
+
+- **Single Source of Truth**: All code, configurations, and shared libraries live in one repository, enabling atomic commits across packages and consistent versioning
+- **Task Graph Orchestration**: Build tools like Turborepo/Nx create dependency graphs to execute only affected tasks, providing 10-100x build speedups through intelligent caching
+- **Workspace Protocol**: Package managers (pnpm/npm/yarn) use workspace protocols (`workspace:*`) to link local packages without publishing, enabling seamless local development
+- **Affected Analysis**: Only rebuild/test packages that changed or depend on changed code - critical for CI/CD performance at scale
+- **Dependency Hoisting**: Shared dependencies are hoisted to the root `node_modules`, reducing duplication and ensuring version consistency across packages
 
 ## Why Monorepos?
 

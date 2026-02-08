@@ -2,7 +2,7 @@
 description: Invoke a specific agent with context and requirements
 args: <agent-name> <task-description>
 tools: Task, Read, TodoWrite
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 # Direct Agent Invocation
@@ -85,4 +85,4 @@ Create TodoWrite entry for:
 If agent not found:
 1. Suggest closest matches
 2. Recommend using `/team` for complex multi-agent tasks
-3. Fall back to agent-coordinator for guidance
+3. Fall back to orchestration-coordinator for guidance

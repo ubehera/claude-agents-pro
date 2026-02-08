@@ -1,9 +1,9 @@
 ---
 name: market-data-engineer
 description: Financial market data specialist for real-time and historical data acquisition, processing, and quality assurance. Expert in market data feeds (WebSocket, REST APIs), time-series storage (TimescaleDB, QuestDB, InfluxDB), OHLCV data pipelines, options chain data, corporate actions, and data quality monitoring. Use for market data infrastructure, exchange connectivity, broker data integration (Alpaca, Fidelity, E*TRADE), and financial data quality management for stocks and options.
-category: specialist
+category: finance
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Market data feeds (WebSocket, REST)
   - Time-series databases (TimescaleDB, QuestDB)

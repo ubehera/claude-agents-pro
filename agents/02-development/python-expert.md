@@ -1,9 +1,9 @@
 ---
 name: python-expert
 description: Senior Python engineer for production services using Python 3.11+, FastAPI, Django, async workers (Celery, Dramatiq), data workflows (pandas, SQLAlchemy), type safety (PEP 484, mypy), packaging (Poetry, Hatch), and performance tuning. Use for backend feature delivery, library design, refactoring, and Python-specific troubleshooting.
-category: specialist
+category: development
 complexity: moderate
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Python 3.11+ development
   - FastAPI and Django expertise

@@ -2,7 +2,7 @@
 description: Predefined multi-agent workflow patterns for common scenarios
 args: <pattern-name> [--customize] [--quality-level mvp|standard|enterprise]
 tools: Task, TodoWrite, Read, Write
-model: claude-opus-4-1
+model: opus
 ---
 
 # /workflow-patterns - Reusable Multi-Agent Workflow Templates
@@ -65,7 +65,7 @@ Provides predefined, battle-tested workflow patterns for common development scen
 1. **Debt Assessment**: `code-reviewer` → technical debt analysis
 2. **Architecture Review**: `system-design-specialist` → refactoring strategy
 3. **Impact Analysis**: Domain specialists → change impact assessment
-4. **Incremental Planning**: `agent-coordinator` → phased approach
+4. **Incremental Planning**: `orchestration-coordinator` → phased approach
 5. **Implementation**: Domain specialists → incremental changes
 6. **Continuous Testing**: `test-engineer` → regression prevention
 7. **Performance Monitoring**: `performance-optimization-specialist` → impact tracking
@@ -85,7 +85,7 @@ Provides predefined, battle-tested workflow patterns for common development scen
 3. **Escalation**: Domain specialists → expert involvement
 4. **Resolution**: Multi-agent coordination → fix implementation
 5. **Verification**: `test-engineer` → resolution validation
-6. **Communication**: `agent-coordinator` → stakeholder updates
+6. **Communication**: `orchestration-coordinator` → stakeholder updates
 7. **Post-Incident Review**: Multi-agent → lessons learned
 
 **Quality Gates**: Incident contained, root cause identified, preventive measures planned
@@ -173,7 +173,7 @@ Provides predefined, battle-tested workflow patterns for common development scen
 4. **Performance Testing**: `performance-optimization-specialist` → benchmark testing
 5. **Security Assessment**: `security-architect` → security evaluation
 6. **Integration Analysis**: `system-design-specialist` → ecosystem fit
-7. **Recommendation**: `agent-coordinator` → decision synthesis
+7. **Recommendation**: `orchestration-coordinator` → decision synthesis
 
 **Quality Gates**: Comprehensive analysis, POC validated, risks identified, recommendation clear
 

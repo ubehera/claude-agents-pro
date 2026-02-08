@@ -1,6 +1,7 @@
 ---
 name: better-auth
 description: Implement authentication with Better Auth - a framework-agnostic TypeScript authentication framework. Features email/password, OAuth, 2FA, passkeys, and session management.
+trigger_keywords: [better-auth, better auth, typescript auth, passkeys, magic link, oauth typescript, 2fa typescript, session management]
 ---
 
 # Better Auth
@@ -14,6 +15,18 @@ Framework-agnostic TypeScript authentication with built-in email/password, socia
 - Setting up 2FA, passkeys, magic links
 - Building multi-tenant apps with organization support
 - Any framework (Next.js, Nuxt, SvelteKit, Remix, etc.)
+
+## Core Concepts
+
+- **Session Security**: Better Auth uses secure, httpOnly cookies by default. Sessions are cryptographically signed and can be configured for sliding expiration. Always set `BETTER_AUTH_SECRET` to a strong random value (32+ characters).
+
+- **Defense in Depth**: Layer multiple auth methods (email/password + 2FA + rate limiting). Better Auth's plugin system enables progressive security enhancement without rewriting core auth logic.
+
+- **Token Lifecycle**: Access tokens should be short-lived (15-30 min), refresh tokens longer (7-30 days). Better Auth handles token rotation automatically, but configure `session.expiresIn` and `session.updateAge` appropriately for your risk profile.
+
+- **Attack Mitigation**: Enable rate limiting in production to prevent credential stuffing and brute force attacks. Use email verification to prevent account enumeration. PKCE is automatic for OAuth flows to prevent authorization code interception.
+
+- **Secure Defaults**: Better Auth implements OWASP session management best practices out of the box, including secure cookie flags, CSRF protection, and password hashing with bcrypt. Override defaults only when you understand the security implications.
 
 ## Quick Start
 

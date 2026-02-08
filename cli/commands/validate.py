@@ -90,9 +90,9 @@ def validate(agents_dir: Path, strict: bool, fix: bool):
 
                 # Check model is valid
                 valid_models = [
-                    'claude-sonnet-4-5-20250929',
-                    'claude-opus-4-5-20251101',
-                    'claude-haiku-4-5-20250929'
+                    'claude-opus-4-6',
+                    'claude-sonnet-4-5',
+                    'claude-haiku-4-5'
                 ]
                 model = agent_data.get('model', '')
                 if model and model not in valid_models:

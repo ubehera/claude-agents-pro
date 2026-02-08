@@ -337,12 +337,12 @@ tools: Read, Write, Bash, Task
 
 **Problem:**
 ```yaml
-model: claude-opus-4-1-20250805
+model: claude-opus-4-6
 ```
 
 **Solution:** Add justification:
 ```yaml
-model: claude-opus-4-1-20250805
+model: claude-opus-4-6
 model_rationale: Complex multi-agent orchestration requires highest reasoning capability for dependency management and workflow optimization
 ```
 

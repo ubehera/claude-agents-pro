@@ -1,6 +1,7 @@
 ---
 name: database-migration
 description: Execute database migrations across ORMs with zero-downtime strategies, data transformation, and rollback procedures. Use when migrating databases or changing schemas.
+trigger_keywords: [database migration, schema migration, sequelize, typeorm, prisma migrate, zero downtime, rollback, db:migrate]
 ---
 
 # Database Migration
@@ -14,6 +15,14 @@ Master database schema and data migrations across ORMs (Sequelize, TypeORM, Pris
 - Moving data between databases
 - Zero-downtime deployments
 - Database version upgrades
+
+## Core Concepts
+
+- **Idempotency**: Migrations must be rerunnable without side effects - use IF NOT EXISTS, check for column existence before adding, and handle already-applied states gracefully
+- **Backward Compatibility**: Never break running applications - add new columns with defaults, deprecate before removing, and support reading both old and new schemas during transitions
+- **Transaction Safety**: Wrap DDL operations in transactions where supported (PostgreSQL), split large data migrations into batched transactions, and always test rollback procedures
+- **Schema Versioning**: Track migration history with timestamps and checksums, maintain linear migration order, and never modify already-deployed migrations - create new ones instead
+- **Data Preservation**: Always backup before migration, use COPY/INSERT with explicit column lists, validate row counts and data integrity post-migration
 
 ## ORM Migrations
 

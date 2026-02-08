@@ -8,6 +8,14 @@ trigger_keywords: [wireframe, prototype, mockup, figma, sketch, low fidelity, hi
 
 Creating wireframes and prototypes at various fidelity levels for design exploration and validation.
 
+## Core Concepts
+
+- **Fidelity Spectrum**: Sketch (minutes, ideation) to Low-fi (grayscale boxes) to Mid-fi (basic styling) to High-fi (pixel-perfect) - match fidelity to design phase and testing goals
+- **Prototype vs. Mockup**: Prototypes are interactive (clickable, demonstrate behavior); mockups are static (visual design only) - choose based on what you need to validate
+- **Appropriate Fidelity Principle**: Use lowest fidelity that answers your question; high-fidelity too early wastes time and biases feedback toward visual details over interaction patterns
+- **Rapid Iteration**: Wireframes enable fast exploration of layout and hierarchy; prototype multiple concepts before committing - it's cheaper to iterate on paper than code
+- **Design Handoff Specs**: Final deliverables include component specifications, interaction states, responsive breakpoints, and annotation of spacing/typography for developer implementation
+
 ## Fidelity Spectrum
 
 ### Understanding Fidelity Levels

@@ -1,9 +1,9 @@
 ---
 name: trading-risk-manager
 description: Trading risk management and portfolio optimization specialist for capital preservation. Expert in position sizing (Kelly criterion, fixed fractional), portfolio optimization (mean-variance, risk parity, Black-Litterman), VaR/CVaR calculations, correlation analysis, drawdown monitoring, exposure limits, and real-time risk tracking. Use for risk assessment, position sizing, portfolio construction, risk limit enforcement, and capital allocation for stocks and options portfolios.
-category: specialist
+category: finance
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Position sizing (Kelly criterion)
   - Portfolio optimization (mean-variance, risk parity)

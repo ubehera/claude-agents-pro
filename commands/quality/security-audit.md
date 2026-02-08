@@ -2,7 +2,7 @@
 description: Comprehensive security assessment with OWASP compliance and automated remediation
 args: [target] [--framework=owasp|nist|cis] [--scope=api|infra|app|all] [--fix] [--report=json|html|sarif]
 tools: Task, Read, Grep
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 ## Purpose

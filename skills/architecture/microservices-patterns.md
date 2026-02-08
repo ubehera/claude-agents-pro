@@ -1,9 +1,18 @@
 ---
 name: microservices-patterns
 description: Design microservices architectures with service boundaries, event-driven communication, and resilience patterns. Use when building distributed systems, decomposing monoliths, or implementing microservices.
+trigger_keywords: [microservices, saga pattern, circuit breaker, service mesh, distributed system, event driven, bounded context, strangler fig]
 ---
 
 # Microservices Patterns
+
+## Core Concepts
+
+- **Bounded Context**: Each microservice owns a single domain with clear boundaries - services communicate through well-defined APIs, never share databases, and maintain data autonomy
+- **Eventual Consistency**: Accept that data across services will be temporarily inconsistent - design for idempotency, use compensation patterns, and communicate state changes via events
+- **Bulkhead Pattern**: Isolate failures by partitioning resources (thread pools, connection pools, instances) - prevents cascading failures where one service exhausts shared resources
+- **Service Discovery**: Services register themselves and discover others dynamically - use DNS-based (Kubernetes Services), client-side (Eureka), or service mesh (Istio) discovery patterns
+- **Contract-First Design**: Define API contracts (OpenAPI, gRPC protobuf, AsyncAPI) before implementation - enables parallel development, contract testing, and prevents breaking changes
 
 ## Core Patterns
 

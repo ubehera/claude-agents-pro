@@ -2,7 +2,7 @@
 description: Execute complete feature development workflow with DDD and quality gates
 args: [feature-context] [--stage=all|requirements|design|api|implementation|testing] [--ddd] [--parallel]
 tools: Task, TodoWrite, Read, Write
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 ## Purpose
@@ -33,7 +33,7 @@ The workflow stages map to quality gate phases:
 ### Stage 1: Requirements Analysis
 **Phase**: Analysis (Phase 1)
 **Quality Gate**: 95%
-**Agents**: `agent-coordinator` → `system-design-specialist`
+**Agents**: `orchestration-coordinator` → `system-design-specialist`
 **Duration**: 1-2 hours
 **Deliverables**:
 - Business requirements specification
@@ -326,7 +326,7 @@ EOF
 ### Agent Coordination Sequence
 
 #### Stage 1: Requirements Analysis
-Delegate to `agent-coordinator` for requirements extraction:
+Delegate to `orchestration-coordinator` for requirements extraction:
 
 **Task**: Requirements analysis and business context extraction for feature: $FEATURE_CONTEXT
 

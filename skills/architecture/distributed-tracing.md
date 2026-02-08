@@ -1,6 +1,7 @@
 ---
 name: distributed-tracing
 description: Implement distributed tracing with Jaeger and Tempo to track requests across microservices and identify performance bottlenecks. Use when debugging microservices, analyzing request flows, or implementing observability.
+trigger_keywords: [distributed tracing, jaeger, tempo, opentelemetry, span, trace, observability, zipkin, trace context]
 ---
 
 # Distributed Tracing
@@ -14,6 +15,14 @@ Track requests across distributed systems to understand latency, dependencies, a
 - Identify bottlenecks
 - Trace error propagation
 - Analyze request paths
+
+## Core Concepts
+
+- **Trace Context Propagation**: W3C Trace Context headers (`traceparent`, `tracestate`) carry trace ID and span ID across service boundaries - all services must extract/inject these headers for end-to-end visibility
+- **Span Hierarchy**: A trace is a directed acyclic graph of spans - parent spans create child spans, enabling visualization of request flow and identification of parallel vs. sequential operations
+- **Baggage Items**: Key-value pairs propagated alongside trace context for cross-cutting concerns (user ID, tenant ID) - use sparingly as they add overhead to every request
+- **Sampling Strategies**: Head-based sampling decides at trace start (simple, predictable), tail-based sampling decides after trace completes (captures errors/slow traces) - production typically uses 1-10% head sampling with 100% error sampling
+- **Instrumentation Layers**: Auto-instrumentation captures HTTP/DB/messaging spans automatically; manual instrumentation adds business-specific spans for domain operations
 
 ## Key Concepts
 

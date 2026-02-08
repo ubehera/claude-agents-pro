@@ -19,6 +19,14 @@ Code reviews validate changes against acceptance criteria, architectural standar
 - Security vulnerability assessment
 - Performance optimization verification
 
+## Core Concepts
+
+- **Weighted Quality Dimensions**: Security (25%) and Correctness (25%) outweigh Performance (15%) and Maintainability (15%) - critical issues block merge, nice-to-haves don't
+- **Context-First Review**: Read specs, user stories, and API contracts before reviewing code - understanding intent prevents false positives and catches missed requirements
+- **Severity-Based Triage**: Critical issues (security, data loss) block merge; Important issues (bugs, performance) should fix; Nice-to-haves are optional - clear priority prevents review fatigue
+- **Specific, Actionable Feedback**: Point to exact lines, provide fix examples, explain impact - vague feedback like "make this better" wastes time and frustrates developers
+- **Highlight Good Practices**: Reinforcing quality work encourages repetition and builds team knowledge - reviews aren't just for finding problems
+
 ## Review Strategy Selection
 
 ### Sequential Review (< 5 files, single concern)

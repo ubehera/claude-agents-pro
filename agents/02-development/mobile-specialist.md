@@ -1,9 +1,9 @@
 ---
 name: mobile-specialist
 description: Principal mobile engineer for iOS (SwiftUI, UIKit) and Android (Kotlin, Jetpack) plus cross-platform stacks (React Native 0.73+, Flutter 3.16+). Handles architecture, native modules, performance profiling, release automation, and mobile CI/CD. Use for feature delivery, platform audits, and mobile modernization.
-category: specialist
+category: development
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - iOS development (SwiftUI, UIKit)
   - Android development (Kotlin, Jetpack)

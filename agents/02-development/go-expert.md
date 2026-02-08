@@ -3,7 +3,7 @@ name: go-expert
 description: Senior Go engineer for cloud-native microservices, concurrent systems, CLI tools, and distributed applications using Go 1.21+. Specializes in goroutines/channels, context patterns, interface design, standard library mastery, cloud SDK integration (AWS, GCP, Azure), Kubernetes operators, and production observability. Use for Go development, microservices architecture, cloud services, and high-concurrency systems.
 category: development
 complexity: moderate
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Go 1.21+ development
   - Goroutines and channels

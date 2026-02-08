@@ -8,6 +8,14 @@ trigger_keywords: [stress test, tail risk, cvar, expected shortfall, scenario an
 
 Tail risk analysis, scenario-based stress testing, and extreme event modeling for capital preservation.
 
+## Core Concepts
+
+- **VaR Limitations**: VaR only tells you the threshold; says nothing about losses beyond that threshold (use CVaR instead)
+- **Fat Tails**: Financial returns have fatter tails than normal distribution; 3-sigma events happen more than expected
+- **Correlation Breakdown**: In crises, correlations spike toward 1.0; diversification fails when you need it most
+- **Tail Dependence**: Assets that seem uncorrelated in normal times can crash together in stress scenarios
+- **Scenario vs Historical**: Historical simulations miss unprecedented events; scenario analysis captures "what if" risks
+
 ## Tail Risk Metrics
 
 ### Expected Shortfall (CVaR)

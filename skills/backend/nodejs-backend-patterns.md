@@ -8,6 +8,20 @@ trigger_keywords: [nodejs, node.js, express, fastify, backend, middleware, depen
 
 Production-grade Node.js backend architecture with Express/Fastify, layered design, middleware patterns, dependency injection, and database integration for scalable, maintainable applications.
 
+## Core Concepts
+
+- **Layered Architecture**: Separate controllers (HTTP handling), services (business logic), and repositories (data access). Controllers never access databases directly; services never know about HTTP. This separation enables unit testing without mocking Express.
+
+- **Middleware Pipeline**: Express/Fastify middleware executes in order. Place security middleware (helmet, cors) first, then parsing, then authentication, then routes, then error handlers last. Order matters for both security and performance.
+
+- **Dependency Injection**: Avoid `require()` for cross-cutting concerns. Use a DI container or constructor injection to wire dependencies. This makes testing trivial (inject mocks) and supports different configurations per environment.
+
+- **Connection Pooling**: Never create database connections per request. Use connection pools (pg.Pool, mongoose connection) with appropriate pool sizes (typically 10-20). Monitor pool exhaustion in production.
+
+- **Error Handling Strategy**: Distinguish operational errors (user input, network) from programmer errors (null reference, type error). Operational errors return HTTP 4xx/5xx; programmer errors crash and restart the process.
+
+- **Anti-pattern - Callback Hell**: Avoid nested callbacks. Use async/await consistently. Wrap callback-based APIs with `util.promisify()`. Never mix callbacks and promises in the same flow.
+
 ## Core Frameworks
 
 ### Express.js - Minimalist Framework

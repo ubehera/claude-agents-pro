@@ -24,6 +24,14 @@ End-to-end testing validates complete user workflows from UI to backend, ensurin
 - API contract validation (use integration tests)
 - Edge cases requiring many permutations (too slow)
 
+## Core Concepts
+
+- **Test User Behavior, Not Implementation**: E2E tests validate what users experience, not how code works internally - use semantic selectors (roles, labels, data-testid) over CSS classes
+- **Test Independence**: Each test must set up its own data, run without dependencies on other tests, and clean up after itself - shared state causes flaky suites
+- **Page Object Model**: Encapsulate page interactions in reusable classes to reduce duplication and isolate selector changes to single locations
+- **Smart Waiting**: Use auto-waiting assertions (`expect(element).toBeVisible()`) and network idle states instead of fixed timeouts - condition-based waits eliminate flakiness
+- **Critical Paths Only**: E2E tests are slow and expensive - focus on 20-30 critical user journeys (login, checkout, signup), not comprehensive coverage
+
 ## The Testing Pyramid
 
 ```

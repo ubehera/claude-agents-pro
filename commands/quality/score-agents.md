@@ -2,7 +2,7 @@
 description: Score agents against the quality rubric
 args: [target-path] [--report report.md]
 tools: Bash(python3 scripts/quality-scorer.py:*)
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 ## Objective
@@ -25,4 +25,3 @@ python3 scripts/quality-scorer.py $ARGUMENTS
 
 ## Related Resources
 - `scripts/quality-scorer.py`
-- `docs/IMPLEMENTATION_ROADMAP.md`

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Standardize Agent Models to Opus 4.5
+Standardize Agent Models to Opus 4.6
 
-Updates all agent frontmatter to use claude-opus-4-5-20251101 model.
+Updates all agent frontmatter to use claude-opus-4-6 model.
 Maximum capability for all agents - no compromises.
 
 Usage:
@@ -22,7 +22,7 @@ except ImportError:
     sys.exit(1)
 
 
-TARGET_MODEL = "claude-opus-4-5-20251101"
+TARGET_MODEL = "claude-opus-4-6"
 TARGET_RATIONALE = "Maximum capability for optimal results"
 
 

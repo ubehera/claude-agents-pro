@@ -8,6 +8,14 @@ trigger_keywords: [options strategy, spread, straddle, strangle, iron condor, ir
 
 Comprehensive guide to multi-leg options strategies with payoff analysis, Greeks profiles, and selection criteria.
 
+## Core Concepts
+
+- **Defined vs Undefined Risk**: Spreads cap maximum loss; naked positions have theoretically unlimited risk
+- **Credit vs Debit**: Credit spreads collect premium upfront (profit from time decay); debit spreads pay premium (profit from movement)
+- **Implied Volatility Rank**: Compare current IV to historical range; sell premium when IV is high, buy when low
+- **Probability of Profit (POP)**: Wider spreads have lower probability but higher reward; manage position sizing accordingly
+- **Greeks Profile**: Each strategy has unique Greeks exposure; match strategy Greeks to your market view
+
 ## Strategy Categories
 
 | Category | Risk Profile | Market View | Examples |

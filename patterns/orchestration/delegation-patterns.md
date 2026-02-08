@@ -81,7 +81,7 @@ Security_Review:
 
 Quality_Gate:
   description: "Final quality assessment and integration"
-  subagent_type: "agent-coordinator"
+  subagent_type: "orchestration-coordinator"
   dependencies: [Performance_Review, Security_Review]
 ```
 
@@ -213,7 +213,7 @@ Perspectives:
 
 Synthesis:
   description: "Synthesize findings into root cause analysis"
-  subagent_type: "agent-coordinator"
+  subagent_type: "orchestration-coordinator"
   dependencies: [all perspectives]
 ```
 
@@ -315,7 +315,7 @@ Perspectives:
     reasoning: "REST for simple operations, GraphQL for complex queries"
 
 Final_Decision:
-  coordinator: "agent-coordinator"
+  coordinator: "orchestration-coordinator"
   decision: "Based on project constraints and team expertise"
   rationale: "Synthesis of all perspectives with project context"
 ```

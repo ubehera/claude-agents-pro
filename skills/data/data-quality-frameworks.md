@@ -8,6 +8,14 @@ trigger_keywords: [data quality, data validation, great expectations, data testi
 
 Production-grade data quality validation patterns using Great Expectations, custom validators, and automated testing.
 
+## Core Concepts
+
+- **Shift-Left Validation**: Catch data issues at ingestion rather than discovery in reports - validate schemas, nullability, and business rules before data enters pipelines
+- **Expectation-Based Testing**: Define explicit expectations (not just assertions) that document data contracts - Great Expectations makes these human-readable, versioned, and reusable
+- **Quality Gates**: Implement checkpoint validations at layer boundaries (source->raw, raw->transformed, transformed->served) - fail-fast prevents bad data from propagating downstream
+- **Statistical Profiling**: Monitor distributions, not just row counts - detect drift in means, percentiles, and cardinality that indicate upstream issues before they become data quality incidents
+- **Quality Metrics as SLOs**: Track completeness, accuracy, timeliness, and consistency as measurable SLOs - alert on degradation, report trends, and tie data quality to business impact
+
 ## Core Principles
 
 ### Data Quality Dimensions

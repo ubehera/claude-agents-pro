@@ -27,7 +27,7 @@
 - [ ] YAML frontmatter includes `name` and `description`; `tools` minimal and intentional
 - [ ] Agent description is specific and action‑oriented for routing
 - [ ] Examples compile/are accurate; code blocks render properly
-- [ ] Docs updated: `AGENTS.md`, `agents/README.md` (matrix/triggers)
+- [ ] Docs updated: `agents/README.md` (matrix/triggers)
 - [ ] Local verification done (install, restart, prompt tests)
 - [ ] No secrets or credentials added; env vars used for config
 - [ ] I agree my contribution is licensed under the Apache License 2.0

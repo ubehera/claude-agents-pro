@@ -1,9 +1,18 @@
 ---
 name: financial-modeling
 description: Advanced financial modeling suite with DCF analysis, sensitivity testing, Monte Carlo simulations, and scenario planning for investment decisions.
+trigger_keywords: [dcf, financial model, monte carlo, sensitivity analysis, valuation, wacc, lbo, terminal value, irr]
 ---
 
 # Financial Modeling Suite
+
+## Core Concepts
+
+- **WACC (Weighted Average Cost of Capital)**: Blended cost of debt and equity; the discount rate for enterprise value DCFs
+- **Terminal Value**: Captures value beyond forecast period; typically 60-80% of total DCF value (sensitive to assumptions)
+- **Free Cash Flow**: Cash available to all capital providers; FCF = EBIT(1-t) + D&A - CapEx - Change in NWC
+- **Sensitivity Analysis**: Test how valuation changes with key assumptions; identifies critical value drivers
+- **Monte Carlo Confidence**: Run thousands of scenarios to generate probability distributions, not single-point estimates
 
 ## Core Capabilities
 

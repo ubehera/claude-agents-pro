@@ -3,7 +3,7 @@ name: test-engineer
 description: Expert test automation specialist for creating comprehensive test suites, implementing testing strategies, and ensuring code quality through automated testing. Use when writing tests, setting up test frameworks, or improving test coverage.
 category: foundation
 complexity: moderate
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Test automation
   - Unit testing

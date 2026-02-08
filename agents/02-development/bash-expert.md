@@ -4,7 +4,7 @@ description: |
   Shell scripting and command-line automation specialist for Bash, Zsh, and POSIX-compliant scripts. Expert in process management, file manipulation, text processing (sed, awk, grep), system administration, error handling, pipeline composition, and cross-platform compatibility. Use for build scripts, deployment automation, system monitoring, log processing, CI/CD tooling, and infrastructure bootstrapping.
 category: development
 complexity: moderate
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Bash/Zsh/POSIX shell scripting
   - Process and job control

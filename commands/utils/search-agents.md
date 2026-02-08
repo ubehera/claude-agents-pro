@@ -2,7 +2,7 @@
 description: Search and discover agents by domain, tier, or capability with intelligent filtering
 args: [search-term] [--tier=0-9] [--domain=api|security|frontend] [--format=table|json|list] [--tools=bash|task]
 tools: Read, Grep, Glob
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 ## Purpose

@@ -3,7 +3,7 @@ name: system-design-specialist
 description: System design expert for distributed systems, microservices, scalability, load balancing, caching, database design, message queues, event-driven architecture, high availability, fault tolerance, CAP theorem, consensus algorithms, and large-scale architecture. Use for system architecture, distributed system design, scalability planning, and handling millions of users.
 category: foundation
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Distributed systems design
   - Microservices architecture

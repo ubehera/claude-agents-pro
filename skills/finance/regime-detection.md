@@ -8,6 +8,14 @@ trigger_keywords: [regime detection, market regime, regime switching, markov, tr
 
 Market regime identification and strategy adaptation for robust performance across market conditions.
 
+## Core Concepts
+
+- **Regime Persistence**: Markets tend to stay in regimes (trending/ranging) longer than random; exploit this with adaptive strategies
+- **Hurst Exponent**: H > 0.5 indicates trending (momentum works), H < 0.5 indicates mean-reverting, H = 0.5 is random walk
+- **Volatility Clustering**: High volatility periods cluster together (GARCH effect); regime detection captures this
+- **Strategy Selection**: Momentum strategies work in trends, mean-reversion works in ranges - wrong strategy loses money
+- **Regime Transition**: The most dangerous period; existing positions may be wrong for the new regime
+
 ## Regime Framework
 
 ### Core Regime Types

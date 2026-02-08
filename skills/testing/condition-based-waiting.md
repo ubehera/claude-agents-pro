@@ -1,6 +1,7 @@
 ---
 name: condition-based-waiting
 description: Use when tests have race conditions, timing dependencies, or inconsistent pass/fail behavior - replaces arbitrary timeouts with condition polling to wait for actual state changes, eliminating flaky tests from timing guesses
+trigger_keywords: [flaky test, race condition, waitFor, polling, timing, async test, condition wait, timeout, test reliability]
 ---
 
 # Condition-Based Waiting
@@ -22,6 +23,14 @@ Flaky tests often guess at timing with arbitrary delays. This creates race condi
 **Don't use when:**
 - Testing actual timing behavior (debounce, throttle intervals)
 - Always document WHY if using arbitrary timeout
+
+## Core Concepts
+
+- **Condition Polling**: Replace arbitrary delays with loops that check actual state changes every 10-50ms until a condition is met or timeout occurs
+- **Descriptive Timeouts**: Always include timeout with clear error message describing what was being waited for - enables rapid debugging when tests fail
+- **Fresh Data Principle**: Call getters inside the polling loop, never cache state before the loop - stale data causes false failures
+- **Minimal Polling Interval**: Poll every 10ms for most operations - faster wastes CPU, slower increases test time unnecessarily
+- **Documented Fixed Delays**: When arbitrary timeouts ARE needed (testing debounce, tick intervals), wait for triggering condition first, then document the known timing being tested
 
 ## Core Pattern
 

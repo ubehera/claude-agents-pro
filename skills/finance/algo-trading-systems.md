@@ -8,6 +8,14 @@ trigger_keywords: [algo trading, algorithmic trading, trading system, trading bo
 
 Complete guide to building production algorithmic trading systems from data ingestion to live execution.
 
+## Core Concepts
+
+- **Alpha**: Excess returns above a benchmark; alpha generation is the core goal of systematic trading
+- **Signal-to-Noise Ratio**: Most market data is noise; robust signals require statistical significance testing
+- **Latency Tiers**: HFT (<1ms), medium-frequency (seconds), low-frequency (minutes/hours) - each requires different architecture
+- **Slippage & Market Impact**: The cost of executing trades; larger orders move prices against you
+- **Walk-Forward Validation**: Test strategies on unseen data to avoid overfitting (critical for live performance)
+
 ## System Architecture
 
 ### High-Level Components

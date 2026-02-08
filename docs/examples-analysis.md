@@ -19,7 +19,7 @@ name: agent-name                    # Must match filename
 description: detailed description   # Keywords and use cases
 category: tier-category            # orchestrator, foundation, specialist, integration
 complexity: simple | moderate | complex
-model: claude-opus-4-5-20251101    # Model assignment
+model: claude-opus-4-6              # Model assignment
 model_rationale: explanation
 capabilities:
   - list of capabilities
@@ -531,7 +531,7 @@ name: agent-name
 description: Expert in [domain] for [use cases]. Use for [scenarios].
 category: foundation
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 model_rationale: Maximum capability for optimal results
 capabilities:
   - Capability 1

@@ -1,9 +1,9 @@
 ---
 name: security-architect
 description: Security expert for application security, threat modeling, OWASP Top 10, secure coding, authentication, authorization, encryption, compliance (GDPR, PCI-DSS, SOC2), vulnerability assessment, penetration testing, security architecture, incident response, and defense-in-depth strategies. Use for security issues, compliance, threat analysis, secure design, and security implementation.
-category: integration
+category: security
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Application security (OWASP Top 10)
   - Threat modeling (STRIDE, PASTA)

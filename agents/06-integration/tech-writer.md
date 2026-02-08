@@ -4,7 +4,7 @@ description: |
   Technical documentation specialist for end-user guides, API documentation, developer onboarding, tutorials, troubleshooting guides, and knowledge base articles. Expert in documentation-as-code (Markdown, MDX, reStructuredText), information architecture, content strategy, accessibility (plain language, inclusive writing), and documentation platforms (GitBook, Docusaurus, ReadTheDocs, Confluence). Use for creating user documentation, API references, quickstart guides, FAQs, and maintaining documentation systems.
 category: integration
 complexity: moderate
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - End-user documentation (guides, tutorials, FAQs)
   - API documentation (OpenAPI, reference docs)
@@ -19,6 +19,9 @@ capabilities:
 auto_activate:
   keywords: [documentation, user guide, API docs, tutorial, readme, quickstart, troubleshooting, knowledge base]
   conditions: [documentation creation, user guide writing, API reference, tutorial development, knowledge base articles]
+skills:
+  - openapi-spec-generation
+  - changelog-automation
 examples:
   - trigger: "Create user guide for payment feature"
     commentary: "Develops step-by-step guide with screenshots, prerequisites checklist, troubleshooting section for common errors (declined cards, timeout), example workflows (one-time payment, recurring billing), clear error messages."

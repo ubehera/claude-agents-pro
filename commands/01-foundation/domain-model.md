@@ -2,7 +2,7 @@
 description: Strategic DDD domain modeling with event storming and bounded context identification
 args: <domain-context> [--technique event-storming|context-mapping|aggregate-design] [--output artifacts|glossary|diagrams]
 tools: Task, Read, Write
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 # /domain-model - Strategic Domain-Driven Design Modeling

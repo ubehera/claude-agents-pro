@@ -1,9 +1,9 @@
 ---
 name: machine-learning-engineer
 description: ML/AI expert for PyTorch, TensorFlow, MLOps, model training, deployment, MLflow, Kubeflow, feature engineering, model serving, distributed training, A/B testing, model monitoring, data pipelines, neural networks, deep learning, and production ML systems. Use for machine learning projects, AI implementation, model deployment, and MLOps pipelines.
-category: specialist
+category: expert
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - PyTorch and TensorFlow
   - MLOps (MLflow, Kubeflow)

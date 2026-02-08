@@ -8,6 +8,14 @@ trigger_keywords: [user research, user interview, usability testing, contextual 
 
 Comprehensive user research techniques for understanding user needs, behaviors, and pain points.
 
+## Core Concepts
+
+- **Generative vs. Evaluative Research**: Generative research discovers user needs and opportunities (interviews, contextual inquiry); evaluative research tests solutions (usability testing, A/B tests)
+- **Qualitative vs. Quantitative**: Qualitative answers "why" with depth (5-8 participants often sufficient); quantitative answers "how many" with statistical significance (larger samples needed)
+- **Research Triangulation**: Combine multiple methods (interviews + analytics + surveys) to validate findings - single-method research risks missing the full picture
+- **Participant Recruitment**: Screener criteria must match target users; incentives should be appropriate; 5 users find 85% of usability issues in focused testing
+- **Research Ethics**: Informed consent, data privacy, right to withdraw, avoiding leading questions - ethical research protects participants and produces valid insights
+
 ## Research Planning
 
 ### Research Plan Template

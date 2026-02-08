@@ -25,6 +25,14 @@ Static Application Security Testing (SAST) and code quality tools analyze source
 - **Formatting**: Prettier, Black, gofmt
 - **Type Checking**: TypeScript, mypy, Flow
 
+## Core Concepts
+
+- **Shift Left Security**: SAST tools catch vulnerabilities before code review - automated scanning finds 70%+ of common security issues faster than manual review
+- **Incremental Adoption**: Start with security-focused rules only, establish baseline for existing issues, then gradually add quality rules - avoid overwhelming teams with thousands of warnings
+- **False Positive Management**: Tune severity levels, add path exclusions, use inline suppressions with justification - high false positive rates cause developers to ignore all warnings
+- **Pre-commit vs CI**: Pre-commit hooks catch issues instantly during development; CI gates enforce quality on all code - use both for defense in depth
+- **Custom Rules for Patterns**: Write organization-specific rules for internal security patterns, deprecated APIs, and architectural constraints - generic rules miss domain-specific issues
+
 ## Tool Selection Matrix
 
 | Tool | Best For | Language Support | Cost | CI Integration |

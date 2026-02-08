@@ -2,7 +2,7 @@
 description: Fetch documentation for libraries, frameworks, and APIs
 args: <library-name> [topic]
 tools: Task
-model: claude-sonnet-4-5
+model: sonnet
 ---
 
 # Documentation Fetcher

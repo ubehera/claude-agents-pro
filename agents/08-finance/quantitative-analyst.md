@@ -1,9 +1,9 @@
 ---
 name: quantitative-analyst
 description: Quantitative analysis specialist for technical indicators, statistical models, and mathematical trading research. Expert in technical analysis (RSI, MACD, Bollinger Bands), options Greeks, statistical arbitrage, time-series analysis, volatility modeling (GARCH), mean reversion, momentum strategies, and feature engineering. Use for quant research, alpha generation, signal development, and mathematical strategy design for stocks and options.
-category: specialist
+category: finance
 complexity: complex
-model: claude-opus-4-5-20251101
+model: claude-opus-4-6
 capabilities:
   - Technical indicators (RSI, MACD, Bollinger Bands)
   - Options Greeks calculations

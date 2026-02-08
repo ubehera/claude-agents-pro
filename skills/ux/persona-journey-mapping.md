@@ -8,6 +8,14 @@ trigger_keywords: [persona, user persona, empathy map, journey map, customer jou
 
 Techniques for modeling users and visualizing their experiences across touchpoints.
 
+## Core Concepts
+
+- **Research-Backed Personas**: Composite user archetypes derived from actual research data (interviews, surveys), not assumptions - include quotes and data sources for credibility
+- **Jobs To Be Done (JTBD)**: Focus on functional, emotional, and social jobs users hire products for rather than demographic attributes - reveals true motivations
+- **Empathy Mapping**: Visual framework capturing what users Say, Think, Do, and Feel - synthesizes qualitative research into actionable insights about user mindset
+- **Journey Map Anatomy**: Visualization of user experience across stages (awareness to advocacy), documenting actions, thoughts, emotions, pain points, and opportunities at each touchpoint
+- **Service Blueprinting**: Extended journey map adding frontstage/backstage organizational processes - reveals how internal operations affect customer experience
+
 ## Persona Development
 
 ### Research-Based Personas

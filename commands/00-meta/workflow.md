@@ -1,7 +1,7 @@
 ---
 description: Initialize or continue DDD workflow with quality gates and agent coordination
 tools: TodoWrite, Task, Read, Write, MultiEdit
-model: claude-opus-4-1
+model: opus
 args: [phase] [context]
 ---
 
@@ -42,7 +42,7 @@ Orchestrates Domain-Driven Design workflows through the agent ecosystem with qua
 
 ## Integration Points
 
-- **agent-coordinator**: Primary orchestration for complex workflows
+- **orchestration-coordinator**: Primary orchestration for complex workflows
 - **TodoWrite**: Progress tracking and task management
 - **MCP Memory**: Persistent workflow state and decision history
 - **Quality Agents**: Automated validation at each gate

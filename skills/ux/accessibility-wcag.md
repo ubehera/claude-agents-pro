@@ -8,6 +8,14 @@ trigger_keywords: [accessibility, wcag, a11y, aria, screen reader, keyboard navi
 
 Implementing accessible digital experiences following WCAG 2.1/2.2 guidelines.
 
+## Core Concepts
+
+- **POUR Principles**: Perceivable, Operable, Understandable, Robust - the four foundational pillars that structure all WCAG guidelines and success criteria
+- **Conformance Levels (A/AA/AAA)**: Tiered accessibility targets where AA is the typical legal requirement; Level A is minimum, AAA is enhanced accessibility
+- **Semantic HTML First**: Native HTML elements provide built-in accessibility; ARIA supplements but never replaces proper semantic structure
+- **Keyboard Navigation**: All interactive functionality must be operable via keyboard alone, with visible focus indicators and no keyboard traps
+- **Progressive Enhancement**: Build accessible baseline first, then layer on enhancements - ensures content works for all users regardless of ability or technology
+
 ## WCAG Overview
 
 ### WCAG Principles (POUR)
