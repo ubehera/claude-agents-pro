@@ -483,34 +483,29 @@ Skills can reference other skills or suggest delegation:
 - ✅ Workflow skills (standup-report, bug-fix, create-feature)
 
 ### Phase 2 (Complete)
-- ✅ ML/AI skills (8 skills: agent-development-patterns, langchain-architecture, llm-evaluation, mcp-builder, mcp-integration, ml-pipeline-workflow, prompt-engineering-patterns, rag-implementation)
+- ✅ ML/AI skills (12 skills: agent-development-patterns, embedding-strategies, hybrid-search-implementation, langchain-architecture, llm-evaluation, mcp-builder, mcp-integration, ml-pipeline-workflow, prompt-engineering-patterns, rag-implementation, similarity-search-patterns, vector-index-tuning)
 - ✅ Python skills (6 skills: async-patterns, fastapi-patterns, packaging-distribution, performance-profiling, testing-patterns, type-hints)
-- ✅ Backend skills (4 skills: defense-in-depth-validation, error-handling-patterns, nodejs-backend-patterns, stripe-integration)
+- ✅ Backend skills (5 skills: defense-in-depth-validation, error-handling-patterns, nodejs-backend-patterns, stripe-integration, websocket-patterns)
 - ✅ Security skills (12 skills: auth-patterns, better-auth, cryptography-basics, input-validation, k8s-security-policies, network-security, owasp-top-10, secrets-management, secure-coding-practices, security-testing, threat-modeling, vulnerability-scanning)
-- ✅ Testing skills (8 skills: code-review-patterns, condition-based-waiting, e2e-testing, flaky-test-elimination, integration-testing, static-analysis, tdd-workflow, testing-anti-patterns)
-- ✅ API skills (5 skills: api-versioning, caching-strategies, graphql-patterns, rate-limiting, rest-best-practices)
-- ✅ DevOps skills (5 skills: ci-cd-patterns, docker-security-patterns, kubernetes-advanced-patterns, monorepo-management, opentelemetry-observability)
+- ✅ Testing skills (10 skills: code-review-patterns, condition-based-waiting, contract-testing, e2e-testing, flaky-test-elimination, integration-testing, load-testing, static-analysis, tdd-workflow, testing-anti-patterns)
+- ✅ API skills (6 skills: api-versioning, caching-strategies, graphql-patterns, openapi-spec-generation, rate-limiting, rest-best-practices)
+- ✅ DevOps skills (9 skills: ci-cd-patterns, docker-security-patterns, github-actions-patterns, incident-runbook-templates, kubernetes-advanced-patterns, monorepo-management, on-call-handoff-patterns, opentelemetry-observability, postmortem-writing)
 - ✅ Data skills (6 skills: data-quality-frameworks, database-migration, etl-pipeline-patterns, pandas-polars-patterns, streaming-data-patterns, warehouse-design-patterns)
 - ✅ UX skills (8 skills: accessibility-wcag, design-systems, heuristic-evaluation, information-architecture, persona-journey-mapping, user-research-methods, ux-metrics-analytics, wireframing-prototyping)
 - ✅ Cloud skills (2 skills: multi-cloud-patterns, terraform-state-management)
-- ✅ Architecture skills (2 skills: distributed-tracing, microservices-patterns)
+- ✅ Architecture skills (4 skills: architecture-decision-records, distributed-tracing, event-sourcing-cqrs, microservices-patterns)
 - ✅ Database skills (1 skill: query-optimization)
 - ✅ Debugging skills (1 skill: debugging-strategies)
 - ✅ Finance domain expanded (15 additional skills beyond Phase 1)
+- ✅ Agentic skills (6 skills: hook-development, mcp-server-development, memory-taxonomy, multi-agent-patterns, plugin-architecture, subagent-catalog)
+- ✅ TypeScript skills (7 skills: javascript-testing-patterns, modern-javascript-patterns, nextjs-patterns, react-patterns, state-management, type-system-advanced, typescript-advanced-types)
+- ✅ Workflow skills expanded (7 skills: bug-fix, changelog-automation, context-driven-development, create-feature, spec-driven-development, standup-report, track-management)
 
-### Phase 3 (Complete)
-- ✅ TypeScript skills (4 skills: react-patterns, nextjs-patterns, type-system-advanced, state-management)
-- ✅ Agentic skills (6 skills: subagent-catalog, multi-agent-patterns, hook-development, mcp-server-development, memory-taxonomy, plugin-architecture)
-- ✅ Testing additions (2 skills: contract-testing, load-testing)
-- ✅ Architecture addition (1 skill: event-sourcing-cqrs)
-- ✅ Backend addition (1 skill: websocket-patterns)
-- ✅ DevOps addition (1 skill: github-actions-patterns)
-- ✅ Workflow addition (1 skill: spec-driven-development)
-
-### Phase 4 (Planned)
-- Cross-domain skill sharing
-- Skill versioning and compatibility
+### Phase 3 (Planned)
+- Cross-domain skill sharing recommendations
+- Skill versioning and compatibility policy
 - Skill marketplace/registry
+- Automated docs generation for catalog drift prevention
 
 ## Best Practices for Skill Usage
 
@@ -540,7 +535,7 @@ All skills must meet:
 ---
 
 **Skills System**: Progressive Disclosure Architecture
-**Status**: Production (Phase 3 Complete)
-**Total Skills**: 105 across 17 active domains (~57,000 lines of expertise)
+**Status**: Production (Phase 2 Complete, Phase 3 in progress)
+**Total Skills**: 120 across 17 active domains (~57,849 lines of expertise)
 **Token Savings**: ~70% average reduction vs monolithic agents
-**Domains**: Agentic (6), API (6), Architecture (3), Backend (5), Cloud (2), Data (6), Database (1), Debugging (1), DevOps (6), Finance (18), ML/AI (8), Python (6), Security (12), Testing (10), TypeScript (4), UX (8), Workflow (4)
+**Domains**: Agentic (6), API (6), Architecture (4), Backend (5), Cloud (2), Data (6), Database (1), Debugging (1), DevOps (9), Finance (18), ML/AI (12), Python (6), Security (12), Testing (10), TypeScript (7), UX (8), Workflow (7)
