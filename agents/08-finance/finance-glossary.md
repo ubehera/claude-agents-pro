@@ -4,6 +4,22 @@ description: Canonical terminology and domain boundaries for finance trading age
 category: finance
 complexity: simple
 model: claude-opus-4-6
+capabilities:
+  - Ubiquitous language definition
+  - Domain boundary mapping
+  - Term disambiguation
+  - Canonical schema reference
+  - Integration pattern documentation
+auto_activate:
+  keywords: [finance glossary, trading terminology, domain boundaries, ubiquitous language, term disambiguation]
+  conditions: [finance term conflicts, cross-agent terminology, domain ownership questions]
+examples:
+  - trigger: "What agent owns position sizing calculations?"
+    commentary: "References Domain Boundaries Table to identify trading-risk-manager as owner of position sizing (Kelly criterion, fixed fractional, volatility-based)."
+  - trigger: "Which volatility metric should I use for portfolio optimization?"
+    commentary: "Disambiguates four volatility types and identifies portfolio_volatility (covariance-weighted) as the correct metric, owned by trading-risk-manager."
+  - trigger: "How should trading signals flow between agents?"
+    commentary: "References Pattern 2 (Signal Generation → Risk Validation → Execution) showing the canonical TradingSignal schema and agent handoff sequence."
 ---
 
 # Finance Domain - Ubiquitous Language Glossary

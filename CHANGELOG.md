@@ -27,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - **Agent Count**: 51 → 61 agents across 9 tiers
-- **Skill Count**: 89 → 105 skills across 17 domains (was 16)
+- **Skill Count**: 89 → 120 skills across 17 domains (was 16)
 - **SYSTEM_OVERVIEW.md**: Added Hooks System section, Skills System section, MCP Server Registry reference
 - **Documentation**: Updated all counts and references
 
@@ -177,7 +177,7 @@ Gap analysis against 12 reference repositories (VoltAgent, davepoon, microck, zh
 
 | Version | Date | Agents | Highlights |
 |---------|------|--------|------------|
-| Unreleased | 2026-02-07 | 51 | Tiger team review: model updates, bug fixes, documentation overhaul |
+| Unreleased | 2026-02-08 | 61 | Gap analysis & expansion: 10 new agents, 31 new skills, hooks, MCP registry |
 | 2.1.0 | 2025-12-11 | 51 | New agents (llm-architect, chaos-engineer, prompt-engineer), 05-platform tier, workflow skills |
 | 2.0.0 | 2025-11-05 | 45 | Quality framework, documentation standards, finance tier, agent expansion |
 | 1.0.0 | 2024-12-11 | 24 | Initial release with core infrastructure |

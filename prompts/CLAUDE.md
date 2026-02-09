@@ -645,7 +645,7 @@ curl -X POST localhost:3000/api/auth -H "Content-Type: application/json" -d '{"e
 ```
 
 ### File Path Patterns
-- Absolute paths: `/Users/umank/Code/agent-repos/ubehera/agents/api-platform-engineer.md:67`
+- Absolute paths: `agents/01-foundation/api-platform-engineer.md:67`
 - Multi-file refs: `agents/system-design-specialist.md:23, agents/security-architect.md:145`
 - Pattern matching: `agents/**/*.md` for all agent files
 - Project examples: `ubehera/prompts/CLAUDE.md:10`, `ubehera/scripts/validate-agents.sh:22`

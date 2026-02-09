@@ -128,7 +128,7 @@ Search through the agents catalog using file system and content matching:
 
 ```bash
 # Read the main agent catalog
-AGENT_CATALOG="/Users/umank/Code/agent-repos/ubehera/agents/README.md"
+AGENT_CATALOG="${AGENT_CATALOG:-agents/README.md}"
 
 if [ ! -f "$AGENT_CATALOG" ]; then
   echo "❌ Error: Agent catalog not found at $AGENT_CATALOG"
@@ -192,7 +192,7 @@ Search within agent files for deeper matching:
 ```bash
 search_agent_content() {
   local search_term="$1"
-  local agent_dir="/Users/umank/Code/agent-repos/ubehera/agents"
+  local agent_dir="agents"
   
   echo "🔎 Deep content search for: '$search_term'"
   

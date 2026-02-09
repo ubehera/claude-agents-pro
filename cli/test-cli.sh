@@ -4,8 +4,9 @@
 
 set -e
 
-CLI_DIR="/Users/umank/Code/agent-repos/claude-agents-pro/cli"
-REPO_ROOT="/Users/umank/Code/agent-repos/claude-agents-pro"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+CLI_DIR="$SCRIPT_DIR"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 echo "=========================================="
 echo "Claude Agents CLI - Quick Test Suite"

@@ -17,7 +17,7 @@ Complete installation and testing guide for the `claude-agents` CLI tool.
 ### Option 1: Automated Setup
 
 ```bash
-cd /Users/umank/Code/agent-repos/claude-agents-pro/cli
+cd claude-agents-pro/cli
 
 # Run automated test script (creates venv, installs, tests)
 ./test-cli.sh
@@ -33,7 +33,7 @@ This script will:
 ### Option 2: Manual Setup
 
 ```bash
-cd /Users/umank/Code/agent-repos/claude-agents-pro/cli
+cd claude-agents-pro/cli
 
 # Create virtual environment
 python3 -m venv venv
@@ -54,7 +54,7 @@ claude-agents --help
 ### Option 3: Using Makefile
 
 ```bash
-cd /Users/umank/Code/agent-repos/claude-agents-pro/cli
+cd claude-agents-pro/cli
 
 # Create venv and install with dev dependencies
 make quickstart
@@ -289,7 +289,7 @@ pip install -e .
 **Solution**: Specify agents directory explicitly
 
 ```bash
-claude-agents list --agents-dir /Users/umank/Code/agent-repos/claude-agents-pro/agents
+claude-agents list --agents-dir ./agents
 ```
 
 ### Issue: `Permission denied` when installing
@@ -307,7 +307,7 @@ pip install -e .
 **Solution**: Reinstall in development mode
 
 ```bash
-cd /Users/umank/Code/agent-repos/claude-agents-pro/cli
+cd claude-agents-pro/cli
 pip uninstall claude-agents-cli
 pip install -e .
 ```
@@ -450,7 +450,7 @@ rm ~/.claude/cli-config.json
 
 1. **Install the CLI**
    ```bash
-   cd /Users/umank/Code/agent-repos/claude-agents-pro/cli
+   cd claude-agents-pro/cli
    ./test-cli.sh
    ```
 
@@ -480,11 +480,11 @@ rm ~/.claude/cli-config.json
 ## Support
 
 - **Issues**: https://github.com/ubehera/claude-agents-pro/issues
-- **Documentation**: `/Users/umank/Code/agent-repos/claude-agents-pro/cli/README.md`
+- **Documentation**: `claude-agents-pro/cli/README.md`
 - **Examples**: Run `python3 demo.py` for detailed examples
 
 ---
 
-**CLI Location**: `/Users/umank/Code/agent-repos/claude-agents-pro/cli/`
+**CLI Location**: `claude-agents-pro/cli/`
 **Test Script**: `./test-cli.sh`
 **Makefile**: Available for quick commands

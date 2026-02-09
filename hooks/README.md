@@ -16,11 +16,7 @@ Hooks are **automation scripts** that execute in response to Claude Code events.
 |-------|--------------|-----------|
 | `PreToolUse` | Before a tool executes | Block dangerous commands, validate file paths |
 | `PostToolUse` | After a tool completes | Auto-format code, run linters, update indexes |
-| `Stop` | When agent completes | Summary generation, cleanup, notifications |
-| `Notification` | On important events | Slack/Discord/email alerts |
-| `UserPromptSubmit` | When user sends message | Prompt validation, context injection |
 | `SessionStart` | When session begins | Load context, check prerequisites |
-| `SessionEnd` | When session ends | Save state, cleanup temp files |
 
 ## Hook Format
 
@@ -64,25 +60,19 @@ Hook instructions and logic here.
 | Hook | Event | Description |
 |------|-------|-------------|
 | `session-context` | SessionStart | Loads project context and recent changes |
-| `progress-tracker` | Stop | Updates TodoWrite with completion status |
-| `notification-slack` | Notification | Sends alerts to Slack channel |
-
-### Prompt Hooks
-| Hook | Event | Description |
-|------|-------|-------------|
-| `prompt-enricher` | UserPromptSubmit | Enriches vague prompts with context |
-| `style-enforcer` | UserPromptSubmit | Enforces output style preferences |
 
 ## Installation
 
 Hooks are installed to `.claude/hooks/` (project) or `~/.claude/hooks/` (global):
 
 ```bash
-# Install all hooks
-./scripts/install-hooks.sh --user
-
 # Install specific hook
 cp hooks/secrets-scanner.md ~/.claude/hooks/
+
+# Install all hooks
+for hook in hooks/*.md; do
+  cp "$hook" ~/.claude/hooks/
+done
 ```
 
 ## Creating New Hooks

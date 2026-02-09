@@ -16,7 +16,7 @@ Shared core library for finance trading agents. Eliminates code duplication acro
 
 ```bash
 # Navigate to core directory
-cd /Users/umank/Code/agent-repos/ubehera/examples/finance/core
+cd examples/finance/core
 
 # Install in editable mode (recommended for development)
 pip install -e .

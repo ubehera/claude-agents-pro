@@ -1,7 +1,7 @@
 # Claude Agents CLI - Implementation Status
 
 **Generated**: 2025-12-11
-**Location**: `/Users/umank/Code/agent-repos/claude-agents-pro/cli/`
+**Location**: `claude-agents-pro/cli/`
 
 ---
 
@@ -131,7 +131,7 @@ Multi-factor fuzzy matching in `commands/search.py`:
 ### Development Installation (Recommended)
 
 ```bash
-cd /Users/umank/Code/agent-repos/claude-agents-pro/cli
+cd claude-agents-pro/cli
 python3 -m venv venv
 source venv/bin/activate
 pip install -e .
@@ -140,7 +140,7 @@ pip install -e .
 ### System-wide Installation
 
 ```bash
-cd /Users/umank/Code/agent-repos/claude-agents-pro/cli
+cd claude-agents-pro/cli
 pip install .
 ```
 
@@ -276,7 +276,7 @@ pytest tests/ -v --cov=cli
 
 ### 1. Marketplace Registry
 
-CLI reads agent metadata from `/Users/umank/Code/agent-repos/claude-agents-pro/configs/marketplace.json`:
+CLI reads agent metadata from `configs/marketplace.json`:
 
 - Agent catalog with 30+ agents
 - Tier definitions (00-meta through 08-finance)
@@ -298,7 +298,7 @@ from quality_scorer import AgentQualityScorer
 Frontmatter validation against schema:
 
 - Required: name, description, category, complexity, model
-- Valid categories: meta, foundation, development, specialists, experts, integration, quality, finance
+- Valid categories: orchestrator, foundation, development, specialist, expert, platform, integration, quality, finance, security
 - Valid complexity: simple, moderate, complex, expert
 - Valid models: claude-opus-4-6, claude-sonnet-4-5, claude-haiku-4-5
 
@@ -336,7 +336,7 @@ dev = [
 
 1. **Install CLI in virtual environment**
    ```bash
-   cd /Users/umank/Code/agent-repos/claude-agents-pro/cli
+   cd claude-agents-pro/cli
    python3 -m venv venv
    source venv/bin/activate
    pip install -e .
@@ -501,4 +501,4 @@ The `claude-agents` CLI tool is **production-ready** and exceeds the requirement
 
 **Recommendation**: Proceed with testing, then publish to PyPI for public distribution.
 
-**Files**: All located in `/Users/umank/Code/agent-repos/claude-agents-pro/cli/`
+**Files**: All located in `claude-agents-pro/cli/`

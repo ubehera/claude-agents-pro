@@ -2,16 +2,20 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Agents](https://img.shields.io/badge/agents-61-brightgreen.svg)](./agents/README.md)
+[![Skills](https://img.shields.io/badge/skills-120-purple.svg)](./skills/README.md)
 [![Commands](https://img.shields.io/badge/commands-35-blue.svg)](./commands/README.md)
+[![Hooks](https://img.shields.io/badge/hooks-10-orange.svg)](./hooks/README.md)
 [![Quality](https://img.shields.io/badge/quality-validated-success.svg)](./scripts/quality-scorer.py)
 
 Personal collection of production-ready Claude Code agents with automated quality validation and multi-tier orchestration.
 
 ## System Architecture
 
-### 🎯 Core Components
+### Core Components
 - **61 Specialized Agents**: Tiered collection from orchestration to domain experts
+- **120 Progressive-Disclosure Skills**: Modular knowledge packages across 17 domains (~70% token savings)
 - **35 Slash Commands**: Quick access workflows using latest Claude models (Opus 4.6, Sonnet 4.5)
+- **10 Event-Driven Hooks**: Security, quality, git, and workflow automation
 - **Automation Scripts**: Install, verify, and score agent quality
 - **MCP Integration**: Memory persistence and advanced reasoning capabilities
 - **Quality Framework**: Automated validation, scoring rubric (70+ minimum, 85+ production)
@@ -84,6 +88,9 @@ See `agents/README.md` for complete trigger patterns and invocation examples.
 - `agents/README.md`: Complete agent catalog with invocation triggers
 - `agents/AGENT_CHECKLIST.md`: Pre-flight checklist for agent updates
 - `agents/TESTING.md`: Comprehensive testing procedures
+- `skills/README.md`: Skills catalog (120 skills across 17 domains)
+- `hooks/README.md`: Hook development guide (10 event-driven hooks)
+- `mcp-servers/README.md`: MCP server registry (20+ verified servers)
 - `commands/README.md`: Slash command catalog and usage
 - `patterns/orchestration/`: Multi-agent coordination patterns
 - `prompts/CLAUDE.md`: Operating instructions for Claude Code

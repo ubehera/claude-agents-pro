@@ -151,7 +151,7 @@ pip install statsmodels==0.14.1 arch==6.2.0  # GARCH models for volatility
 3. **Holding period scaling**: Adjust volatility by √(days/252) for multi-day holds
 4. **Account size constraints**: Never exceed 100% of capital allocation
 
-**Full Code**: See `/Users/umank/Code/agent-repos/ubehera/examples/finance/risk/position_sizing.py` (219 lines)
+**Full Code**: See `examples/finance/risk/position_sizing.py` (219 lines)
 
 **Quickstart** (30 lines):
 ```python
@@ -202,7 +202,7 @@ print(f"Volatility-Based: {shares} shares")
 3. **SLSQP solver**: Sequential Least Squares for constrained optimization
 4. **Initial guess**: Equal weights (1/n) for all assets
 
-**Full Code**: See `/Users/umank/Code/agent-repos/ubehera/examples/finance/risk/portfolio_optimizer.py` (180 lines)
+**Full Code**: See `examples/finance/risk/portfolio_optimizer.py` (180 lines)
 
 **Quickstart** (35 lines):
 ```python

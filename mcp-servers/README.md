@@ -230,5 +230,5 @@ MCP servers are configured in `.mcp.json` at the project root or `~/.claude/.mcp
 ---
 
 **Registry Status**: Curated catalog of verified MCP servers
-**Categories**: 6 (Knowledge, Development, Database, Cloud, Search, AI/ML, Communication)
+**Categories**: 7 (Knowledge, Development, Database, Cloud, Search, AI/ML, Communication)
 **Recommended Minimum**: memory + sequential-thinking

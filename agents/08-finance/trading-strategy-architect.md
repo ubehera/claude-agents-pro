@@ -153,7 +153,7 @@ pip install scikit-optimize==0.9.0
 2. **Anchored vs rolling**: Expanding window (anchored) or fixed window (rolling)
 3. **Overfitting detection**: Compare in-sample vs out-of-sample Sharpe ratio (gap <0.5)
 
-**Full Code**: See `/Users/umank/Code/agent-repos/ubehera/examples/finance/strategy/walk_forward.py` (141 lines)
+**Full Code**: See `examples/finance/strategy/walk_forward.py` (141 lines)
 
 **Quickstart** (30 lines):
 ```python
@@ -200,7 +200,7 @@ print(f"Average Sharpe: {results['avg_sharpe']:.2f}")
 2. **Annualization**: Daily returns annualized with √252 factor for volatility
 3. **Trade-level metrics**: Separate winning/losing trades for asymmetric analysis
 
-**Full Code**: See `/Users/umank/Code/agent-repos/ubehera/examples/finance/strategy/performance_metrics.py` (201 lines)
+**Full Code**: See `examples/finance/strategy/performance_metrics.py` (201 lines)
 
 **Quickstart** (25 lines):
 ```python

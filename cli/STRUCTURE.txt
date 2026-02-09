@@ -1,7 +1,7 @@
 Claude Agents CLI - File Structure
 ====================================
 
-Location: /Users/umank/Code/agent-repos/claude-agents-pro/cli/
+Location: claude-agents-pro/cli/
 
 cli/
 ├── Documentation (5 files)
@@ -99,7 +99,7 @@ QUICK START
 ================================================================================
 
 1. Run automated test suite:
-   $ cd /Users/umank/Code/agent-repos/claude-agents-pro/cli
+   $ cd claude-agents-pro/cli
    $ ./test-cli.sh
 
 2. Or manual setup:

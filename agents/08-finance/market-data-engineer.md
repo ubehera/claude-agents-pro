@@ -161,7 +161,7 @@ export ALPACA_API_SECRET="your_alpaca_secret"
 2. **WebSocket reconnection**: Automatic authentication and subscription recovery on connection loss
 3. **Rate limit handling**: Exponential backoff and retry logic for API throttling
 
-**Full Code**: See `/Users/umank/Code/agent-repos/ubehera/examples/finance/market-data/multi_broker_pipeline.py` (414 lines)
+**Full Code**: See `examples/finance/market-data/multi_broker_pipeline.py` (414 lines)
 
 **Quickstart** (30 lines):
 ```python
@@ -375,7 +375,7 @@ ORDER BY hour DESC, symbol;
 2. **Outlier detection**: Z-score analysis on returns (>5 std deviations flagged)
 3. **Staleness monitoring**: Alert if last update exceeds threshold (1 hour during market hours)
 
-**Full Code**: See `/Users/umank/Code/agent-repos/ubehera/examples/finance/market-data/data_quality_monitor.py` (356 lines)
+**Full Code**: See `examples/finance/market-data/data_quality_monitor.py` (356 lines)
 
 **Quickstart** (25 lines):
 ```python

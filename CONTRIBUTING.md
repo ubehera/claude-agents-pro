@@ -52,8 +52,8 @@ Every agent must include valid YAML frontmatter with:
 ---
 name: agent-name  # Must match filename (kebab-case, without .md)
 description: Clear, concise agent purpose that drives routing
-category: foundation  # One of: meta, foundation, development, specialists, experts
-complexity: moderate  # One of: simple, moderate, complex
+category: foundation  # One of: orchestrator, foundation, development, specialist, expert, platform, integration, quality, finance, security
+complexity: moderate  # One of: simple, moderate, complex, expert
 model: claude-opus-4-6
 capabilities:
   - Capability 1
@@ -233,7 +233,7 @@ python3 scripts/quality-scorer.py --agents-dir agents
 <type>(<scope>): <description>
 
 Types: feat, fix, docs, style, refactor, test, chore
-Scopes: agents, scripts, skills, config
+Scopes: agents, scripts, skills, hooks, commands, mcp-servers, config
 ```
 
 ## Documentation Updates
@@ -241,7 +241,7 @@ Scopes: agents, scripts, skills, config
 When adding/renaming agents, update:
 - `agents/README.md` (matrix and triggers)
 - `agents/[tier]/README.md` (tier-level documentation)
-- `UPDATES.md` (changelog)
+- `CHANGELOG.md` (changelog)
 
 ## Security & Configuration
 

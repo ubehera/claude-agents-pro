@@ -14,6 +14,8 @@ Production-ready Claude Code agents for algorithmic trading, quantitative analys
 | **equity-research-analyst** | Fundamental analysis | DCF valuation, financial statement analysis | Read, Write, MultiEdit, WebSearch, Task |
 | **trading-ml-specialist** | ML for trading | Walk-forward ML, trading-specific features | Read, Write, MultiEdit, Bash, Task, WebSearch |
 | **trading-compliance-officer** | Regulatory compliance | PDT rules, wash sales, trade reporting | Read, Write, MultiEdit, WebSearch, Task |
+| **portfolio-manager** | Portfolio construction | Multi-strategy allocation, rebalancing, performance attribution | Read, Write, MultiEdit, Bash, Task |
+| **finance-glossary** | Domain reference | Canonical terminology, domain boundaries, ubiquitous language | Read, Grep, Glob |
 
 ## Multi-Agent Workflows
 
@@ -96,7 +98,7 @@ trading-compliance-officer (audit)
 
 ```bash
 # Install all finance agents
-cd ubehera  # or your agent-forge directory
+cd claude-agents-pro
 ./scripts/install-agents.sh --user
 
 # Restart Claude Code to load agents

@@ -2,7 +2,7 @@
 
 ## Architecture Philosophy
 
-Claude Agents Pro is a **tiered agent collection** designed for production-grade software engineering with specialized expertise in algorithmic trading and quantitative finance. The system balances breadth (61 agents across 9 tiers) with depth (10 finance specialists covering end-to-end trading workflows), supported by 105 progressive-disclosure skills across 17 domains, 10 event-driven hooks, and a curated MCP server registry.
+Claude Agents Pro is a **tiered agent collection** designed for production-grade software engineering with specialized expertise in algorithmic trading and quantitative finance. The system balances breadth (61 agents across 9 tiers) with depth (10 finance specialists covering end-to-end trading workflows), supported by 120 progressive-disclosure skills across 17 domains, 10 event-driven hooks, and a curated MCP server registry.
 
 ### Design Principles
 
@@ -333,7 +333,7 @@ See `hooks/README.md` for the complete hook development guide.
 
 ---
 
-## Skills System (105 Skills, 17 Domains)
+## Skills System (120 Skills, 17 Domains)
 
 Progressive-disclosure knowledge modules that activate on-demand. Key domains:
 
@@ -343,16 +343,16 @@ Progressive-disclosure knowledge modules that activate on-demand. Key domains:
 | Security | 12 | Auth patterns, OWASP, threat modeling, vulnerability scanning |
 | Testing | 10 | TDD, E2E, contract testing, load testing, static analysis |
 | UX | 8 | Accessibility, design systems, user research, prototyping |
-| ML/AI | 8 | RAG, LangChain, prompt engineering, MLOps |
+| ML/AI | 12 | RAG, LangChain, prompt engineering, MLOps, embeddings, vector search |
 | Agentic | 6 | Subagent catalog, multi-agent patterns, hooks, MCP, memory, plugins |
-| DevOps | 6 | CI/CD, Docker, K8s, GitHub Actions, OTel |
+| DevOps | 9 | CI/CD, Docker, K8s, GitHub Actions, OTel, monorepo, incident runbooks |
 | Data | 6 | ETL, streaming, warehousing, pandas/polars |
 | Python | 6 | Async, FastAPI, packaging, profiling, testing, types |
 | Backend | 5 | Error handling, Node.js, Stripe, validation, WebSockets |
-| API | 5 | Versioning, caching, GraphQL, rate limiting, REST |
-| TypeScript | 4 | React, Next.js, advanced types, state management |
-| Workflow | 4 | Bug fix, features, standups, spec-driven development |
-| Architecture | 3 | Distributed tracing, microservices, event sourcing/CQRS |
+| API | 6 | Versioning, caching, GraphQL, rate limiting, REST, OpenAPI |
+| TypeScript | 7 | React, Next.js, advanced types, state management, JS testing, modern JS |
+| Workflow | 7 | Bug fix, features, standups, spec-driven development, changelog, context-driven |
+| Architecture | 4 | Distributed tracing, microservices, event sourcing/CQRS, ADRs |
 | Cloud | 2 | Multi-cloud, Terraform state |
 | Database | 1 | Query optimization |
 | Debugging | 1 | Debugging strategies |
@@ -399,7 +399,7 @@ See `skills/README.md` for the complete catalog with trigger keywords and line c
    ---
    name: agent-name
    description: Detailed description with technologies and "Use for..." triggers
-   category: [orchestrator|foundation|development|specialist|expert|integration|quality|finance]
+   category: [orchestrator|foundation|development|specialist|expert|platform|integration|quality|finance|security]
    complexity: [simple|moderate|complex|expert]
    model: claude-opus-4-6
    capabilities: [list, of, key, capabilities]

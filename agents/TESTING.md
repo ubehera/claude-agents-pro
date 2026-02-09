@@ -16,7 +16,7 @@ This document provides comprehensive testing procedures for validating the ubehe
 find ~/.claude/agents -maxdepth 1 -type f -name '*.md' \
   | grep -E '(orchestration-coordinator|api-platform-engineer|code-reviewer|error-diagnostician|performance-optimization-specialist|system-design-specialist|test-engineer|frontend-expert|aws-cloud-architect|data-pipeline-engineer|devops-automation-expert|full-stack-architect|machine-learning-engineer|research-librarian|security-architect)'
 
-# Count should be 51 agents
+# Count should be 61 agents
 find ~/.claude/agents -maxdepth 1 -type f -name '*.md' | wc -l
 ```
 
